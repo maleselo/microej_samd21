@@ -1,0 +1,74 @@
+com.is2t.microbsp.microui.InvalidEventGenerator->ej.microui.event.generator.GenericEventGenerator: super class
+com.is2t.microbsp.microui.SystemMicroUI->ej.microui.MicroUI: super class
+com.is2t.microbsp.microui.geg.SystemButtons->ej.microui.event.generator.Buttons: super class
+com.is2t.microbsp.microui.geg.SystemCommand->ej.microui.event.generator.Command: super class
+com.is2t.microej.microui.SystemMicroUIImpl->com.is2t.microbsp.microui.SystemMicroUI: super class
+com.is2t.vm.support.util.EncUS_ASCII->com.is2t.vm.support.util.EncodingConversion: super class
+com.is2t.vm.support.util.EncUTF_8->com.is2t.vm.support.util.EncodingConversion: super class
+ej.microui.MicroUI->java.lang.String: type allocation
+	com.is2t.vm.support.lang.SupportNumber.toStringInteger(int,int)java.lang.String
+	java.lang.Integer.toString(int,int)java.lang.String
+	java.lang.Integer.toString(int)java.lang.String
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int,int)void
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int)void
+	java.lang.AbstractStringBuilder._append(char[],int,int)void
+	java.lang.AbstractStringBuilder._append(java.lang.String)void
+	java.lang.StringBuilder.append(java.lang.String)java.lang.StringBuilder
+	ej.microui.MicroUI.getMicroUIImpl()ej.microui.MicroUI
+	ej.microui.MicroUI.<clinit>()void
+ej.microui.MicroUI->java.lang.System: static method call: getStackTrace
+	java.lang.Throwable.fillInStackTrace()java.lang.Throwable
+	java.lang.Throwable.Throwable()void
+	java.lang.Exception.Exception()void
+	java.lang.RuntimeException.RuntimeException()void
+	java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException()void
+	com.is2t.vm.support.lang.Systools.charValue(int)char
+	com.is2t.vm.support.lang.SupportNumber.toStringInteger(int,int)java.lang.String
+	java.lang.Integer.toString(int,int)java.lang.String
+	java.lang.Integer.toString(int)java.lang.String
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int,int)void
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int)void
+	java.lang.AbstractStringBuilder._append(char[],int,int)void
+	java.lang.AbstractStringBuilder._append(java.lang.String)void
+	java.lang.StringBuilder.append(java.lang.String)java.lang.StringBuilder
+	ej.microui.MicroUI.getMicroUIImpl()ej.microui.MicroUI
+	ej.microui.MicroUI.<clinit>()void
+ej.microui.MicroUI->java.lang.Thread: static method call: currentThread
+	java.lang.Throwable.fillInStackTrace()java.lang.Throwable
+	java.lang.Throwable.Throwable()void
+	java.lang.Exception.Exception()void
+	java.lang.RuntimeException.RuntimeException()void
+	java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException()void
+	com.is2t.vm.support.lang.Systools.charValue(int)char
+	com.is2t.vm.support.lang.SupportNumber.toStringInteger(int,int)java.lang.String
+	java.lang.Integer.toString(int,int)java.lang.String
+	java.lang.Integer.toString(int)java.lang.String
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int,int)void
+	com.is2t.tools.ArrayTools.checkBounds(int,int,int)void
+	java.lang.AbstractStringBuilder._append(char[],int,int)void
+	java.lang.AbstractStringBuilder._append(java.lang.String)void
+	java.lang.StringBuilder.append(java.lang.String)java.lang.StringBuilder
+	ej.microui.MicroUI.getMicroUIImpl()ej.microui.MicroUI
+	ej.microui.MicroUI.<clinit>()void
+ej.microui.event.generator.Buttons->ej.microui.event.EventGenerator: super class
+ej.microui.event.generator.Command->ej.microui.event.EventGenerator: super class
+ej.microui.event.generator.GenericEventGenerator->ej.microui.event.EventGenerator: super class
+java.lang.MainThread->java.lang.Thread: super class
+java.lang.System->com.is2t.vm.support.util.EncodingConversion: static access: DefaultEncoding
+	java.io.OutputStreamWriter.OutputStreamWriter(java.io.OutputStream)void
+	java.io.PrintStream.PrintStream(java.io.OutputStream)void
+	java.lang.System.<clinit>()void
+java.lang.System->java.lang.String: type allocation
+	java.lang.String.trim()java.lang.String
+	java.lang.System.buildOutputStream()java.io.OutputStream
+	java.lang.System.<clinit>()void
+java.lang.System->java.lang.Thread: static method call: currentThread
+	java.lang.Throwable.fillInStackTrace()java.lang.Throwable
+	java.lang.Throwable.Throwable()void
+	java.lang.Exception.Exception()void
+	java.lang.RuntimeException.RuntimeException()void
+	java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException()void
+	java.lang.String.String(char[],int,int,boolean)void
+	java.lang.String.trim()java.lang.String
+	java.lang.System.buildOutputStream()java.io.OutputStream
+	java.lang.System.<clinit>()void
