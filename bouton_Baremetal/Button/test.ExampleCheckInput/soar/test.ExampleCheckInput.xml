@@ -1,0 +1,702 @@
+<soar_information>
+	<clinit_order>
+		<init rank="0" descriptor="com.is2t.vm.support.util.EncodingConversion"></init>
+		<init rank="1" descriptor="ej.microui.event.EventGenerator"></init>
+		<init rank="2" descriptor="java.lang.String"></init>
+		<init rank="3" descriptor="java.lang.Thread"></init>
+		<init rank="4" descriptor="java.lang.System"></init>
+		<init rank="5" descriptor="ej.microui.MicroUI"></init>
+		<init rank="6" descriptor="ej.microui.PumpsPool"></init>
+	</clinit_order>
+	<stackgroups></stackgroups>
+	<selected_methods>
+		<method descriptor="java.lang.Runnable.run()void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.error.ErrorMessages.category()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.UncaughtExceptionHandler.uncaughtException(java.lang.Throwable)void" codesize="0" stacksize="28"></method>
+		<method descriptor="java.io.OutputStream.write(int)void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Math.max(int,int)int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Math.min(int,int)int" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.util.EventHandler.handleEvent(int)boolean" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Thread$UncaughtExceptionHandler.uncaughtException(java.lang.Thread,java.lang.Throwable)void" codesize="0" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.opYield()void" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.pump.Pump.stop()void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.security.Permission.getActions()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.CharSequence.toString()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIPump.isDone()boolean" codesize="0" stacksize="20"></method>
+		<method descriptor="java.security.Permission.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIPump.start()void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.breakRun()void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.systemStart()void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.init()void" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.read()int" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.systemClose()void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.systemBeep()void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.destroy()void" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.execute(int)void" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.systemStop()void" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.getMaxBytesPerChar()int" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.encode(char[],int[],int,byte[],int,int)int" codesize="0" stacksize="44"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.systemClose()void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.systemStop()void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.systemStart()void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.SecurityManager.checkAccess(java.lang.Thread)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.SecurityManager.checkPermission(java.security.Permission)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.Object.Object()void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.io.NullOutputStream.write(int)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.io.OutputStream.flush()void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.String.toString()java.lang.String" codesize="6" stacksize="12"></method>
+		<method descriptor="ej.microui.event.EventGenerator.convert(com.is2t.pump._int.IntPump,int)void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.destroy()void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.init()void" codesize="6" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Command.getEventType()int" codesize="7" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.yield()void" codesize="7" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Pointer.getY()int" codesize="8" stacksize="12"></method>
+		<method descriptor="ej.microui.MicroUIPermission.getActions()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.security.Permission.getName()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.getEventType()int" codesize="8" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Pointer.getX()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Integer.hashCode()int" codesize="8" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.getMaxBytesPerChar()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.getName()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="ej.microui.event.EventPermission.getActions()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Throwable.getMessage()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.String.length()int" codesize="8" stacksize="12"></method>
+		<method descriptor="ej.microui.event.EventGenerator.getID()int" codesize="8" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.getMaxBytesPerChar()int" codesize="9" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Pointer.getEventType()int" codesize="9" stacksize="12"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.stop()void" codesize="9" stacksize="16"></method>
+		<method descriptor="java.lang.Class.isAssignableFrom(java.lang.Class)boolean" codesize="11" stacksize="28"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.IntPump()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.microui.MicroUIFactory.setUncaughtExceptionHandler(ej.microui.UncaughtExceptionHandler)void" codesize="11" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.appendInteger(int,int,char[])int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.charArrayToByteArray(char[],int,byte[],int,int)void" codesize="11" stacksize="28"></method>
+		<method descriptor="ej.microui.MicroUIFactory.MicroUIFactory()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String.hashCodeNative()int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.io.NullOutputStream.NullOutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.Systools()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Class.forNameNative(java.lang.String)java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Class.Class()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Class.getName()java.lang.String" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIProperties.MicroUIProperties()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Math.Math()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.tools.ToolsErrorMessage.ToolsErrorMessage()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.parseLong(char[],int,int,int)long" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Object.notify(boolean)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Object.originalGetClass()java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Object.getClass()java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Class.isInterface()boolean" codesize="11" stacksize="20"></method>
+		<method descriptor="java.io.InputStream.InputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringLongNative(long,int,char[])int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.SupportNumber()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Number.Number()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.io.OutputStream.OutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String.equals(java.lang.Object)boolean" codesize="11" stacksize="28"></method>
+		<method descriptor="ej.error.Message.Message()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.natives.NSystemInputPump.NSystemInputPump()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.microui.PumpsPool.PumpsPool()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.microui.event.Event.Event()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.ArrayTools()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.natives.NSystemInputPump.initialize()boolean" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.microui.err.MicroUIErrorMessages.MicroUIErrorMessages()void" codesize="11" stacksize="16"></method>
+		<method descriptor="test.ExampleCheckInput.ExampleCheckInput()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String$CaseInsensitiveOrder.String$CaseInsensitiveOrder()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String$CaseInsensitiveOrder.String$CaseInsensitiveOrder(java.lang.String$CaseInsensitiveOrder)void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.createNewArrayFromType(java.lang.Class,int)java.lang.Object" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.err.EDCErrorMessages.EDCErrorMessages()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.io.DebugOutputStream.DebugOutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.io.DebugOutputStream.write(int)void" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.MicroUI()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Throwable.internalError(java.lang.Throwable)void" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.Util.Util()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.natives.NSystemInputPump.getEvent()int" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.Immortals.setImmortal(java.lang.Object)java.lang.Object" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.CurrentTime.get(boolean)long" codesize="11" stacksize="28"></method>
+		<method descriptor="ej.bon.CurrentTime.CurrentTime()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.natives.NSystemInputPump.interrupt()void" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.Immortals.Immortals()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.storeException(java.lang.Throwable)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.getStackTrace(java.lang.Thread)int[]" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.getOutputStream()java.io.OutputStream" codesize="11" stacksize="12"></method>
+		<method descriptor="java.lang.System.System()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.System.getMethodClass(int)java.lang.Class" codesize="11" stacksize="12"></method>
+		<method descriptor="java.lang.System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)void" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.System.initializeProperties(java.lang.String[][])void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.hashCode(java.lang.Object)int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.currentTimeMillis()long" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.startNative()int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.setPriorityNative(int)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.toStringStackLine(char[],int,int)int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.activeCount()int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.getSecurityManager()java.lang.SecurityManager" codesize="11" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.currentThread()java.lang.Thread" codesize="11" stacksize="12"></method>
+		<method descriptor="java.security.BasicPermission.getActions()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.err.EDCErrorMessages.category()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="com.is2t.tools.ToolsErrorMessage.category()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="ej.microui.err.MicroUIErrorMessages.category()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="java.io.FilterOutputStream.FilterOutputStream(java.io.OutputStream)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.security.Permission.Permission(java.lang.String)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.io.Writer.Writer()void" codesize="13" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.EncodingConversion(java.lang.String)void" codesize="13" stacksize="16"></method>
+		<method descriptor="ej.microui.event.EventGenerator.setEventHandler0(ej.microui.util.EventHandler)void" codesize="14" stacksize="16"></method>
+		<method descriptor="java.io.FilterOutputStream.flush()void" codesize="15" stacksize="16"></method>
+		<method descriptor="java.lang.Throwable.getLocalizedMessage()java.lang.String" codesize="15" stacksize="16"></method>
+		<method descriptor="java.lang.String.isEmpty()boolean" codesize="15" stacksize="12"></method>
+		<method descriptor="java.lang.ref.Reference.Reference(java.lang.Object,java.lang.ref.ReferenceQueue)void" codesize="15" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Keyboard.onlyTextInput(boolean)void" codesize="16" stacksize="12"></method>
+		<method descriptor="ej.microui.event.generator.Keyboard.getAction(int)int" codesize="16" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalThreadStateException.IllegalThreadStateException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.execClinit(int)void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.IncompatibleClassChangeError.IncompatibleClassChangeError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="ej.microui.MicroUI.MicroUI(boolean)void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ReflectiveOperationException.ReflectiveOperationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalAccessError.IllegalAccessError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Error.Error()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.InterruptedException.InterruptedException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ClassNotFoundException.ClassNotFoundException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.LinkageError.LinkageError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.StringBuilder.StringBuilder()void" codesize="17" stacksize="16"></method>
+		<method descriptor="ej.microui.MicroUIPermission.hashCode()int" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.StackOverflowError.StackOverflowError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.OutOfMemoryError.OutOfMemoryError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Class.newInstance()java.lang.Object" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.StringBuffer()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.UnsatisfiedLinkError.UnsatisfiedLinkError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NumberFormatException.NumberFormatException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="com.is2t.microej.microui.SystemMicroUIImpl.SystemMicroUIImpl()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalArgumentException.IllegalArgumentException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Exception.Exception()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalMonitorStateException.IllegalMonitorStateException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArithmeticException.ArithmeticException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.StringIndexOutOfBoundsException.StringIndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ClassCastException.ClassCastException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ExceptionInInitializerError.ExceptionInInitializerError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.Buttons()void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.io.FilterOutputStream.write(int)void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.MainThread.MainThread()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArrayStoreException.ArrayStoreException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NegativeArraySizeException.NegativeArraySizeException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.RuntimeException.RuntimeException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Command.Command()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.VirtualMachineError.VirtualMachineError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalStateException.IllegalStateException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.SystemMicroUI()void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.io.IOException.IOException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.geg.SystemButtons.SystemButtons()void" codesize="17" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.geg.SystemCommand.SystemCommand()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArrayIndexOutOfBoundsException.ArrayIndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.AbstractMethodError.AbstractMethodError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NullPointerException.NullPointerException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalAccessException.IllegalAccessException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.InstantiationException.InstantiationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.addToSystemPool()void" codesize="17" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Keypad.getMode()int" codesize="18" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.Thread(int)void" codesize="18" stacksize="20"></method>
+		<method descriptor="java.lang.RuntimePermission.RuntimePermission(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.EncUS_ASCII(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.LinkageError.LinkageError(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.io.IOException.IOException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIFactory$1.run()void" codesize="19" stacksize="16"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.crash(java.lang.Throwable)void" codesize="19" stacksize="16"></method>
+		<method descriptor="java.lang.NumberFormatException.NumberFormatException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(java.lang.String)java.lang.StringBuilder" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.StringIndexOutOfBoundsException.StringIndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.OutOfMemoryError.OutOfMemoryError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Object.hashCode()int" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.VirtualMachineError.VirtualMachineError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.geg.SystemButtons.SystemButtons(int)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.RuntimeException.RuntimeException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Error.Error(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Error.Error(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.NegativeArraySizeException.NegativeArraySizeException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="test.EventHandlerImpl.EventHandlerImpl()void" codesize="19" stacksize="24"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.start()void" codesize="19" stacksize="16"></method>
+		<method descriptor="java.lang.Object.notifyAll()void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.InternalLimitsError.InternalLimitsError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.ExceptionInInitializerError.ExceptionInInitializerError(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.IllegalStateException.IllegalStateException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.geg.SystemCommand.convert(com.is2t.pump._int.IntPump,int)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.ArrayIndexOutOfBoundsException.ArrayIndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.IllegalArgumentException.IllegalArgumentException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.read()int" codesize="19" stacksize="16"></method>
+		<method descriptor="ej.microui.MicroUIProperties.getProperty(java.lang.String)java.lang.String" codesize="19" stacksize="16"></method>
+		<method descriptor="java.lang.Exception.Exception(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="ej.microui.PumpsPool.&amp;lt;clinit&amp;gt;()void" codesize="19" stacksize="20"></method>
+		<method descriptor="ej.microui.event.EventPermission.hashCode()int" codesize="19" stacksize="20"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.supportsExtendedFeatures(int)boolean" codesize="20" stacksize="20"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.getButtonID(int)int" codesize="20" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.States.getStateID(int)int" codesize="20" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.isAlive()boolean" codesize="20" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.callWrapper()void" codesize="20" stacksize="16"></method>
+		<method descriptor="java.lang.Throwable.printStackTrace()void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.util.PropertyPermission.PropertyPermission(java.lang.String,int)void" codesize="21" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIFactory$1.MicroUIFactory$1(ej.microui.MicroUIFactory,ej.microui.MicroUI)void" codesize="21" stacksize="16"></method>
+		<method descriptor="java.lang.MainThread.run()void" codesize="21" stacksize="16"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.setPriority(int)void" codesize="21" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIPermission.MicroUIPermission(java.lang.String)void" codesize="21" stacksize="20"></method>
+		<method descriptor="ej.microui.event.EventPermission.EventPermission(ej.microui.event.EventGenerator)void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.ref.Reference.Reference()void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.flush()void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.String.String()void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.security.BasicPermission.hashCode()int" codesize="21" stacksize="20"></method>
+		<method descriptor="ej.bon.Util.platformTimeMillis()long" codesize="22" stacksize="20"></method>
+		<method descriptor="ej.microui.event.Event.getData(int)int" codesize="22" stacksize="16"></method>
+		<method descriptor="java.lang.Integer.toString(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="ej.microui.event.EventGeneratorsPool.EventGeneratorsPool(int)void" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Integer.toString(int,int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="ej.microui.event.Event.getGeneratorID(int)int" codesize="23" stacksize="16"></method>
+		<method descriptor="java.lang.Integer.toHexString(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.String.valueOf(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Integer.parseInt(java.lang.String)int" codesize="23" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.stop()void" codesize="23" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.&amp;lt;clinit&amp;gt;()void" codesize="23" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.States.getStateValue(int)int" codesize="23" stacksize="16"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.AbstractStringBuilder()void" codesize="23" stacksize="24"></method>
+		<method descriptor="ej.microui.event.Event.getType(int)int" codesize="23" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.getAction(int)int" codesize="23" stacksize="16"></method>
+		<method descriptor="java.lang.AbstractMethodError.throwAbstractMethodError()void" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.System.identityHashCode(java.lang.Object)int" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Integer.toString()java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Long.toString(long,int)java.lang.String" codesize="23" stacksize="28"></method>
+		<method descriptor="java.lang.Long.toString()java.lang.String" codesize="23" stacksize="28"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.EncUTF_8()void" codesize="23" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.crash(java.lang.Throwable)void" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Long.hashCode()int" codesize="24" stacksize="32"></method>
+		<method descriptor="java.lang.Thread.run()void" codesize="25" stacksize="20"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(byte[],int,int)void" codesize="25" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuffer.toString()java.lang.String" codesize="25" stacksize="16"></method>
+		<method descriptor="ej.microui.event.EventGenerator.get(java.lang.Class)ej.microui.event.EventGenerator[]" codesize="25" stacksize="20"></method>
+		<method descriptor="ej.microui.event.EventGenerator.get(int)ej.microui.event.EventGenerator" codesize="25" stacksize="20"></method>
+		<method descriptor="ej.microui.event.EventGenerator.addToSystemPool()int" codesize="25" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuffer.append(java.lang.String)java.lang.StringBuffer" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.ensureCapacity(int)void" codesize="25" stacksize="20"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(int,int,int)void" codesize="25" stacksize="28"></method>
+		<method descriptor="ej.microui.event.EventGenerator.sendEvent(int)void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.Long.toString(long)java.lang.String" codesize="25" stacksize="28"></method>
+		<method descriptor="ej.microui.MicroUIFactory.setEventHandler(ej.microui.event.EventGenerator,ej.microui.util.EventHandler)void" codesize="25" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUI.setUncaughtExceptionHandler(ej.microui.UncaughtExceptionHandler)void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.io.OutputStreamWriter.OutputStreamWriter(java.io.OutputStream)void" codesize="25" stacksize="16"></method>
+		<method descriptor="ej.microui.MicroUIFactory.start(ej.microui.MicroUI)void" codesize="25" stacksize="16"></method>
+		<method descriptor="java.lang.String.String(char[],int,int)void" codesize="25" stacksize="32"></method>
+		<method descriptor="ej.microui.event.EventGenerator.get(java.lang.Class,int)ej.microui.event.EventGenerator" codesize="27" stacksize="24"></method>
+		<method descriptor="com.is2t.microbsp.microui.SystemMicroUI.systemBeep()void" codesize="27" stacksize="20"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.isDone()boolean" codesize="27" stacksize="20"></method>
+		<method descriptor="ej.microui.event.generator.Command.done(int)void" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.System.getPropertyNoCheck(java.lang.String,java.lang.String)java.lang.String" codesize="27" stacksize="16"></method>
+		<method descriptor="java.io.PrintStream.print(int)void" codesize="27" stacksize="24"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.isPressed(int)boolean" codesize="27" stacksize="16"></method>
+		<method descriptor="ej.microui.event.EventGenerator.setEventHandler(ej.microui.util.EventHandler)void" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuilder.append(int)java.lang.StringBuilder" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.checkAccess()void" codesize="27" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(java.lang.Object)java.lang.StringBuilder" codesize="27" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(long)java.lang.StringBuilder" codesize="27" stacksize="28"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.isDoubleClicked(int)boolean" codesize="28" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.isClicked(int)boolean" codesize="28" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.isReleased(int)boolean" codesize="28" stacksize="16"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.isRepeated(int)boolean" codesize="28" stacksize="16"></method>
+		<method descriptor="java.lang.String.&amp;lt;clinit&amp;gt;()void" codesize="29" stacksize="24"></method>
+		<method descriptor="ej.microui.event.EventGenerator.EventGenerator()void" codesize="29" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.append(int)java.lang.StringBuffer" codesize="29" stacksize="24"></method>
+		<method descriptor="ej.microui.event.generator.Keyboard.getChar(boolean)boolean" codesize="29" stacksize="24"></method>
+		<method descriptor="ej.microui.event.EventGenerator.&amp;lt;clinit&amp;gt;()void" codesize="29" stacksize="24"></method>
+		<method descriptor="java.io.FilterOutputStream.write(byte[],int,int)void" codesize="30" stacksize="28"></method>
+		<method descriptor="java.lang.Throwable.Throwable()void" codesize="31" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.print(char[])void" codesize="31" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.print(char)void" codesize="31" stacksize="24"></method>
+		<method descriptor="java.lang.String.valueOf(java.lang.Object)java.lang.String" codesize="31" stacksize="16"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.copy(java.lang.Object[],int)java.lang.Object[]" codesize="31" stacksize="24"></method>
+		<method descriptor="java.lang.Throwable.fillInStackTrace()java.lang.Throwable" codesize="31" stacksize="16"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.toString()java.lang.String" codesize="31" stacksize="32"></method>
+		<method descriptor="java.lang.System.stackIpsForOutOfMemoryError()int[]" codesize="32" stacksize="20"></method>
+		<method descriptor="java.lang.Throwable.Throwable(java.lang.String)void" codesize="33" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.Thread(java.lang.Runnable,java.lang.String)void" codesize="33" stacksize="16"></method>
+		<method descriptor="java.lang.String.hashCode()int" codesize="34" stacksize="20"></method>
+		<method descriptor="java.lang.System.buildDefaultOutputStream()java.io.OutputStream" codesize="34" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.Thread()void" codesize="35" stacksize="20"></method>
+		<method descriptor="ej.microui.PumpsPool.stopAll()void" codesize="35" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.PrintStream(java.io.OutputStream)void" codesize="35" stacksize="24"></method>
+		<method descriptor="ej.microui.PumpsPool.startAll()void" codesize="35" stacksize="24"></method>
+		<method descriptor="ej.microui.MicroUIFactory.getInstance()ej.microui.MicroUIFactory" codesize="35" stacksize="20"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.buildEventData(int,int)int" codesize="36" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.clinitWrapper(int)void" codesize="36" stacksize="28"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.done(int,int)void" codesize="37" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuilder.StringBuilder(java.lang.String)void" codesize="37" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuilder.append(char)java.lang.StringBuilder" codesize="37" stacksize="36"></method>
+		<method descriptor="java.lang.Throwable.printClassName(java.io.PrintStream,java.lang.Throwable)void" codesize="37" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.StringBuffer(java.lang.String)void" codesize="37" stacksize="24"></method>
+		<method descriptor="java.lang.Throwable.printMessage(java.io.PrintStream)void" codesize="37" stacksize="24"></method>
+		<method descriptor="ej.microui.MicroUI.errorLog(java.lang.Throwable)void" codesize="37" stacksize="20"></method>
+		<method descriptor="java.io.OutputStream.write(byte[],int,int)void" codesize="38" stacksize="28"></method>
+		<method descriptor="ej.microui.event.EventGeneratorsPool.get(int)ej.microui.event.EventGenerator" codesize="39" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.println()void" codesize="40" stacksize="28"></method>
+		<method descriptor="java.security.BasicPermission.BasicPermission(java.lang.String)void" codesize="40" stacksize="24"></method>
+		<method descriptor="java.lang.Class.forName(java.lang.String)java.lang.Class" codesize="40" stacksize="20"></method>
+		<method descriptor="ej.microui.PumpsPool.areAllPumpsStopped()boolean" codesize="40" stacksize="24"></method>
+		<method descriptor="java.lang.AbstractStringBuilder._append(java.lang.String)void" codesize="41" stacksize="32"></method>
+		<method descriptor="com.is2t.pump._int.IntPump.run()void" codesize="41" stacksize="28"></method>
+		<method descriptor="ej.microui.event.EventGenerator.checkEventHandlerPermission()void" codesize="43" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.setPriority(int)void" codesize="43" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.print(java.lang.String)void" codesize="43" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.println(java.lang.String)void" codesize="43" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.write(byte[],int,int)void" codesize="44" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuffer.append(char)java.lang.StringBuffer" codesize="44" stacksize="36"></method>
+		<method descriptor="java.io.PrintStream.write(int)void" codesize="44" stacksize="24"></method>
+		<method descriptor="java.lang.Throwable.Throwable(java.lang.Throwable)void" codesize="45" stacksize="24"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.AbstractStringBuilder(int)void" codesize="45" stacksize="28"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.execute(int)void" codesize="45" stacksize="28"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.copy(java.lang.Object[],int,java.lang.Class)java.lang.Object[]" codesize="45" stacksize="32"></method>
+		<method descriptor="java.lang.SecurityManager.SecurityManager()void" codesize="47" stacksize="28"></method>
+		<method descriptor="java.lang.StackOverflowError.getMessage()java.lang.String" codesize="50" stacksize="28"></method>
+		<method descriptor="test.ExampleCheckInput.initializeEventGenerators()void" codesize="50" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.someName()java.lang.String" codesize="51" stacksize="28"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.charValue(int)char" codesize="51" stacksize="20"></method>
+		<method descriptor="ej.microui.MicroUIFactory.stop(ej.microui.MicroUI)void" codesize="51" stacksize="28"></method>
+		<method descriptor="java.lang.System.getPropertyNoCheck(java.lang.String)java.lang.String" codesize="51" stacksize="36"></method>
+		<method descriptor="test.ExampleCheckInput.main(java.lang.String[])void" codesize="51" stacksize="20"></method>
+		<method descriptor="java.lang.AbstractStringBuilder._append(char[],int,int)void" codesize="51" stacksize="36"></method>
+		<method descriptor="test.ExampleCheckInput.class$()void" codesize="53" stacksize="12"></method>
+		<method descriptor="java.lang.Throwable.printMessageStackTrace(java.io.PrintStream)void" codesize="55" stacksize="28"></method>
+		<method descriptor="test.EventHandlerImpl.showKeypad(ej.microui.event.EventGenerator,int)void" codesize="57" stacksize="24"></method>
+		<method descriptor="java.lang.System.buildOutputStream()java.io.OutputStream" codesize="57" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.encode(char[],int[],int,byte[],int,int)int" codesize="58" stacksize="32"></method>
+		<method descriptor="ej.microui.PumpsPool.addToSystemPool(ej.microui.MicroUIPump)void" codesize="59" stacksize="28"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.add(java.lang.Object[],java.lang.Object)java.lang.Object[]" codesize="59" stacksize="40"></method>
+		<method descriptor="ej.microui.event.EventGeneratorsPool.get(java.lang.Class,int)ej.microui.event.EventGenerator" codesize="59" stacksize="36"></method>
+		<method descriptor="ej.microui.MicroUI.checkRunning()void" codesize="61" stacksize="36"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.&amp;lt;clinit&amp;gt;()void" codesize="63" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.toString()java.lang.String" codesize="65" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.updateThreadCounters()void" codesize="67" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.ensureCapacity(int)void" codesize="67" stacksize="40"></method>
+		<method descriptor="ej.microui.event.Event.buildEvent(int,ej.microui.event.EventGenerator,int)int" codesize="67" stacksize="28"></method>
+		<method descriptor="java.lang.Integer.parseInt(java.lang.String,int)int" codesize="68" stacksize="28"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.add(java.lang.Object[],java.lang.Object,int)java.lang.Object[]" codesize="69" stacksize="40"></method>
+		<method descriptor="ej.error.Message.at(ej.error.ErrorMessages,int)java.lang.String" codesize="71" stacksize="28"></method>
+		<method descriptor="test.ExampleCheckInput.check()void" codesize="73" stacksize="24"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringLong(long,int)java.lang.String" codesize="75" stacksize="40"></method>
+		<method descriptor="java.io.OutputStreamWriter.flush()void" codesize="76" stacksize="36"></method>
+		<method descriptor="java.lang.Object.toString()java.lang.String" codesize="77" stacksize="28"></method>
+		<method descriptor="ej.microui.event.generator.Pointer.send(int,int)void" codesize="77" stacksize="32"></method>
+		<method descriptor="java.lang.Throwable.toString()java.lang.String" codesize="78" stacksize="24"></method>
+		<method descriptor="ej.error.Message.at(ej.error.ErrorMessages,int,java.lang.Object)java.lang.String" codesize="79" stacksize="28"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toUnsignedString(int,int)java.lang.String" codesize="83" stacksize="44"></method>
+		<method descriptor="java.lang.String.String(char[],int,int,boolean)void" codesize="83" stacksize="36"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.Buttons(int)void" codesize="84" stacksize="24"></method>
+		<method descriptor="com.is2t.microbsp.microui.geg.SystemButtons.convert(com.is2t.pump._int.IntPump,int)void" codesize="85" stacksize="32"></method>
+		<method descriptor="ej.microui.MicroUI.stop()void" codesize="86" stacksize="40"></method>
+		<method descriptor="java.util.PropertyPermission.getActions()java.lang.String" codesize="88" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.runWrapper()void" codesize="89" stacksize="28"></method>
+		<method descriptor="ej.microui.MicroUI.waitForPumps()void" codesize="89" stacksize="60"></method>
+		<method descriptor="com.is2t.microej.microui.SystemMicroUIImpl.init()void" codesize="89" stacksize="24"></method>
+		<method descriptor="ej.microui.event.generator.Keyboard.getNextChar(int)char" codesize="92" stacksize="40"></method>
+		<method descriptor="com.is2t.microbsp.microui.io.SystemInputPump.SystemInputPump()void" codesize="93" stacksize="36"></method>
+		<method descriptor="ej.microui.MicroUI.start()void" codesize="94" stacksize="40"></method>
+		<method descriptor="java.lang.Class.toString()java.lang.String" codesize="95" stacksize="28"></method>
+		<method descriptor="ej.microui.MicroUI.&amp;lt;clinit&amp;gt;()void" codesize="97" stacksize="32"></method>
+		<method descriptor="java.lang.System.getProperty(java.lang.String)java.lang.String" codesize="99" stacksize="36"></method>
+		<method descriptor="test.EventHandlerImpl.showState(int)void" codesize="101" stacksize="40"></method>
+		<method descriptor="java.lang.System.&amp;lt;clinit&amp;gt;()void" codesize="113" stacksize="32"></method>
+		<method descriptor="ej.microui.event.EventGeneratorsPool.get(java.lang.Class)ej.microui.event.EventGenerator[]" codesize="116" stacksize="40"></method>
+		<method descriptor="java.lang.String.trim()java.lang.String" codesize="120" stacksize="52"></method>
+		<method descriptor="java.lang.Long.parseLong(java.lang.String,int)long" codesize="123" stacksize="36"></method>
+		<method descriptor="ej.microui.event.generator.Buttons.send(int,int)void" codesize="127" stacksize="56"></method>
+		<method descriptor="java.io.OutputStreamWriter.write(char[],int,int)void" codesize="128" stacksize="60"></method>
+		<method descriptor="ej.microui.MicroUI.getMicroUIImpl()ej.microui.MicroUI" codesize="135" stacksize="32"></method>
+		<method descriptor="java.io.OutputStreamWriter.writeln(char[],int,int)void" codesize="140" stacksize="60"></method>
+		<method descriptor="test.ExampleCheckInput.prepareKeypad()void" codesize="144" stacksize="44"></method>
+		<method descriptor="ej.microui.event.EventGeneratorsPool.add(ej.microui.event.EventGenerator)int" codesize="146" stacksize="48"></method>
+		<method descriptor="test.EventHandlerImpl.showPointer(ej.microui.event.EventGenerator,int)void" codesize="163" stacksize="40"></method>
+		<method descriptor="java.lang.Thread.start()void" codesize="171" stacksize="36"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(int,int,int,int)void" codesize="171" stacksize="36"></method>
+		<method descriptor="java.security.Permission.toString()java.lang.String" codesize="172" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.handleUncaughtException(java.lang.Throwable)void" codesize="182" stacksize="36"></method>
+		<method descriptor="test.EventHandlerImpl.showButton(int)void" codesize="186" stacksize="40"></method>
+		<method descriptor="java.lang.Throwable.printStackTrace(java.io.PrintStream)void" codesize="186" stacksize="36"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringInteger(int,int)java.lang.String" codesize="187" stacksize="36"></method>
+		<method descriptor="java.lang.System.printStackTrace(java.io.PrintStream,int[])void" codesize="212" stacksize="52"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.encode(char[],int[],int,byte[],int,int)int" codesize="237" stacksize="36"></method>
+		<method descriptor="test.EventHandlerImpl.showKeyboard(ej.microui.event.EventGenerator,int)void" codesize="268" stacksize="40"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.decode(byte[],int[],int,char[],int,int)int" codesize="326" stacksize="40"></method>
+		<method descriptor="test.EventHandlerImpl.handleEvent(int)boolean" codesize="486" stacksize="56"></method>
+		<method descriptor="test.EventHandlerImpl.showCommand(int)void" codesize="569" stacksize="36"></method>
+	</selected_methods>
+	<classpath>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\MICROJVM\javaLibs\bon-1.2.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\MICROJVM\javaLibs\edc-1.2.jar"></path>
+		<path location="E:\ProjetSAMD21\Button\bin"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\javaLibs\microui-2.0.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\javaLibs\systemmicroui-2.0.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\javaLibs\pump.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.0\.bin\javaLibs\resourcemanager-1.0.jar"></path>
+		<path location="C:\Users\Simon\AppData\Local\Temp\microej\ProjetSAMD21_1485532156302\ExampleCheckInput_1485532522885\customlaunch264940058properties"></path>
+	</classpath>
+	<selected_resources></selected_resources>
+	<java_properties>
+		<property name="java.vendor" value="IS2T"></property>
+		<property name="java.vendor.url" value="www.is2t.com"></property>
+		<property name="com.is2t.edc.assertions.status" value="true"></property>
+		<property name="line.separator" value="&#xa;"></property>
+		<property name="microedition.configuration" value="EDC-1.2"></property>
+		<property name="microedition.encoding" value="ISO-8859-1"></property>
+		<property name="com.is2t.microui.SystemMicroUI" value="com.is2t.microej.microui.SystemMicroUIImpl"></property>
+		<property name="com.is2t.system.out.class" value=""></property>
+		<property name="microedition.platform" value="Core"></property>
+	</java_properties>
+	<selected_internStrings>
+		main
+		Core
+		microedition.platform
+		com.is2t.microej.microui.SystemMicroUIImpl
+		com.is2t.microui.SystemMicroUI
+		microedition.encoding
+		microedition.configuration
+		com.is2t.edc.assertions.status
+		www.is2t.com
+		java.vendor.url
+		IS2T
+		java.vendor
+		start
+		stop
+		SystemMicroUI
+		log
+		com.is2t.microui.
+		Caused by: 
+		java.lang.OutOfMemoryError
+		" 
+		Exception in thread "
+		: 
+		true
+		MicroUI
+		MicroUI started
+		=== Ready to check: send an input event... ===
+		Keypad mode is 
+		Turning on low-level keypad events...
+		EDC-1.2
+		createSecurityManager
+		&#xa;
+		line.separator
+		com.is2t.system.out.class
+		 remaining frame(s).&#xa;
+		...&#xa;
+		     at 
+		thread
+		Stacks space
+		Too many alive java threads (
+		Thread[
+		"
+		 thrown from UncaughtExceptionHandler in thread "
+		Exception: 
+		write
+		read
+		Generic
+		try to grow _jvm_sharedMemory_size
+		class 
+		interface 
+		US-ASCII
+		ISO-8859-1
+		BEEP
+		null
+		UTF-8
+		double-clicked 
+		TEXT_INPUT
+		BACK
+		button&#x9;&#x9;
+		(
+		 after 
+		Other key action: 
+		 (
+		unknown)
+		KEY_UP
+		Unknown event: 0x
+		character&#x9;
+		RIGHT
+		COPY
+		clicked 
+		unknown (0x
+		pressed 
+		DOWN
+		EXIT
+		command&#x9;&#x9;
+		repeated 
+		,
+		ANTICLOCKWISE
+		SYSINpmp
+		PASTE
+		
+		HELP
+		MENU
+		CLOCKWISE
+		PAUSE
+		CUT
+		unknown
+		position&#x9;
+		)
+		state&#x9;&#x9;
+		UP
+		LEFT
+		SELECT
+		EventGenerator&#x9;
+		CANCEL
+		RESUME
+		released 
+		&apos;
+		KEY_VALIDATED
+		Before switch type
+		PREVIOUS
+		NEXT
+		KEY_DOWN
+		ms
+		STOP
+		Event&#x9;&#x9;0x
+		 
+		 value: 
+		ESC
+		START
+	</selected_internStrings>
+	<selected_types nb="138">
+		<type descriptor="java.lang.Object" instancesize="4" depth="0"></type>
+		<type descriptor="test.ExampleCheckInput" instancesize="8" depth="1"></type>
+		<type descriptor="ej.microui.MicroUI" instancesize="8" depth="1"></type>
+		<type descriptor="java.lang.AbstractStringBuilder" instancesize="12" depth="1"></type>
+		<type descriptor="char[]" depth="0"></type>
+		<type descriptor="java.lang.StringBuilder" instancesize="12" depth="2"></type>
+		<type descriptor="ej.microui.MicroUIProperties" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.System" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.String" instancesize="20" depth="1"></type>
+		<type descriptor="java.lang.String$CaseInsensitiveOrder" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.String[]" depth="0"></type>
+		<type descriptor="java.lang.String[][]" depth="0"></type>
+		<type descriptor="java.lang.Throwable" instancesize="24" depth="1"></type>
+		<type descriptor="java.lang.Throwable[]" depth="0"></type>
+		<type descriptor="java.lang.Thread" instancesize="28" depth="1"></type>
+		<type descriptor="java.lang.Exception" instancesize="24" depth="2"></type>
+		<type descriptor="java.lang.RuntimeException" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.NegativeArraySizeException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.Number" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Integer" instancesize="8" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.lang.SupportNumber" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.lang.Systools" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.IndexOutOfBoundsException" instancesize="24" depth="4"></type>
+		<type descriptor="com.is2t.tools.ArrayTools" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.tools.ToolsErrorMessage" instancesize="4" depth="1"></type>
+		<type descriptor="ej.error.Message" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Class" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Math" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.StringBuffer" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.ArrayIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.StringIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.Error" instancesize="24" depth="2"></type>
+		<type descriptor="java.lang.VirtualMachineError" instancesize="24" depth="3"></type>
+		<type descriptor="com.is2t.vm.support.InternalLimitsError" instancesize="24" depth="4"></type>
+		<type descriptor="java.io.OutputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.io.NullOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java.io.FilterOutputStream" instancesize="8" depth="2"></type>
+		<type descriptor="java.io.PrintStream" instancesize="16" depth="3"></type>
+		<type descriptor="java.io.Writer" instancesize="8" depth="1"></type>
+		<type descriptor="java.io.OutputStreamWriter" instancesize="16" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.util.EncodingConversion" instancesize="8" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.util.EncUS_ASCII" instancesize="8" depth="2"></type>
+		<type descriptor="java.security.Permission" instancesize="8" depth="1"></type>
+		<type descriptor="java.security.BasicPermission" instancesize="8" depth="2"></type>
+		<type descriptor="java.util.PropertyPermission" instancesize="12" depth="3"></type>
+		<type descriptor="java.lang.IllegalArgumentException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.SecurityManager" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.RuntimePermission" instancesize="8" depth="3"></type>
+		<type descriptor="java.lang.NullPointerException" instancesize="24" depth="4"></type>
+		<type descriptor="ej.microui.err.MicroUIErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="byte[]" depth="0"></type>
+		<type descriptor="int[]" depth="0"></type>
+		<type descriptor="java.io.IOException" instancesize="24" depth="3"></type>
+		<type descriptor="com.is2t.vm.support.err.EDCErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.OutOfMemoryError" instancesize="24" depth="4"></type>
+		<type descriptor="ej.microui.MicroUIPermission" instancesize="12" depth="2"></type>
+		<type descriptor="ej.microui.MicroUIFactory" instancesize="4" depth="1"></type>
+		<type descriptor="ej.microui.PumpsPool" instancesize="4" depth="1"></type>
+		<type descriptor="ej.microui.MicroUIPump[]" depth="0"></type>
+		<type descriptor="test.EventHandlerImpl" instancesize="12" depth="1"></type>
+		<type descriptor="ej.microui.event.EventGenerator" instancesize="20" depth="1"></type>
+		<type descriptor="ej.microui.event.EventGeneratorsPool" instancesize="12" depth="1"></type>
+		<type descriptor="ej.microui.event.EventGenerator[]" depth="0"></type>
+		<type descriptor="java.lang.Object[]" depth="0"></type>
+		<type descriptor="ej.microui.event.EventPermission" instancesize="12" depth="2"></type>
+		<type descriptor="ej.microui.event.generator.Keyboard" instancesize="44" depth="2"></type>
+		<type descriptor="ej.microui.event.generator.Keypad" instancesize="52" depth="3"></type>
+		<type descriptor="char[][]" depth="0"></type>
+		<type descriptor="java.lang.Thread[]" depth="0"></type>
+		<type descriptor="java.lang.ArrayStoreException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ReflectiveOperationException" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.IllegalAccessException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.LinkageError" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.IncompatibleClassChangeError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.IllegalAccessError" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.InstantiationException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.IllegalMonitorStateException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.IllegalThreadStateException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.InterruptedException" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.ArithmeticException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.NumberFormatException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.ClassCastException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ClassNotFoundException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.UnsatisfiedLinkError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.StackOverflowError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.Long" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.ref.Reference" instancesize="24" depth="1"></type>
+		<type descriptor="java.lang.ref.WeakReference" instancesize="24" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.io.DebugOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java.io.InputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.io.MemoryInputStream" instancesize="20" depth="2"></type>
+		<type descriptor="ej.bon.EnqueuedWeakReference" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.MainThread" instancesize="28" depth="2"></type>
+		<type descriptor="java.lang.ExceptionInInitializerError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.AbstractMethodError" instancesize="24" depth="5"></type>
+		<type descriptor="ej.bon.Util" instancesize="4" depth="1"></type>
+		<type descriptor="ej.bon.CurrentTime" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.IllegalStateException" instancesize="24" depth="4"></type>
+		<type descriptor="ej.bon.Immortals" instancesize="4" depth="1"></type>
+		<type descriptor="ej.microui.MicroUIFactory$1" instancesize="36" depth="2"></type>
+		<type descriptor="com.is2t.microbsp.microui.SystemMicroUI" instancesize="8" depth="2"></type>
+		<type descriptor="com.is2t.microej.microui.SystemMicroUIImpl" instancesize="20" depth="3"></type>
+		<type descriptor="com.is2t.pump._int.IntPump" instancesize="8" depth="1"></type>
+		<type descriptor="com.is2t.microbsp.microui.io.SystemInputPump" instancesize="12" depth="2"></type>
+		<type descriptor="com.is2t.microbsp.microui.natives.NSystemInputPump" instancesize="4" depth="1"></type>
+		<type descriptor="ej.microui.event.generator.Command" instancesize="20" depth="2"></type>
+		<type descriptor="com.is2t.microbsp.microui.geg.SystemCommand" instancesize="20" depth="3"></type>
+		<type descriptor="ej.microui.event.Event" instancesize="4" depth="1"></type>
+		<type descriptor="ej.microui.event.generator.Buttons" instancesize="36" depth="2"></type>
+		<type descriptor="long[]" depth="0"></type>
+		<type descriptor="boolean[]" depth="0"></type>
+		<type descriptor="ej.microui.event.generator.Pointer" instancesize="100" depth="3"></type>
+		<type descriptor="ej.microui.event.generator.States" instancesize="28" depth="2"></type>
+		<type descriptor="com.is2t.microbsp.microui.geg.SystemButtons" instancesize="36" depth="3"></type>
+		<type descriptor="com.is2t.vm.support.util.EncUTF_8" instancesize="8" depth="2"></type>
+		<type descriptor="short[]" depth="0"></type>
+		<type descriptor="float[]" depth="0"></type>
+		<type descriptor="double[]" depth="0"></type>
+		<type descriptor="java.io.Serializable" depth="0"></type>
+		<type descriptor="java.lang.CharSequence" depth="0"></type>
+		<type descriptor="java.lang.Appendable" depth="0"></type>
+		<type descriptor="java.lang.Comparable" depth="0"></type>
+		<type descriptor="java.util.Comparator" depth="0"></type>
+		<type descriptor="java.lang.Runnable" depth="0"></type>
+		<type descriptor="ej.error.ErrorMessages" depth="0"></type>
+		<type descriptor="java.lang.reflect.Type" depth="0"></type>
+		<type descriptor="java.lang.reflect.GenericDeclaration" depth="0"></type>
+		<type descriptor="java.lang.reflect.AnnotatedElement" depth="0"></type>
+		<type descriptor="java.lang.AutoCloseable" depth="0"></type>
+		<type descriptor="java.io.Flushable" depth="0"></type>
+		<type descriptor="java.io.Closeable" depth="0"></type>
+		<type descriptor="java.security.Guard" depth="0"></type>
+		<type descriptor="ej.microui.err.ErrorMessagesNames" depth="0"></type>
+		<type descriptor="com.is2t.pump.Pump" depth="0"></type>
+		<type descriptor="ej.microui.MicroUIPump" depth="0"></type>
+		<type descriptor="ej.microui.util.EventHandler" depth="0"></type>
+		<type descriptor="java.lang.Thread$UncaughtExceptionHandler" depth="0"></type>
+		<type descriptor="ej.microui.UncaughtExceptionHandler" depth="0"></type>
+	</selected_types>
+	<required_types>
+		<type descriptor="ej.microui.MicroUI"></type>
+		<type descriptor="com.is2t.microej.microui.SystemMicroUIImpl"></type>
+		<type descriptor="com.is2t.vm.support.util.EncUTF_8"></type>
+	</required_types>
+	<selected_immutables></selected_immutables>
+</soar_information>
