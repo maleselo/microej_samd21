@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2012-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="extension.init">
+
+	<!-- Libraries initialization extension point -->
+	<extension-point name="init/context" description="Initializes some context such as Class availability etc." />
+	<extension-point name="init/execution" depends="init/context, mkdirs/application" description="Initializes launch according to context and application."/>
+	<extension-point name="init/finalization" description="Computes final values of the 'overall.*' properties given to tools (S3, SOAR, etc.)"/>
+	
+	<extension-point name="dyninit/context" description="Same as init/context for dynamic download launches."/>
+	<extension-point name="dyninit/execution" depends="dyninit/context, mkdirs/application" description="Same as init/execution for dynamic download launches."/>
+	<extension-point name="dyninit/finalization" description="Same as init/finalization for dynamic download launches."/>
+	
+	<!-- Creates output directories -->
+	<extension-point name="launch/mkdirs" depends="mkdirs/application"/> <!-- application directory is the base for all others -->
+
+	<!-- Extension point to clean intermediate files generated in output dir -->
+	<extension-point name="launch/clean" if="clean.extrafiles"/>
+	
+	<target name="mkdirs/application">
+		<fail unless="output.dir" message="Please define the 'output.dir' property"/>
+		<property name="application.output.dir" location="${output.dir}/${application.main.class}"/>
+		<delete dir="${application.output.dir}" includes="**/*"/>
+		<mkdir dir="${application.output.dir}"/>
+	</target>
+		
+</project>

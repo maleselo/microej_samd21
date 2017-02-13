@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2011-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="nlsInit">
+
+	<dirname file="${ant.file.nlsInit}" property="nlsInit.dir"/>	
+
+	<import file="${nlsInit.dir}/../extension-init.xml" />
+
+	<target name="init/nls/check" extensionOf="init/context">
+		<condition property="nls.generator.gen.needed" value="true">
+			<istrue value="${ej.nls.use}"/>
+		</condition>
+	</target>
+	
+	<target name="definitions/nlsGen" if="nls.generator.gen.needed">
+		<loadproperties srcfile="${nlsInit.dir}/nlsgen.properties" prefix="nls.gen."/>
+	</target>
+		
+	<target name="activity/nlsGen" depends="definitions/nlsGen" if="nls.generator.gen.needed">
+		<start.subactivity
+			activity.id="${nls.gen.activity.id}"
+			message="${nls.gen.activity.msg}"
+			parent.activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<target name="init/nlsGen" extensionOf="init/execution" depends="activity/nlsGen, definitions/nlsGen" if="nls.generator.gen.needed">
+		
+		<!-- define NLSGenerator task -->
+		<property name="nlsImmutablesCreator.classpath" value="${jpf.dir}/tools/NLSImmutablesCreator.jar"/>
+		<taskdef name="nlsImmutablesCreator" classname="${nls.gen.classname}" classpath="${nlsImmutablesCreator.classpath}"/>
+		
+		<tempfile destdir="${microej.io.tmpdir}" property="outputdir" prefix="immu"/>
+		<mkdir dir="${outputdir}"/>
+		
+		<!-- generate -->
+		<nlsImmutablesCreator
+			outputDir="${outputdir}"
+			appClasspath="${application.classpath}"
+			listFile="${ej.nls.list}"
+		/>
+		
+		<!-- set the output properties -->
+		<listFiles in.directory="${outputdir}${file.separator}" in.pattern="**/*.xml" out.list="nlsConverter.immutables"/>
+		
+		<!-- IMMUTABLES -->
+		<augment id="init.immutables">
+			<string value="${nlsConverter.immutables}"/>
+		</augment>
+		
+		<!-- PROPERTIES -->
+		<property name="nls.implementation" value="ej.nls.BasicImmutablesNLS"/>
+		<augment id="init.properties">
+			<propertyref name="nls.implementation"/>
+		</augment>
+		
+		<!-- REQUIRED TYPES -->
+		<augment id="init.requires">
+			<string value="ej.nls.BasicImmutablesNLS"/>
+		</augment>
+		
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${jpf.dir}/javaLibs" includes="nls-*.jar" />
+			<dirset dir="${outputdir}"/>
+		</augment>
+	</target>
+	
+	<macrodef name="listFiles" description="List the files contained in the directory, and matching the pattern">
+		<attribute name="in.directory" description="Root directory"/>
+		<attribute name="in.pattern" default="**/*" description="Pattern to match"/>
+		<attribute name="out.list" description="Resulting list of files"/>
+		<sequential>
+			<fileset id="fs.id" dir="@{in.directory}" includes="@{in.pattern}" />
+			<pathconvert property="@{out.list}" refid="fs.id" dirsep="${file.separator}" pathsep="${path.separator}">
+				<globmapper from="@{in.directory}*" to="*"/>
+			</pathconvert>
+		</sequential>
+	</macrodef>
+</project>

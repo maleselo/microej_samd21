@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="soar">
+
+	<!-- 
+		Launch the SOAR on the Java application
+		
+		Output property:
+			- soar.output.file: soar file  
+	-->
+
+	<import file="soarDefinition.xml"/>
+	<import file="activity.xml"/>
+	
+	<target name="activity/soar">
+		<start.subactivity
+			activity.id="${soar.activity.id}"
+			message="${soar.activity.msg}"
+			parent.activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<target name="soar" depends="activity/soar, soar/defaultProperties, soar/checkProperties, soar/do">
+		<property name="soar.output.file" location="${soar.output.dir}/${soar.root.name}.o"/>
+	</target>
+	
+	<!-- Target without dependencies that can be overridden -->
+	<target name="soar/do">
+		<!-- use default preset definition -->
+		<soar />
+	</target>
+	
+	<target name="soar/defaultProperties">
+		<!-- Set default properties values -->
+		<property name="soar.ni" value="true"/>
+		<property name="application.allocation.policy.file" value=""/>
+		<property name="soar.aot.compiler" value="false"/>
+		<property name="soar.disableStringCompaction" value="true"/>
+		<property name="soar.expertMode" value="true"/>
+		<property name="soar.debugMode" value="true"/>
+		<condition property="soar.checkAPIs" value="true" else="false">
+			<istrue value="${apis.check.enable}"/>
+		</condition>
+		<property name="soar.clinit.mode" value="strict"/>
+		<property name="soar.legacyPropertiesLoad" value="false"/>
+		<property name="soar.legacyStaticFeatures" value="false"/>
+		<propertyset id="build.propertyset">
+			<propertyset refid="init.build.properties"/>
+		</propertyset>
+		<property name="soar.bytecode.verifier" value="true"/>
+		<property name="soar.generate.classnames" value="false"/>
+		<!-- Legacy CLDC 1.3 compliance (disabled by default) -->
+		<property name="cldc.13.compliance" value="false"/>
+	</target>
+	
+	<target name="soar/checkProperties">
+		<!-- Check properties -->
+		
+		<!-- If the AOT compiler is enable, the compiler.cpu property must be set.	-->
+		<fail message="Please define the 'compiler.cpu' property">
+			<condition>
+			<and>
+				<istrue value="${soar.aot.compiler}"/>
+				<not><isset property="compiler.cpu"/></not>
+			</and>
+			</condition>
+		</fail>
+		<fail unless="arch.endianness" message="Please define the 'arch.endianness' property"/>
+		<fail unless="arch.symbol.prefix" message="Please define the 'arch.symbol.prefix' property"/>
+		<fail unless="decimal.impl" message="Please define the 'decimal.impl' property"/>
+	</target>
+
+</project>

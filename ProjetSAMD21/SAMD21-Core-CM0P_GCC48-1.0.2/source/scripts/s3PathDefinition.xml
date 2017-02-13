@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2015 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="s3.definition.path">
+
+	<path id="s3.classpath.path">
+		<pathelement location="${s3.dir}/S3/S3.jar"/>
+	</path>
+		
+</project>
+	
+	

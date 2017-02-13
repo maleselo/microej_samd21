@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2013-2016 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="partialLinkInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/microejAntlib.xml" />
+	
+	<property name="icetea.linker.support.file" location="${microjvm.dir}/link/icetea_linker_support.o"/>
+	
+	<target name="init/context/partialLink" extensionOf="init/context" if="onBoard">
+		<resources id="partialLink.lscf.path"/> <!-- Directories that contains LSCF files -->
+		<resources id="partialLink.ilink.files"/> <!-- Ilink files -->
+		<path id="partialLink.objects.files"/> <!-- Object files to link -->		
+		<propertyset id="partialLink.generic.properties"/> <!-- Properties that will be given to the linker. They will be output in the map file -->
+	</target>
+	
+	<target name="init/execution/partialLink" extensionOf="init/execution" if="onBoard">
+		<!--  Add link files defined in the platform -->
+		<augment id="partialLink.lscf.path">
+			<path location="${microjvm.dir}/link"/>
+		</augment>
+		
+		<!-- Populate ilink files -->
+		<augment id="partialLink.ilink.files">
+			<fileset dir="${microjvm.dir}">
+				<include name="**/*.ilink"/>
+			</fileset>
+			<fileset dir="${platform.dir}/lib" erroronmissingdir="false" >
+				<include name="**/*.ilink"/>
+			</fileset>
+		</augment>
+		
+		<!-- Populate the object files -->
+		<augment id="partialLink.objects.files">
+			<fileset file="${icetea.linker.support.file}"/>
+		</augment>
+		
+		<!-- Add the partialLink properties -->
+		<local name="linkerPrefix"/>		
+		<property name="linkerPrefix" value="linkerPrefix."/>
+		<property name="jpf.dir" location="${platform.dir}"/>
+		<loadproperties srcfile="${platform.dir}/release.properties" prefix="${linkerPrefix}"/>
+		<augment id="partialLink.generic.properties">
+			<propertyref prefix="${linkerPrefix}"/>
+			<propertyref name="jpf.dir"/>
+			<globmapper from="${linkerPrefix}*" to="*"/>
+		</augment>
+		
+	</target>
+	
+	<target name="createLinkFile" extensionOf="init/execution" if="onBoard">
+		<!-- temporary link files -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="link" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+		
+		<local name="link.sizes"/>
+		<property name="link.sizes" value="${link.files.dir}/sizes.lscf" />
+		
+		<property name="core.memory.javastack.size" value="0x1000"/>
+		
+		<!-- create the size file -->
+		<echoxml file="${link.sizes}" append="false">
+			<lscFragment>
+				<defSymbol name="_java_heap_size" value="${core.memory.javaheap.size}" rootSymbol="true"/>
+				<defSymbol name="_java_immortals_size" value="${core.memory.immortal.size}" rootSymbol="true"/>
+			</lscFragment>
+		</echoxml>
+		
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+		</augment>
+	</target>
+	
+	<target name="init/finalization/partialLink" extensionOf="init/finalization" if="onBoard">
+		<pathconvert property="overall.partialLink.lscf.path" pathsep="${path.separator}" refid="partialLink.lscf.path"/>
+		<pathconvert property="overall.partialLink.ilink.files" pathsep="${path.separator}" refid="partialLink.ilink.files"/>
+	</target>
+	
+</project>

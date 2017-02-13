@@ -1,0 +1,25 @@
+<!--
+	ANT
+	
+	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="traceAnalyzerDefinition">
+	
+	<!--
+		Declare the testsuite tasks. 
+		To use them, define the following name space in your project: xmlns:traceAnalyzer="antlib:com.is2t.testsuite.traceAnalyzer"
+	-->
+	<target name="traceAnalyzer/definition">
+		<path id="traceAnalyzer.path">
+			<fileset dir="${platform.dir}/tools">
+				<include name="traceAnalyzer*.jar"/>
+				<!-- Used only for SerialTraceAnalyzer -->
+				<include name="CONNECTOR_COMM*.jar"/>
+			</fileset>
+		</path>
+		<taskdef uri="antlib:com.is2t.testsuite.traceAnalyzer" resource="com/is2t/testsuite/traceAnalyzer/antlib.xml" classpathref="traceAnalyzer.path"/>
+	</target>
+	
+</project>

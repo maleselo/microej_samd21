@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2015 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="s3.definition">
+
+	<dirname property="ant.dir.s3.definition" file="${ant.file.s3.definition}"/>
+	<loadproperties srcfile="${ant.dir.s3.definition}/s3.properties"/>
+	
+	<path id="s3.bootclasspath.path"/>
+	<resources id="s3.mock.includes"/>
+	<resources id="s3.mock.excludes"/>
+		
+	<import file="init.xml"/>
+
+	<extension-point name="s3/exec"/>
+	
+	<target name="s3" depends="init, s3/exec, finish"/>
+	
+	<target name="finalization/s3" extensionOf="init/finalization">
+		<!-- default path separator for classpath (default pathsep value of pathconvert) -->
+		<pathconvert property="s3.bootclasspath" refid="s3.bootclasspath.path"/>
+		<pathconvert property="overall.s3.mock.includes" refid="s3.mock.includes" />
+		<pathconvert property="overall.s3.mock.excludes" refid="s3.mock.excludes" />
+	</target>
+	
+	<target name="activity/s3">
+		<start.activity
+			activity.id="${s3.activity.id}"
+			message="${s3.activity.msg}"
+		/>
+		<!-- Legacy CLDC 1.3 compliance (disabled by default) -->
+		<property name="cldc.13.compliance" value="false"/>
+	</target>
+	
+	<import file="s3PathDefinition.xml"/>
+	<taskdef name="s3Task" classname="${s3.classname}" classpathref="s3.classpath.path"/>
+	
+	<presetdef name="s3">
+		<s3Task
+			verbose="${s3.verbose}"
+		
+			debug="${s3.arg.debug}"
+			
+		    slow="${s3.slow}"
+
+		    boardCompliance="${s3.board.compliant}"
+		    schedulingPolicy="${s3.scheduling.policy}"
+			boardHeapSize="${s3.simulation.javaheap.size}"
+		    boardImmortalsSize="${s3.simulation.immortalheap.size}"
+		    soarFile="${soar.file}"
+		    soarFileCLDC="${soar.cldc.file}"
+		    microJvmInfo="${mjvm.info.file}"
+			
+			bootclasspath="${s3.bootclasspath}"
+			appclasspath="${overall.classpath}"
+
+    		mainclass="${application.main.class}"
+			
+			immutables="${overall.immutables}"
+			resources="${overall.resources}"
+			requiredTypes="${overall.requires}"
+			is13compliance="${cldc.13.compliance}"
+			
+		    hilconnection="${hil.main.port}"
+		    hiltimeout="${s3.hil.timeout}"
+			
+		    codecoveragethread="${s3.cc.tick}"
+		    codecoverageoutput="${s3.cc.outputDir}"
+			
+			inspectHeap="${s3.heap.dump.filename}"
+		
+		    immortalAfterInit="${ej.bon.immortalAfterInit}"
+		    immutableBlocksSectorSize="${jpf.ej.bon.immutable.sector.size}"
+		    immutableBlocksNbSector="${jpf.ej.bon.immutable.sectors}"
+		    immutableBlocksNumber="${jpf.ej.bon.immutable.blocks}"
+		    immutableBlocksRoot="${s3.bon.outputDir}"
+
+			mockClasspath="${overall.s3.mock.includes}"
+			mockExcludes="${overall.s3.mock.excludes}"
+			
+		    logOutputDir="${s3.log.outputDir}"
+		    logPeriod="${console.logs.period}"
+		>
+			<logLevel 
+				low="${console.logs.level.low}"
+				threads="${console.logs.level.thread}"
+				monitoring="${console.logs.level.monitoring}"
+				monitors="${console.logs.level.monitors}"
+				memory="${console.logs.level.memory}"
+				scheduling="${console.logs.level.schedule}"
+			/>
+		</s3Task>
+	</presetdef>
+
+</project>
+	
+	

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.is2t.testsuite.support.CheckHelper"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="ej.microui.led.Leds"/>
+<fullyQualifiedTypeName name="ej.microui.display.Displayable"/>
+<fullyQualifiedTypeName name="ej.microui.display.Display"/>
+<fullyQualifiedTypeName name="test.TestLCD01"/>
+<fullyQualifiedTypeName name="ej.microui.MicroUI"/>
+<fullyQualifiedTypeName name="ej.microui.display.GraphicsContext"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="ej.microui.display.Colors"/>
+<fullyQualifiedTypeName name="ej.microui.event.generator.Buttons"/>
+</qualifiedTypeNameHistroy>

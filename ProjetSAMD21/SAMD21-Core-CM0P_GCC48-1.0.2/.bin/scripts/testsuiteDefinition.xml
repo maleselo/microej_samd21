@@ -1,0 +1,42 @@
+<!--
+	ANT
+	
+	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="testsuiteDefinition">
+	
+	<!--
+		Declare the testsuite tasks. 
+		To use them, define the following name space in your project: xmlns:testsuite="antlib:com.is2t.testsuite.ant".
+	-->
+	<target name="testsuite/definition">
+		<path id="testsuite-engine.path">
+			<fileset dir="${platform.dir}/tools">
+				<include name="testsuite-engine*.jar"/>
+				<include name="commons-lang*.jar"/>
+				<include name="asm*.jar"/>
+			</fileset>
+		</path>
+		<taskdef uri="antlib:com.is2t.testsuite.ant" resource="com/is2t/testsuite/ant/antlib.xml" classpathref="testsuite-engine.path"/>
+	</target>
+	
+	<macrodef name="analyzeTrace">
+        <attribute name="trace.file" description="Path to the file that contains the execution trace"/>
+        <attribute name="error.message" default="Test fails." description="The error message to print when the test has failed"/>
+        <attribute name="pass.pattern" default="PASSED" description="The success pattern to detect in the trace"/>
+        <attribute name="fail.pattern" default="FAILED" description="The failure pattern to detect in the trace"/>
+        <sequential>
+    		<fail message="@{error.message}">
+    			<condition>
+    			<or>
+    				<not><resourcecontains resource="@{trace.file}" substring="@{pass.pattern}"/></not>
+    				<resourcecontains resource="@{trace.file}" substring="@{fail.pattern}"/>
+    			</or>				
+    			</condition>
+    		</fail>
+        </sequential>
+    </macrodef>
+	
+</project>

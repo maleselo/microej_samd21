@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="var" path="BON-1.2"/>
+	<classpathentry kind="var" path="EDC-1.2"/>
+	<classpathentry kind="lib" path="checkHelper-1.2.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

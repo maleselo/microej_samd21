@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.  	
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="partialLinkJStackBlockInit">
+
+	<!-- 
+		Generate link file for VM with Java stacks allocated in stack blocks
+	-->
+
+	<import file="${ant.file.partialLinkJStackBlockInit}/../../extension-init.xml" />
+	<import file="${ant.file.partialLinkJStackBlockInit}/../../microejAntlib.xml" />
+		
+	<target name="createLinkFileJStackBlock" extensionOf="init/execution" if="onBoard">
+		<!-- temporary link files -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="linkJStackBlock" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+		
+		<local name="link.sizes"/>
+		<property name="link.sizes" value="${link.files.dir}/sizes.lscf" />
+		
+		<fail unless="arch.symbol.prefix" message="Please define the 'arch.symbol.prefix' property"/>
+		
+		<!-- create the size file -->
+		<echoxml file="${link.sizes}" append="false">
+			<lscFragment>
+				<!-- Size of one java stack block -->
+				<defSymbol name="${arch.symbol.prefix}_java_vmthread_java_stack_block_size" value="${core.memory.thread.block.size}"/>
+				<!-- Maximum size of the stack of a thread -->
+				<defSymbol name="${arch.symbol.prefix}_java_vmthread_java_stack_size" value="${core.memory.thread.max.size}*${core.memory.thread.block.size}"/>
+				<!-- Total size of the memory reserved for the java stacks -->
+				<defSymbol name="_java_java_stack_size" value="${core.memory.threads.pool.size}*${core.memory.thread.block.size}"/>
+			</lscFragment>
+		</echoxml>
+		
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+		</augment>
+	</target>
+		
+</project>

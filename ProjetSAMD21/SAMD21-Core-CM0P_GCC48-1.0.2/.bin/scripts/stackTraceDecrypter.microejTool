@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2013-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="stackTraceDecrypter" default="launch" xmlns:tools="antlib:com.is2t.proxy">
+	
+	<dirname file="${ant.file.stackTraceDecrypter}" property="stackTraceDecrypter.dir"/>
+
+	<import>
+		<fileset dir="${stackTraceDecrypter.dir}">
+    		<include name="stackTraceDecrypterHook*.xml"/>
+    		<include name="stackTraceDecrypterAPI.xml"/>
+		</fileset>
+	</import>
+	
+	<path id="taskdef.path.id">
+		<pathelement location="${platform.dir}/tools/soarModelReader.jar"/>
+		<pathelement location="${platform.dir}/tools/stackTraceDecrypter.jar"/>
+		<pathelement location="${platform.dir}/tools/CONNECTOR_COMM.jar"/>
+	</path>
+	
+	<condition property="core.properties.file" value="${platform.dir}/scripts/core.properties" else="${platform.dir}/source/scripts/core.properties">
+		<available file="${platform.dir}/scripts/core.properties"/>
+	</condition>
+	<loadproperties srcfile="${core.properties.file}"/>
+	
+	<condition property="platform.resources.os" value="Windows" else="Linux">
+		<os family="windows"/>
+	</condition>
+	
+	<target name="launch" depends="launch/definitions">
+		<echo message="=============== [ MicroEJ OS Core Engine Trace ] ==============="/>
+		<condition property="stackTraceDecrypter.endianness.option" value="-littleEndian" else="">
+			<equals arg1="${arch.endianness}" arg2="little"/>
+		</condition>
+  		<antcall target="${proxy.connection.connection.type}"/>
+	</target>
+	
+	<extension-point name="launch/extendedDefinitions"/>
+	<target name="launch/definitions" depends="launch/extendedDefinitions">
+		<!-- by default imageFile == ${application.file} if not already set by extended definitions -->
+		<property name="imageFile" location="${application.file}"/>
+		<pathconvert property="additional.hook.files" pathsep=",">
+			<path refid="hook.images.files" />
+		</pathconvert>
+		<property name="additionalImagesFiles" value="${additional.application.files},${additional.hook.files}"/>
+	</target>
+	
+	<target name="uart">
+		<java classname="com.is2t.proxy.BatchProxyTraceDecrypter" classpathref="taskdef.path.id">
+			<arg value="-imageFile"/>
+			<arg value="${imageFile}"/>
+			<arg value="-additionalImagesFiles"/>
+			<arg value="${additionalImagesFiles}"/>
+			<arg line="${stackTraceDecrypter.endianness.option}"/>
+			<arg line="-vmUrlConnection com.is2t.io.comm.ECOMConnector:${pcboardconnection.usart.pc.port},${pcboardconnection.usart.pc.baudrate},8,1,none"/>
+       </java>
+	</target>
+	
+	<target name="socket">
+		<java classname="com.is2t.proxy.BatchProxyTraceDecrypter" classpathref="taskdef.path.id">
+			<arg value="-imageFile"/>
+			<arg value="${imageFile}"/>
+			<arg value="-additionalImagesFiles"/>
+			<arg value="${additionalImagesFiles}"/>
+			<arg line="${stackTraceDecrypter.endianness.option}"/>
+			<arg line="-vmUrlConnection com.is2t.io.socket.SocketConnection:socket:${pcboardconnection.socket.address}:${pcboardconnection.socket.port}"/>
+       </java>
+	</target>
+	
+	<target name="file">
+		<tempfile property="stackTraceDecrypter.result.file" prefix="stackTraceDecrypter" deleteOnExit="true"/>
+		<touch file="${stackTraceDecrypter.result.file}"/>
+		<java classname="com.is2t.proxy.BatchProxyTraceDecrypter" classpathref="taskdef.path.id">
+			<arg value="-imageFile"/>
+			<arg value="${imageFile}"/>
+			<arg value="-additionalImagesFiles"/>
+			<arg value="${additionalImagesFiles}"/>
+			<arg line="${stackTraceDecrypter.endianness.option}"/>
+			<arg line="-vmUrlConnection com.is2t.io.file.FileConnection:file,${pcboardconnection.file.path},${stackTraceDecrypter.result.file},"/>
+       </java>
+		<delete file="${stackTraceDecrypter.result.file}"/>
+	</target>
+	
+	<target name="console">
+		<echo message="[INFO] Paste the MicroEJ OS core engine stack trace here."/>
+		<java classname="com.is2t.proxy.BatchProxyTraceDecrypter" classpathref="taskdef.path.id">
+			<arg value="-imageFile"/>
+			<arg value="${imageFile}"/>
+			<arg value="-additionalImagesFiles"/>
+			<arg value="${additionalImagesFiles}"/>
+			<arg line="${stackTraceDecrypter.endianness.option}"/>
+			<arg line="-vmUrlConnection com.is2t.io.system.SystemConnection:}"/>
+       </java>
+	</target>
+
+</project>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2012-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="microej.antlib">
+	
+	<fail unless="microej.io.tmpdir"/>
+
+	<!-- provided by AntTools.rip -->
+	<import file="antToolsDefinition.xml"/>
+	
+	<presetdef name="microejtempfile">
+		<tempfile destdir="${microej.io.tmpdir}"/>
+	</presetdef>
+	
+	<macrodef name="echoAndFail" description="Ensure a message is printed on fail even if not in verbose">
+		<attribute name="message" />
+		<sequential>
+			<echo message="@{message}" />
+			<fail />
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="getProperty">
+		<attribute name="prefix" default=""/>
+		<attribute name="property"/>
+		<attribute name="suffix" default=""/>
+		<attribute name="default" default=""/>
+		<sequential>
+			<!-- Fail if the property to get is not defined AND the property to set is not defined AND no default value is defined -->
+			<fail message="Property '@{prefix}@{property}@{suffix}' not defined.">
+				<condition>
+					<and>
+						<not><isset property="@{prefix}@{property}@{suffix}"/></not>
+						<not><isset property="@{property}"/></not>
+						<equals arg1="@{default}" arg2=""/>
+					</and>
+				</condition>
+			</fail>
+			<condition property="@{property}" value="${@{prefix}@{property}@{suffix}}" else="@{default}">
+				<isset property="@{prefix}@{property}@{suffix}"/>
+			</condition>
+		</sequential>
+	</macrodef>
+	
+	<!--
+		prop2 = ${prefix.${prop1}.suffix} does not work but
+		prop2 = ${prefix.@{prop1}.suffix} works!
+		
+		this macro allows to get the content of a dynamic property
+		
+		${prop1} is first property to resolve
+		${prefix.${prop1}.suffix} is second property to resolve
+	-->
+	<macrodef name="setProperty">
+		<attribute name="property" description="property to return"/>
+		<attribute name="value" description="first property to resolve"/>
+		<sequential>
+			<!-- ${setProperty.@{property}} is the name of second property-->
+			<property name="setProperty.@{property}" value="@{value}"/>
+			<setProperty2 property="@{property}" value="${setProperty.@{property}}"/>
+		</sequential>
+	</macrodef>
+	<macrodef name="setProperty2">
+		<attribute name="property"/>
+		<attribute name="value"/>
+		<sequential>
+			<!-- ${@{value}} is the content of second property-->
+			<property name="@{property}" value="${@{value}}"/>
+		</sequential>
+	</macrodef>
+	
+</project>

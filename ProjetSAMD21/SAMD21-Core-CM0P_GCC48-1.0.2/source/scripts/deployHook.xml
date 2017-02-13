@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="deployHook" default="deploy/hook">
+	
+	<dirname file="${ant.file.deployHook}" property="deployHook.dir"/>
+	
+	<import>
+		<fileset dir="${deployHook.dir}">
+    		<include name="deployHook*.xml"/>
+    		<include name="deployHookAPI.xml"/>
+		</fileset>
+	</import>
+	
+</project>

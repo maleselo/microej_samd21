@@ -1,0 +1,21 @@
+<!--
+  	LSC
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	<!--
+		Define round robin period. Since a symbol cannot be null, real period is _java_round_robin_period - 1.
+		Set 0 to disable the round robin.
+	-->
+	<defSymbol name="_java_round_robin_period" value="20+1" rootSymbol="true"/>
+	
+	<!-- 
+		Size of the shared memory use for class names, forName, getResourceAsStream, parseDouble & float (see InternalNativeInterface).
+		A value lower than 128 is ignored.  
+	-->	
+	<defSymbol name="_jvm_sharedMemory_size" value="256" rootSymbol="true"/>
+
+</lscFragment>

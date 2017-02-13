@@ -1,0 +1,11 @@
+INDEX VERSION 1.127+E:\ProjetSAMD21\.metadata\.plugins\org.eclipse.jdt.core
+2056217700.index
+846854931.index
+4219279280.index
+832349936.index
+4117845013.index
+2898099367.index
+715048401.index
+2876287657.index
+1631726226.index
+3242973182.index

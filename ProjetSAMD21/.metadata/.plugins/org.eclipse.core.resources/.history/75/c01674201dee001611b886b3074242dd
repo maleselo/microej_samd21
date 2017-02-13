@@ -1,0 +1,146 @@
+/*
+ * Java
+ *
+ * Copyright 2016 IS2T. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found at http://www.microej.com/open-source-bsd-license/.
+ */
+package test;
+
+import ej.microui.MicroUI;
+import ej.microui.display.Colors;
+import ej.microui.display.Display;
+import ej.microui.display.Displayable;
+import ej.microui.display.GraphicsContext;
+import ej.microui.event.Event;
+import ej.microui.event.EventGenerator;
+import ej.microui.event.generator.Buttons;
+import ej.microui.util.EventHandler;
+
+/**
+ * This class shows how to handle touch input events
+ */
+public class TestLCD_Button extends Displayable implements EventHandler {
+
+/*
+	private final Display display;
+	private int nbClicks;
+	private int pointerX;
+	private int pointerY;
+	private String message;
+*/
+	public TestLCD_Button(Display display) {
+		super(display);
+		//this.display = display;
+		//nbClicks = 0;
+		//pointerX = 0;
+		//pointerY = 0;
+		//this.message = "Touch the screen!";
+	}
+
+	/**
+	 * Describes the Button event: print the button's id & state.
+	 *
+	 * @param data
+	 *            the Button data
+	 */
+	private void showButton(int data) {
+
+		String state = null;
+
+		// print its state(s)
+		if (Buttons.isPressed(data)) {
+			state = "pressed ";
+		}
+		if (Buttons.isReleased(data)) {
+			state = "released ";
+		}
+		if (Buttons.isRepeated(data)) {
+			state = "repeated ";
+		}
+		if (Buttons.isClicked(data)) {
+			state = "clicked ";
+		}
+		if (Buttons.isDoubleClicked(data)) {
+			state = "double-clicked ";
+		}
+
+		if (state != null) {
+			System.out.print("button\t\t");
+
+			// get the button's id
+			int id = Buttons.getButtonID(data);
+			System.out.print(id + " ");
+			System.out.println(state);
+		}
+	}
+	
+	@Override
+	public void paint(GraphicsContext g) {
+		System.out.println("In paint");
+		// fill up background with black
+		g.setColor(Colors.BLACK);
+		g.fillRect(0, 0, g.getClipWidth(), g.getClipHeight());
+
+		g.setColor(Colors.WHITE);
+
+		g.drawString("SAMD21", g.getClipWidth() / 2, g.getClipHeight() / 2, GraphicsContext.HCENTER | GraphicsContext.VCENTER);
+
+	}
+
+	@Override
+	public EventHandler getController() {
+		return this;
+	}
+
+	@Override
+	public boolean handleEvent(int event) {
+		boolean eventProcessed = false;
+
+		// Gets the event generator.
+		final int genId = Event.getGeneratorID(event);
+		EventGenerator gen;
+		try {
+			gen = EventGenerator.get(genId);
+		} catch (IndexOutOfBoundsException e) {
+			gen = null;
+			//message = "unknown event " + event;
+		}
+
+		if (gen != null) {
+			// Gets the type of event.
+			final int type = Event.getType(event);
+			int data = Event.getData(event);
+			if (Event.BUTTON == type) {
+				showButton(data);
+
+				//message = "Bouton : " + nbClicks;
+			}		
+			eventProcessed = true;
+		}
+
+		if (eventProcessed) {
+			System.out.println("Repaint called");
+			this.repaint();
+		}
+		return eventProcessed;
+	}
+
+	/**
+	 * Entry Point for the example.
+	 *
+	 * @param args
+	 *             Not used.
+	 */
+	public static void main(String[] args) {
+		// A call to MicroUI.start is required to initialize the graphics
+		// runtime environment
+		MicroUI.start();
+
+		final Display display = Display.getDefaultDisplay();
+
+		TestLCD_Button sample = new TestLCD_Button(display);
+		sample.show();
+	}
+
+
+}

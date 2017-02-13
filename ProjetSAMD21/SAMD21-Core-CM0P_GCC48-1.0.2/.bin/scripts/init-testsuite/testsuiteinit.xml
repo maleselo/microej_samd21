@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2015 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="testsuite">
+
+	<import file="${ant.file.testsuite}/../../extension-init.xml" />
+	<import file="${ant.file.testsuite}/../../microejAntlib.xml" />
+	
+	<!--
+		Automatically add core libraries to classpath when running a testsuite.
+		This is useful when defining an automated testsuite.
+		
+		Test if the property "testsuite.test.name" is defined to know if we are running a testsuite or not.
+	-->
+	<target name="init/testsuite" extensionOf="init/execution" if="testsuite.test.name">
+		<fail unless="vm.dir"/>
+		
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${vm.dir}/javaLibs" includes="*.jar" />
+		</augment>
+	</target>
+	
+</project>

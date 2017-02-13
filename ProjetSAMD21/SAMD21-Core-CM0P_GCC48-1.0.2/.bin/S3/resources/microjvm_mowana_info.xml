@@ -1,0 +1,78 @@
+<!--
+	XML
+	
+	Copyright 2011-2013 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<microjvm_information>
+	
+	<!--
+	This file describes the MicroJvm.
+	It is used by the S3 to simulate the MicroJvm Mowana
+	-->
+
+	<alignment size="4"/>
+
+	<object object_overhead="0"/>
+	
+	<!-- Available Java heap equals physical allocated memory -->
+	<javaheap ratio="1"/>
+	
+	<array header_size="8" byte_elt_size="1" short_elt_size="2" char_elt_size="2" 
+		int_elt_size="4" float_elt_size="4" long_elt_size="8" double_elt_size="8" reference_elt_size="4"/>
+
+	<immutables_blocks_storage table_overhead="28" write_granularity="4" object_overhead="13" object_link_overhead="12"
+		 key_character_size="2" reuse_keys="true"/>
+	
+	<!--
+	List methods which are specific to S3 CLDC/BON library
+	-->
+	<specific_methods> 
+	
+		<method class="java.lang.Object" name="notify" descriptor="()V"/>
+		<method class="java.lang.Object" name="notifyAll" descriptor="()V"/>
+		<method class="java.lang.Object" name="wait" descriptor="(J)V"/>
+		
+		<method class="java.lang.Class" name="forName" descriptor="(Ljava/lang/String;)Ljava/lang/Class;"/>
+		<method class="java.lang.Class" name="getName" descriptor="()Ljava/lang/String;"/>
+		<method class="java.lang.Class" name="getResourceAsStream" descriptor="(Ljava/lang/String;)Ljava/io/InputStream;"/>
+		<method class="java.lang.Class" name="isArray" descriptor="()Z"/>
+		<method class="java.lang.Class" name="isInterface" descriptor="()Z)"/>
+		
+		<method class="java.lang.Double" name="parseDouble" descriptor="(Ljava/lang/String;)D"/>
+		<method class="java.lang.Double" name="toString" descriptor="()Ljava/lang/String;"/>
+		<method class="java.lang.Double" name="toString" descriptor="(D)Ljava/lang/String;"/>
+		
+		<method class="java.lang.Float" name="parseFloat" descriptor="(Ljava/lang/String;)F"/>
+		<method class="java.lang.Float" name="toString" descriptor="(F)Ljava/lang/String;"/>
+		
+		<method class="java.lang.Integer" name="parseInt" descriptor="(Ljava/lang/String;I)I"/>
+		<method class="java.lang.Integer" name="toBinaryString" descriptor="(I)Ljava/lang/String;"/>
+		<method class="java.lang.Integer" name="toHexString" descriptor="(I)Ljava/lang/String;"/>
+		<method class="java.lang.Integer" name="toOctalString" descriptor="(I)Ljava/lang/String;"/>
+		<method class="java.lang.Integer" name="toString" descriptor="(II)Ljava/lang/String;"/>
+		
+		<method class="java.lang.Long" name="parseLong" descriptor="(Ljava/lang/String;I)J"/>
+		<method class="java.lang.Long" name="toString" descriptor="(JI)Ljava/lang/String;"/>
+		
+		<method class="java.lang.Runtime" name="exit" descriptor="(I)V"/>
+		<method class="java.lang.Runtime" name="freeMemory" descriptor="()J"/>
+		<method class="java.lang.Runtime" name="totalMemory" descriptor="()J"/>
+		
+		<method class="java.lang.System" name="<clinit>" descriptor="()V"/>
+		<method class="java.lang.System" name="gc" descriptor="()V"/>
+		<method class="java.lang.System" name="getProperty" descriptor="(Ljava/lang/String;)Ljava/lang/String;"/>
+		<method class="java.lang.System" name="identityHashCode" descriptor="(Ljava/lang/Object;)I"/>
+		
+		<method class="java.lang.Thread" name="<init>" descriptor="()V"/>
+		<method class="java.lang.Thread" name="<init>" descriptor="(Ljava/lang/Runnable;Ljava/lang/String;)V"/>
+		<method class="java.lang.Thread" name="isAlive" descriptor="()Z"/>
+		<method class="java.lang.Thread" name="join" descriptor="()V"/>
+		<method class="java.lang.Thread" name="run" descriptor="()V"/>
+		<method class="java.lang.Thread" name="sleep" descriptor="(J)V"/>
+		<method class="java.lang.Thread" name="start" descriptor="()V"/>
+		<method class="java.lang.Thread" name="yield" descriptor="()V"/>
+		
+	</specific_methods>
+	
+</microjvm_information>

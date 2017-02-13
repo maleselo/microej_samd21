@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2012-2015 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="s3Init">
+
+	<dirname property="ant.dir.s3Init" file="${ant.file.s3Init}"/>
+	<import file="${ant.dir.s3Init}/../extension-init.xml" />
+	<import file="${ant.dir.s3Init}/../microejAntlib.xml"/>
+
+	<target name="init/s3/check" extensionOf="init/context" if="onS3">
+		<!-- heap dumper -->
+		<condition property="no.heapdump.fs" value="SET">
+			<isfalse value="${s3.inspect.heap}"/>
+		</condition>
+    		
+		<!-- logs -->
+		<condition property="no.logs.fs" value="SET">
+			<!-- isfalse with ${xxx} returns true, this is what we want here -->
+			<or>
+				<isfalse value="${s3.board.compliant}"/>
+				<and>
+					<isfalse value="${console.logs.level.low}"/>
+					<isfalse value="${console.logs.level.thread}"/>
+					<isfalse value="${console.logs.level.monitoring}"/>
+					<isfalse value="${console.logs.level.memory}"/>
+					<isfalse value="${console.logs.level.monitors}"/>
+					<isfalse value="${console.logs.level.schedule}"/>
+				</and>
+			</or>
+		</condition>
+		<!-- code coverage -->
+		<condition property="no.cc.fs" value="SET">
+			<isfalse value="${s3.cc.activated}"/> <!-- /!\ isfalse = not istrue -> does not need to test if set/!\ -->
+		</condition>
+		<condition property="s3.cc.outputDir" value="">
+			<isfalse value="${s3.cc.activated}"/> <!-- /!\ isfalse = not istrue -> does not need to test if set/!\ -->
+		</condition>
+	</target>
+	
+	<target name="init/s3/context" extensionOf="init/context" if="onS3">	
+		<!-- Tasks that must be executed in parallel with the S3 (mock, …) -->
+		<tasks id="s3.exec.parallel.tasks"/>
+	</target>
+
+	<target name="init/s3" extensionOf="init/execution" if="onS3">
+		<echo message="S3 init" level="verbose"/>
+		<augment id="init.application.classpath">
+			<!-- force profile FS when launching on S3 -->
+			<pathelement location="${s3.libs.dir}/profiles-fs-1.1.jar"/>
+		</augment>
+		
+		<augment id="s3.bootclasspath.path">
+			<pathelement location="${s3.libs.dir}/profiles-debug-1.1.jar"/>
+			<!-- CLDC, EDEE, EDC or BON jar must be added to this bootclasspath by their own init scripts (see WI 8396)-->
+		</augment>
+		
+		<!-- specifies a specific class to handle unrecoverable errors (will be passed as a Java System property) -->
+		<property name="icetea.runtime.java.errorhandler" value="com.is2t.s3.error.handler.UnrecoverableErrorHandlerLogFile" />
+		
+		<!-- affect Memories mapping for S3 execution -->
+		<property name="IceteaRuntimeSupport.S3.HeapStart" value="200"/>
+		<property name="IceteaRuntimeSupport.S3.HeapEnd" value="40000000"/>
+		<property name="IceteaRuntimeSupport.S3.RamStart" value="100"/>
+		<property name="IceteaRuntimeSupport.S3.RomStart" value="0"/>
+		
+		<!-- specific values needed by eclasspath locales -->
+		<property name="S3.JavaMemory.MethodsSize" value="10000"/>
+		<property name="S3.JavaMemory.SystemCharsSize" value="1024"/>
+		<property name="S3.JavaMemory.ApplicationCharsSize" value="4096"/>
+
+		<!-- verbose -->
+		<condition property="s3.verbose" value="info" else="">
+			<isset property="execution.verbose"/> <!-- coming from workbench -->
+		</condition>
+		
+		<!-- debug -->
+		<condition property="s3.arg.debug" value="${debug.port}" else="">
+			<equals arg1="${execution.mode}" arg2="debug"/>
+		</condition>
+		
+		<!-- emb characteristics related stuff -->
+		<condition property="soar.beforeS3" value="SET">
+			<istrue value="${s3.board.compliant}"/>
+		</condition>
+		
+		<!-- Set default scheduling priority -->
+		<property name="s3.scheduling.policy.none" value="0"/>
+		<property name="s3.scheduling.policy.PriorityPreemptiveRoundRobin" value="1"/>
+		<property name="s3.scheduling.policy" value="${s3.scheduling.policy.PriorityPreemptiveRoundRobin}"/>
+		
+		<condition property="s3.simulation.javaheap.size" value="${jpf.core.memory.javaheapsum.size}" else="0">
+			<istrue value="${s3.board.compliant}"/>
+		</condition>
+		
+		<condition property="s3.simulation.immortalheap.size" value="${jpf.core.memory.immortal.size}" else="0">
+			<istrue value="${s3.board.compliant}"/>
+		</condition>
+		
+		<condition property="mjvm.info.file" value="${s3.dir}/resources/microjvm_mowana_info.xml" else="">
+			<istrue value="${s3.board.compliant}"/>
+		</condition>
+		<condition property="soar.cldc.file" value="${s3.dir}/resources/cldc.stack.xml" else="">
+			<istrue value="${s3.board.compliant}"/>
+		</condition>
+		
+		<!-- 
+			Add the java properties defined in the commandline.
+			The propertyset "s3.override.properties" is defined by the launch script framework
+		-->
+		<augment id="s3.override.properties">
+			<!-- Add the properties defined in the commandline with the prefix "sim.java.property."  -->
+			<propertyset>
+				<propertyref prefix="sim.java.property."/>
+			  	<mapper type="glob" from="sim.java.property.*" to="*"/>
+			</propertyset>
+			<!-- Add the properties defined in the commandline with the prefix "microej.java.property."  -->
+			<propertyset>
+				<propertyref prefix="microej.java.property."/>
+			  	<mapper type="glob" from="microej.java.property.*" to="*"/>
+			</propertyset>
+		</augment>
+	</target>
+
+	<target name="heapdump.fs" unless="no.heapdump.fs" extensionOf="launch/mkdirs">
+		<property name="s3.heap.dump.outputDir" value="${application.output.dir}/heapDump"/>
+		<property name="s3.heap.dump.filename" value="${s3.heap.dump.outputDir}/heap" />
+		<delete dir="${s3.heap.dump.outputDir}" includes="**/*"/>
+		<mkdir dir="${s3.heap.dump.outputDir}"/>
+	</target>
+	
+	<target name="heapdump.no.fs" if="no.heapdump.fs" extensionOf="launch/mkdirs">
+		<!-- If heap dump is disabled, don't define the output file -->
+		<property name="s3.heap.dump.filename" value=""/>
+	</target>
+		
+	<target name="logs.fs" unless="no.logs.fs" extensionOf="launch/mkdirs">
+		<property name="s3.log.outputDir" value="${output.dir}/${application.main.class}/logs"/>
+		<delete dir="${s3.log.outputDir}" includes="**/*"/>
+		<mkdir dir="${s3.log.outputDir}"/>
+	</target>
+	
+	<target name="no.logs.fs" if="no.logs.fs" extensionOf="launch/mkdirs">
+		<property name="s3.log.outputDir" value=""/>
+	</target>
+	
+	<target name="cc.fs" unless="no.cc.fs" extensionOf="launch/mkdirs">
+		<property name="s3.cc.outputDir" value="${application.output.dir}/cc"/>
+		<property name="s3.cc.html.outputDir" value="${s3.cc.outputDir}/htmlReport"/>
+		<condition property="s3.cc.tick" value="0" else="${s3.cc.thread.period}">
+			<isfalse value="${s3.cc.activated}"/> <!-- /!\ isfalse = not istrue -> does not need to test if set /!\ -->
+		</condition>
+		
+		<delete dir="${s3.cc.outputDir}" includes="**/*"/>
+		<mkdir dir="${s3.cc.outputDir}"/>
+		<mkdir dir="${s3.cc.html.outputDir}"/>
+	</target>
+	
+	
+	<!--
+	<target name="s3/init" extensionOf="sim/init/ext" depends="heapdump.fs, logs.fs, cc.fs">...</target>		
+	<target name="heapdump.fs" unless="no.heapdump.fs" depends="s3/init/check">...</target>
+	<target name="logs.fs" unless="no.logs.fs" depends="s3/init/check">...</target>
+	<target name="cc.fs" unless="no.cc.fs" depends="s3/init/check">...</target>
+	<target name="s3/init/check">...</target>
+	
+	-->
+	
+</project>

@@ -1,0 +1,106 @@
+<soar_information>
+	<clinit_order>
+		<init rank="0" descriptor="com/is2t/vm/support/util/EncodingConversion"></init>
+		<init rank="1" descriptor="java/lang/Thread"></init>
+		<init rank="2" descriptor="java/lang/String"></init>
+		<init rank="3" descriptor="java/lang/System"></init>
+	</clinit_order>
+	<selected_type nb="96">
+		<type descriptor="java/lang/Object" instancesize="4" depth="0"></type>
+		<type descriptor="test/Hello" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/System" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/String" instancesize="20" depth="1"></type>
+		<type descriptor="[C" depth="0"></type>
+		<type descriptor="java/lang/String$CaseInsensitiveOrder" instancesize="4" depth="1"></type>
+		<type descriptor="[Ljava/lang/String;" depth="0"></type>
+		<type descriptor="[[Ljava/lang/String;" depth="0"></type>
+		<type descriptor="java/lang/Throwable" instancesize="24" depth="1"></type>
+		<type descriptor="[Ljava/lang/Throwable;" depth="0"></type>
+		<type descriptor="java/lang/Thread" instancesize="28" depth="1"></type>
+		<type descriptor="java/lang/AbstractStringBuilder" instancesize="12" depth="1"></type>
+		<type descriptor="java/lang/StringBuilder" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/Exception" instancesize="24" depth="2"></type>
+		<type descriptor="java/lang/RuntimeException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/NegativeArraySizeException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/Number" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Integer" instancesize="8" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/lang/SupportNumber" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/lang/Systools" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/IndexOutOfBoundsException" instancesize="24" depth="4"></type>
+		<type descriptor="com/is2t/tools/ArrayTools" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/tools/ToolsErrorMessage" instancesize="4" depth="1"></type>
+		<type descriptor="ej/error/Message" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Class" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Math" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/StringBuffer" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/ArrayIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/StringIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/Error" instancesize="24" depth="2"></type>
+		<type descriptor="java/lang/VirtualMachineError" instancesize="24" depth="3"></type>
+		<type descriptor="com/is2t/vm/support/InternalLimitsError" instancesize="24" depth="4"></type>
+		<type descriptor="java/io/OutputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/io/NullOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java/io/FilterOutputStream" instancesize="8" depth="2"></type>
+		<type descriptor="java/io/PrintStream" instancesize="16" depth="3"></type>
+		<type descriptor="java/io/Writer" instancesize="8" depth="1"></type>
+		<type descriptor="java/io/OutputStreamWriter" instancesize="16" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/util/EncodingConversion" instancesize="8" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/util/EncUS_ASCII" instancesize="8" depth="2"></type>
+		<type descriptor="[B" depth="0"></type>
+		<type descriptor="[I" depth="0"></type>
+		<type descriptor="java/io/IOException" instancesize="24" depth="3"></type>
+		<type descriptor="com/is2t/vm/support/err/EDCErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="[[C" depth="0"></type>
+		<type descriptor="[Ljava/lang/Thread;" depth="0"></type>
+		<type descriptor="java/lang/OutOfMemoryError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/NullPointerException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/ArrayStoreException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/ReflectiveOperationException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/IllegalAccessException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/LinkageError" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/IncompatibleClassChangeError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/IllegalAccessError" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/IllegalArgumentException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/InstantiationException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/IllegalMonitorStateException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/IllegalThreadStateException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/InterruptedException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/ArithmeticException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/NumberFormatException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/ClassCastException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/ClassNotFoundException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/UnsatisfiedLinkError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/StackOverflowError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/Long" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/ref/Reference" instancesize="24" depth="1"></type>
+		<type descriptor="java/lang/ref/WeakReference" instancesize="24" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/io/DebugOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java/io/InputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/io/MemoryInputStream" instancesize="20" depth="2"></type>
+		<type descriptor="ej/bon/EnqueuedWeakReference" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/MainThread" instancesize="28" depth="2"></type>
+		<type descriptor="java/lang/ExceptionInInitializerError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/AbstractMethodError" instancesize="24" depth="5"></type>
+		<type descriptor="com/is2t/vm/support/util/EncUTF_8" instancesize="8" depth="2"></type>
+		<type descriptor="[Z" depth="0"></type>
+		<type descriptor="[S" depth="0"></type>
+		<type descriptor="[J" depth="0"></type>
+		<type descriptor="[F" depth="0"></type>
+		<type descriptor="[D" depth="0"></type>
+		<type descriptor="[Ljava/lang/Object;" depth="0"></type>
+		<type descriptor="java/lang/CharSequence" depth="0"></type>
+		<type descriptor="java/lang/Comparable" depth="0"></type>
+		<type descriptor="java/io/Serializable" depth="0"></type>
+		<type descriptor="java/util/Comparator" depth="0"></type>
+		<type descriptor="java/lang/Runnable" depth="0"></type>
+		<type descriptor="java/lang/Appendable" depth="0"></type>
+		<type descriptor="ej/error/ErrorMessages" depth="0"></type>
+		<type descriptor="java/lang/reflect/Type" depth="0"></type>
+		<type descriptor="java/lang/reflect/GenericDeclaration" depth="0"></type>
+		<type descriptor="java/lang/reflect/AnnotatedElement" depth="0"></type>
+		<type descriptor="java/lang/AutoCloseable" depth="0"></type>
+		<type descriptor="java/io/Flushable" depth="0"></type>
+		<type descriptor="java/io/Closeable" depth="0"></type>
+		<type descriptor="java/lang/Thread$UncaughtExceptionHandler" depth="0"></type>
+	</selected_type>
+</soar_information>

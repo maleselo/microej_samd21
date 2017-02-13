@@ -1,0 +1,150 @@
+/*
+ * Java
+ *
+ * Copyright 2016 IS2T. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found at http://www.microej.com/open-source-bsd-license/.
+ */
+package test;
+
+import ej.microui.MicroUI;
+import ej.microui.display.Colors;
+import ej.microui.display.Display;
+import ej.microui.display.Displayable;
+import ej.microui.display.GraphicsContext;
+import ej.microui.event.Event;
+import ej.microui.event.EventGenerator;
+import ej.microui.event.generator.Buttons;
+import ej.microui.util.EventHandler;
+
+/**
+ * This class shows how to handle touch input events
+ */
+public class TestLCD_Button extends Displayable implements EventHandler {
+
+	private int cpt;
+	private String message;
+	private boolean sens; //true : ajoute carree
+	private boolean pause;
+
+
+	public TestLCD_Button(Display display) {
+		super(display);
+		this.message = "Press Button";
+		this.sens = true;
+		this.pause = false;
+	}
+
+	private void showButton(int data) {
+
+		String state = null;
+		// print its state(s)
+		if (Buttons.isPressed(data)) {
+			state = "pressed ";
+		}
+		if (Buttons.isReleased(data)) {
+			state = "released ";
+		}
+		if (Buttons.isRepeated(data)) {
+			state = "repeated ";
+		}
+
+		if (state != null) {
+			System.out.print("button\t\t");
+
+			// get the button's id
+			int id = Buttons.getButtonID(data);
+			System.out.print(id + " ");
+			System.out.println(state);
+			this.message="button"+id;
+			if(state == "pressed"){
+				switch(id){
+				case 0 :
+					
+					break;
+				case 1 :
+					sens = true;
+					break;
+				case 2 :
+					if(pause) pause=false;
+					else pause = true;
+					break;
+				case 3 :
+					sens = false;
+					break;
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void paint(GraphicsContext g) {
+		/*
+		System.out.println("In paint");
+		g.setColor(Colors.BLACK);
+		System.out.println("Before drawing string");
+		g.fillRect(0, 0, g.getClipWidth(), g.getClipHeight());
+		g.setColor(Colors.WHITE);
+		g.drawString(this.message, g.getClipWidth() / 2, g.getClipHeight() / 2, GraphicsContext.HCENTER | GraphicsContext.VCENTER);
+		System.out.println("After drawing string");
+		*/
+		
+		
+	}
+
+	@Override
+	public EventHandler getController() {
+		return this;
+	}
+
+	@Override
+	public boolean handleEvent(int event) {
+		boolean eventProcessed = false;
+
+		// Gets the event generator.
+		final int genId = Event.getGeneratorID(event);
+		EventGenerator gen;
+		try {
+			gen = EventGenerator.get(genId);
+		} catch (IndexOutOfBoundsException e) {
+			gen = null;
+			//message = "unknown event " + event;
+		}
+
+		if (gen != null) {
+			// Gets the type of event.
+			final int type = Event.getType(event);
+			int data = Event.getData(event);
+			if (Event.BUTTON == type) {
+				showButton(data);
+
+				//message = "Bouton : " + nbClicks;
+			}		
+			eventProcessed = true;
+		}
+
+		if (eventProcessed) {
+			System.out.println("Repaint called");
+			this.repaint();
+		}
+		return eventProcessed;
+	}
+
+	/**
+	 * Entry Point for the example.
+	 *
+	 * @param args
+	 *             Not used.
+	 */
+	public static void main(String[] args) {
+		// A call to MicroUI.start is required to initialize the graphics
+		// runtime environment
+		MicroUI.start();
+
+		final Display display = Display.getDefaultDisplay();
+
+		TestLCD_Button sample = new TestLCD_Button(display);
+		sample.show();
+	}
+
+
+}

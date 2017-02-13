@@ -1,0 +1,21 @@
+
+<!--
+	LSC
+	
+	Copyright 2017 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+		
+<lscFragment>
+		
+	<defSymbol name="IMAGE_DECODERS_TABLE" value="START(.text.IMAGE_DECODERS_TABLE)"/>
+		
+	<defSection name=".text.IMAGE_DECODERS_TABLE" align="8" rootSection="true">
+		
+			<u4 value="0"/>
+		
+	</defSection>
+		
+</lscFragment>
+		

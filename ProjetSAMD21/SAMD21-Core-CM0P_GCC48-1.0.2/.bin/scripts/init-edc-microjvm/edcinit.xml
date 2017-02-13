@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+    
+	Input properties:
+	  	- jpf.name
+	  	- core.outputstream.disable.uart
+	  	- cldc.encoding.utf8.included (from workbench extension)
+  	
+-->
+<project name="edcInitMicroJvm">
+
+	<dirname property="ant.dir.edcInitMicroJvm" file="${ant.file.edcInitMicroJvm}"/>
+	<import file="${ant.dir.edcInitMicroJvm}/../extension-init.xml" />
+	
+	<!-- Add EDC in the Soar bootclasspath -->
+	<target name="init/edc/soar" extensionOf="init/execution" if="execSOAR">
+		<fail unless="microjvm.dir"/>
+		<augment id="init.soar.bootclasspath">
+			<fileset dir="${microjvm.dir}/javaLibs" includes="edc-*.jar"/>
+		</augment>
+	</target>
+	
+</project>

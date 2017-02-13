@@ -1,0 +1,793 @@
+<soar_information>
+	<clinit_order>
+		<init rank="0" descriptor="com.is2t.vm.support.util.EncodingConversion"></init>
+		<init rank="1" descriptor="java.lang.Thread"></init>
+		<init rank="2" descriptor="com.is2t.microjvm.test.Task"></init>
+		<init rank="3" descriptor="java.lang.Runtime"></init>
+		<init rank="4" descriptor="java.lang.Character"></init>
+		<init rank="5" descriptor="java.lang.Double"></init>
+		<init rank="6" descriptor="java.lang.Float"></init>
+		<init rank="7" descriptor="java.lang.Boolean"></init>
+		<init rank="8" descriptor="com.is2t.testsuite.support.CheckHelper"></init>
+		<init rank="9" descriptor="java.lang.String"></init>
+		<init rank="10" descriptor="java.lang.System"></init>
+		<init rank="11" descriptor="com.is2t.microjvm.test.MJVMPortValidation"></init>
+	</clinit_order>
+	<stackgroups></stackgroups>
+	<selected_methods>
+		<method descriptor="java.util.AbstractMap$AbstractMapEntry.getKey()java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Calendar.computeFields()void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Calendar.computeTime()void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.AbstractList.get(int)java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Runnable.run()void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.io.OutputStream.write(int)void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Map$Entry.getKey()java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Map.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Map$Entry.getValue()java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.List.get(int)java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.List.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.encode(char[],int[],int,byte[],int,int)int" codesize="0" stacksize="44"></method>
+		<method descriptor="java.lang.Thread.opSleep(long)void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.AbstractMap.entrySet()java.util.Set" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Object.wait(long)void" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.breakRun()void" codesize="0" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.getMaxBytesPerChar()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.List.add(java.lang.Object)boolean" codesize="0" stacksize="28"></method>
+		<method descriptor="java.lang.Math.max(int,int)int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Math.abs(int)int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Iterator.hasNext()boolean" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Iterator.next()java.lang.Object" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Math.min(int,int)int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.security.Permission.getActions()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.CharSequence.toString()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.Thread$UncaughtExceptionHandler.uncaughtException(java.lang.Thread,java.lang.Throwable)void" codesize="0" stacksize="36"></method>
+		<method descriptor="java.security.Permission.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Map$Entry.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="ej.error.ErrorMessages.category()java.lang.String" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.AbstractCollection.iterator()java.util.Iterator" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.AbstractCollection.size()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Set.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Collection.hashCode()int" codesize="0" stacksize="20"></method>
+		<method descriptor="java.util.Set.iterator()java.util.Iterator" codesize="0" stacksize="20"></method>
+		<method descriptor="java.lang.SecurityManager.checkPermission(java.security.Permission)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.SecurityManager.checkAccess(java.lang.Thread)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.Object.Object()void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.io.OutputStream.flush()void" codesize="6" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.io.NullOutputStream.write(int)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.lang.String.toString()java.lang.String" codesize="6" stacksize="12"></method>
+		<method descriptor="java.util.AbstractHashMap.init()void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapEnumeration.setCurrentEntry(java.util.AbstractHashMap$AbstractHashMapEntry)void" codesize="6" stacksize="12"></method>
+		<method descriptor="java.util.AbstractArrayList.size()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.String.length()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapIterator.setCurrentEntry(java.util.AbstractHashMap$AbstractHashMapEntry)void" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Enum.toString()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Integer.hashCode()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Short.hashCode()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Character.hashCode()int" codesize="8" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.getMaxBytesPerChar()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Byte.hashCode()int" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Throwable.getMessage()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.util.AbstractMap$AbstractMapEntry.getValue()java.lang.Object" codesize="8" stacksize="12"></method>
+		<method descriptor="java.security.Permission.getName()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.getName()java.lang.String" codesize="8" stacksize="12"></method>
+		<method descriptor="java.lang.Thread.getPriority()int" codesize="8" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.getMaxBytesPerChar()int" codesize="9" stacksize="12"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.testFPUJava(float,float)float" codesize="10" stacksize="12"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.testFPUJava(double,double)double" codesize="10" stacksize="12"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapCollection.size()int" codesize="10" stacksize="16"></method>
+		<method descriptor="java.util.AbstractCollection.AbstractCollection()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.System.toStringStackLine(char[],int,int)int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.bon.ImmutablesNatives.ImmutablesNatives()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.bon.ImmutablesNatives.get(java.lang.String)java.lang.Object" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.getSecurityManager()java.lang.SecurityManager" codesize="11" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.io.DebugOutputStream.DebugOutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.io.NullOutputStream.NullOutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.io.DebugOutputStream.write(int)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Class.Class()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.microjvm.test.Task.&amp;lt;clinit&amp;gt;()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.activeCount()int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.currentThread()java.lang.Thread" codesize="11" stacksize="12"></method>
+		<method descriptor="java.io.OutputStream.OutputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.CheckHelper()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.interruptNative()void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)void" codesize="11" stacksize="28"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.ArrayTools()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.io.InputStream.InputStream()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.bon.Immortals.Immortals()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.bon.Immortals.setImmortal(java.lang.Object)java.lang.Object" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.CurrentTime.getNanos()long" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.Float.floatToIntBits(float)int" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.CurrentTime.set(long)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.System()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.System.getOutputStream()java.io.OutputStream" codesize="11" stacksize="12"></method>
+		<method descriptor="java.lang.Double.doubleToLongBits(double)long" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.System.getMethodClass(int)java.lang.Class" codesize="11" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.Systools()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.charArrayToByteArray(char[],int,byte[],int,int)void" codesize="11" stacksize="28"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.appendInteger(int,int,char[])int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.getStackTrace(java.lang.Thread)int[]" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.MJVMPortValidation()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Math.Math()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.System.initializeProperties(java.lang.String[][])void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.System.currentTimeMillis()long" codesize="11" stacksize="28"></method>
+		<method descriptor="ej.bon.CurrentTime.CurrentTime()void" codesize="11" stacksize="16"></method>
+		<method descriptor="ej.bon.CurrentTime.get(boolean)long" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.System.hashCode(java.lang.Object)int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringLongNative(long,int,char[])int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Throwable.internalError(java.lang.Throwable)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.String$CaseInsensitiveOrder.String$CaseInsensitiveOrder()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.util.AbstractMap.AbstractMap()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String$CaseInsensitiveOrder.String$CaseInsensitiveOrder(java.lang.String$CaseInsensitiveOrder)void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Number.Number()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Object.originalGetClass()java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.error.Message.Message()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Object.notify(boolean)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Object.getClass()java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.Immutables.Immutables()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.parseLong(char[],int,int,int)long" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringFloat(float)java.lang.String" codesize="11" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringDouble(double)java.lang.String" codesize="11" stacksize="12"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.SupportNumber()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Package.Package()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.String.equals(java.lang.Object)boolean" codesize="11" stacksize="28"></method>
+		<method descriptor="java.lang.String.hashCodeNative()int" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.tools.ToolsErrorMessage.ToolsErrorMessage()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.util.Dictionary.Dictionary()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Class.forNameNative(java.lang.String)java.lang.Class" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.startNative()int" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Class.isInterface()boolean" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Class.getName()java.lang.String" codesize="11" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.err.EDCErrorMessages.EDCErrorMessages()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.setPriorityNative(int)void" codesize="11" stacksize="20"></method>
+		<method descriptor="java.lang.Runtime.Runtime()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.util.AbstractMap$AbstractMapEntry.AbstractMap$AbstractMapEntry()void" codesize="11" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.storeException(java.lang.Throwable)void" codesize="11" stacksize="20"></method>
+		<method descriptor="ej.bon.Util.Util()void" codesize="11" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.err.EDCErrorMessages.category()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="java.security.BasicPermission.getActions()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="com.is2t.tools.ToolsErrorMessage.category()java.lang.String" codesize="12" stacksize="12"></method>
+		<method descriptor="java.io.Writer.Writer()void" codesize="13" stacksize="16"></method>
+		<method descriptor="com.is2t.microjvm.test.Task.Task(int)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.lang.Integer.Integer(int)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.io.FilterOutputStream.FilterOutputStream(java.io.OutputStream)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.lang.Boolean.Boolean(boolean)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.security.Permission.Permission(java.lang.String)void" codesize="13" stacksize="16"></method>
+		<method descriptor="com.is2t.microjvm.test.MonitorKeeper.MonitorKeeper(java.lang.Object[])void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.io.Reader.Reader()void" codesize="13" stacksize="16"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.EncodingConversion(java.lang.String)void" codesize="13" stacksize="16"></method>
+		<method descriptor="java.util.AbstractList.AbstractList()void" codesize="14" stacksize="20"></method>
+		<method descriptor="java.lang.String.isEmpty()boolean" codesize="15" stacksize="12"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapCollection.AbstractHashMap$AbstractHashMapCollection(java.util.AbstractHashMap,int)void" codesize="15" stacksize="16"></method>
+		<method descriptor="java.lang.Throwable.getLocalizedMessage()java.lang.String" codesize="15" stacksize="16"></method>
+		<method descriptor="java.io.FilterOutputStream.flush()void" codesize="15" stacksize="16"></method>
+		<method descriptor="java.lang.ref.Reference.Reference(java.lang.Object,java.lang.ref.ReferenceQueue)void" codesize="15" stacksize="16"></method>
+		<method descriptor="java.lang.Float.&amp;lt;clinit&amp;gt;()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArrayIndexOutOfBoundsException.ArrayIndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.VirtualMachineError.VirtualMachineError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalAccessException.IllegalAccessException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Float.isNaN(float)boolean" codesize="17" stacksize="12"></method>
+		<method descriptor="java.lang.StringIndexOutOfBoundsException.StringIndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.util.HashMap.HashMap()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Error.Error()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.LinkageError.LinkageError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArrayStoreException.ArrayStoreException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.InternalError.InternalError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.UnsatisfiedLinkError.UnsatisfiedLinkError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalThreadStateException.IllegalThreadStateException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalMonitorStateException.IllegalMonitorStateException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Exception.Exception()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NullPointerException.NullPointerException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.StringBuilder.StringBuilder()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.MainThread.MainThread()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ClassCastException.ClassCastException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Class.newInstance()java.lang.Object" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.AbstractMethodError.AbstractMethodError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Package.hashCode()int" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.StringBuffer()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.io.FilterOutputStream.write(int)void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NumberFormatException.NumberFormatException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.NegativeArraySizeException.NegativeArraySizeException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ArithmeticException.ArithmeticException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.util.NoSuchElementException.NoSuchElementException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.util.ArrayList.ArrayList()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ExceptionInInitializerError.ExceptionInInitializerError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IncompatibleClassChangeError.IncompatibleClassChangeError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalArgumentException.IllegalArgumentException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.UnsupportedOperationException.UnsupportedOperationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.InstantiationException.InstantiationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.StackOverflowError.StackOverflowError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.OutOfMemoryError.OutOfMemoryError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.RuntimeException.RuntimeException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.IllegalAccessError.IllegalAccessError()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.io.IOException.IOException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.InterruptedException.InterruptedException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.util.ConcurrentModificationException.ConcurrentModificationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.execClinit(int)void" codesize="17" stacksize="20"></method>
+		<method descriptor="java.lang.ReflectiveOperationException.ReflectiveOperationException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.lang.ClassNotFoundException.ClassNotFoundException()void" codesize="17" stacksize="16"></method>
+		<method descriptor="java.util.Calendar.setTimeInMillis(long)void" codesize="18" stacksize="12"></method>
+		<method descriptor="java.lang.Object.wait()void" codesize="18" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.Thread(int)void" codesize="18" stacksize="20"></method>
+		<method descriptor="java.lang.Exception.Exception(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.NumberFormatException.NumberFormatException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.RuntimeException.RuntimeException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.NegativeArraySizeException.NegativeArraySizeException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.InternalLimitsError.InternalLimitsError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Enum.hashCode()int" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.ArrayIndexOutOfBoundsException.ArrayIndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.VirtualMachineError.VirtualMachineError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.join()void" codesize="19" stacksize="24"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapIterator.hasNext()boolean" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.OutOfMemoryError.OutOfMemoryError(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.io.IOException.IOException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.EncUS_ASCII(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(java.lang.String)java.lang.StringBuilder" codesize="19" stacksize="20"></method>
+		<method descriptor="java.util.Calendar.getTimeInMillis()long" codesize="19" stacksize="16"></method>
+		<method descriptor="java.lang.IndexOutOfBoundsException.IndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="ej.bon.Util.setCurrentTimeMillis(long)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuffer.StringBuffer(int)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.ExceptionInInitializerError.ExceptionInInitializerError(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.RuntimePermission.RuntimePermission(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.util.AbstractArrayList.AbstractArrayList()void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.StringIndexOutOfBoundsException.StringIndexOutOfBoundsException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.IllegalArgumentException.IllegalArgumentException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.LinkageError.LinkageError(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Error.Error(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Object.notifyAll()void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Object.hashCode()int" codesize="19" stacksize="20"></method>
+		<method descriptor="java.util.NoSuchElementException.NoSuchElementException(java.lang.String)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Error.Error(java.lang.Throwable)void" codesize="19" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.callWrapper()void" codesize="20" stacksize="16"></method>
+		<method descriptor="ej.bon.Util.platformTimeNanos()long" codesize="20" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.isAlive()boolean" codesize="20" stacksize="12"></method>
+		<method descriptor="java.lang.Boolean.hashCode()int" codesize="21" stacksize="12"></method>
+		<method descriptor="java.lang.Boolean.toString()java.lang.String" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.Float.hashCode()int" codesize="21" stacksize="16"></method>
+		<method descriptor="java.lang.String.valueOf(float)java.lang.String" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.MainThread.run()void" codesize="21" stacksize="16"></method>
+		<method descriptor="java.lang.Float.toString()java.lang.String" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.String.String()void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.lang.Throwable.printStackTrace()void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.Thread(java.lang.Runnable)void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.flush()void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.util.AbstractArrayList$AbstractArrayListIterator.AbstractArrayList$AbstractArrayListIterator(java.util.AbstractArrayList)void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.Double.toString()java.lang.String" codesize="21" stacksize="24"></method>
+		<method descriptor="java.util.Hashtable$HashMapForHashtable.Hashtable$HashMapForHashtable(int,float)void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.lang.Double.&amp;lt;clinit&amp;gt;()void" codesize="21" stacksize="20"></method>
+		<method descriptor="java.lang.ref.Reference.Reference()void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.util.HashMap.HashMap(int,float)void" codesize="21" stacksize="24"></method>
+		<method descriptor="java.lang.Float.toString(float)java.lang.String" codesize="21" stacksize="20"></method>
+		<method descriptor="java.security.BasicPermission.hashCode()int" codesize="21" stacksize="20"></method>
+		<method descriptor="ej.bon.Util.platformTimeMillis()long" codesize="22" stacksize="20"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapEnumeration.AbstractHashMap$AbstractHashMapEnumeration(java.util.AbstractHashMap,int)void" codesize="22" stacksize="16"></method>
+		<method descriptor="java.lang.Byte.toString()java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.String.String(char[])void" codesize="23" stacksize="28"></method>
+		<method descriptor="java.lang.String.valueOf(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.AbstractStringBuilder()void" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Long.toString()java.lang.String" codesize="23" stacksize="28"></method>
+		<method descriptor="java.util.AbstractList.add(int,java.lang.Object)void" codesize="23" stacksize="16"></method>
+		<method descriptor="java.lang.Long.toString(long,int)java.lang.String" codesize="23" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractMethodError.throwAbstractMethodError()void" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Integer.parseInt(java.lang.String)int" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Integer.toString()java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Integer.toHexString(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Integer.toString(int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Boolean.toString(boolean)java.lang.String" codesize="23" stacksize="12"></method>
+		<method descriptor="java.lang.Short.toString()java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="java.lang.Integer.toString(int,int)java.lang.String" codesize="23" stacksize="24"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.EncUTF_8()void" codesize="23" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.&amp;lt;clinit&amp;gt;()void" codesize="23" stacksize="16"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapCollection.iterator()java.util.Iterator" codesize="23" stacksize="20"></method>
+		<method descriptor="java.util.Hashtable.hashCode()int" codesize="24" stacksize="20"></method>
+		<method descriptor="java.util.AbstractList$InternalIterator.hasNext()boolean" codesize="24" stacksize="20"></method>
+		<method descriptor="java.util.Hashtable.toString()java.lang.String" codesize="24" stacksize="16"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.testFPU(float,float)float" codesize="24" stacksize="20"></method>
+		<method descriptor="java.lang.Long.hashCode()int" codesize="24" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.testFPU(double,double)double" codesize="24" stacksize="28"></method>
+		<method descriptor="java.util.AbstractHashMap.AbstractHashMap()void" codesize="25" stacksize="24"></method>
+		<method descriptor="java.util.AbstractList$InternalIterator.AbstractList$InternalIterator(java.util.AbstractList)void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.util.AbstractList.add(java.lang.Object)boolean" codesize="25" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuffer.append(java.lang.String)java.lang.StringBuffer" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.run()void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.Long.toString(long)java.lang.String" codesize="25" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuffer.ensureCapacity(int)void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.util.Hashtable.Hashtable()void" codesize="25" stacksize="24"></method>
+		<method descriptor="java.io.OutputStreamWriter.OutputStreamWriter(java.io.OutputStream)void" codesize="25" stacksize="16"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(int,int,int)void" codesize="25" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuffer.toString()java.lang.String" codesize="25" stacksize="16"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.endCheck(java.lang.Class)void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.String.String(char[],int,int)void" codesize="25" stacksize="32"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(byte[],int,int)void" codesize="25" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.interrupt()void" codesize="25" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.checkAccess()void" codesize="27" stacksize="20"></method>
+		<method descriptor="java.lang.Runtime.&amp;lt;clinit&amp;gt;()void" codesize="27" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(boolean)java.lang.StringBuilder" codesize="27" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.print(int)void" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.System.getPropertyNoCheck(java.lang.String,java.lang.String)java.lang.String" codesize="27" stacksize="16"></method>
+		<method descriptor="java.lang.StringBuilder.append(java.lang.Object)java.lang.StringBuilder" codesize="27" stacksize="20"></method>
+		<method descriptor="java.lang.StringBuilder.append(int)java.lang.StringBuilder" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuilder.append(long)java.lang.StringBuilder" codesize="27" stacksize="28"></method>
+		<method descriptor="java.util.AbstractArrayList.iterator()java.util.Iterator" codesize="27" stacksize="24"></method>
+		<method descriptor="java.util.AbstractList.iterator()java.util.Iterator" codesize="27" stacksize="24"></method>
+		<method descriptor="java.lang.String.&amp;lt;clinit&amp;gt;()void" codesize="29" stacksize="24"></method>
+		<method descriptor="java.util.Hashtable.Hashtable(int,float)void" codesize="29" stacksize="28"></method>
+		<method descriptor="java.util.AbstractHashMap.iterator(int)java.util.Iterator" codesize="29" stacksize="28"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.&amp;lt;clinit&amp;gt;()void" codesize="29" stacksize="16"></method>
+		<method descriptor="com.is2t.microjvm.test.MonitorKeeper.run()void" codesize="29" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuffer.append(int)java.lang.StringBuffer" codesize="29" stacksize="24"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapIterator.AbstractHashMap$AbstractHashMapIterator(java.util.AbstractHashMap,int)void" codesize="29" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuffer.append(java.lang.Object)java.lang.StringBuffer" codesize="29" stacksize="20"></method>
+		<method descriptor="java.io.FilterOutputStream.write(byte[],int,int)void" codesize="30" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.toString()java.lang.String" codesize="31" stacksize="32"></method>
+		<method descriptor="java.lang.Throwable.fillInStackTrace()java.lang.Throwable" codesize="31" stacksize="16"></method>
+		<method descriptor="java.lang.Throwable.Throwable()void" codesize="31" stacksize="24"></method>
+		<method descriptor="java.lang.String.valueOf(java.lang.Object)java.lang.String" codesize="31" stacksize="16"></method>
+		<method descriptor="java.util.AbstractHashMap.entrySet()java.util.Set" codesize="31" stacksize="28"></method>
+		<method descriptor="java.io.PrintStream.print(char)void" codesize="31" stacksize="24"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.check(java.lang.Class,java.lang.String,boolean)boolean" codesize="31" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.print(char[])void" codesize="31" stacksize="32"></method>
+		<method descriptor="java.util.Calendar.validateFields()void" codesize="31" stacksize="20"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.check(java.lang.Class,java.lang.String,int,int)boolean" codesize="31" stacksize="32"></method>
+		<method descriptor="java.lang.Double.hashCode()int" codesize="32" stacksize="24"></method>
+		<method descriptor="java.lang.System.stackIpsForOutOfMemoryError()int[]" codesize="32" stacksize="20"></method>
+		<method descriptor="java.lang.Throwable.Throwable(java.lang.String)void" codesize="33" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.Thread(java.lang.Runnable,java.lang.String)void" codesize="33" stacksize="16"></method>
+		<method descriptor="java.lang.String.hashCode()int" codesize="34" stacksize="20"></method>
+		<method descriptor="java.lang.System.buildDefaultOutputStream()java.io.OutputStream" codesize="34" stacksize="16"></method>
+		<method descriptor="java.lang.Thread.Thread()void" codesize="35" stacksize="20"></method>
+		<method descriptor="java.lang.Thread.sleep(long)void" codesize="35" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.PrintStream(java.io.OutputStream)void" codesize="35" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.clinitWrapper(int)void" codesize="36" stacksize="28"></method>
+		<method descriptor="java.lang.StringBuffer.StringBuffer(java.lang.String)void" codesize="37" stacksize="24"></method>
+		<method descriptor="java.lang.Float.isInfinite(float)boolean" codesize="37" stacksize="16"></method>
+		<method descriptor="java.lang.StringBuilder.StringBuilder(java.lang.String)void" codesize="37" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuilder.append(char)java.lang.StringBuilder" codesize="37" stacksize="36"></method>
+		<method descriptor="java.lang.Throwable.printMessage(java.io.PrintStream)void" codesize="37" stacksize="24"></method>
+		<method descriptor="java.lang.Throwable.printClassName(java.io.PrintStream,java.lang.Throwable)void" codesize="37" stacksize="20"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.&amp;lt;clinit&amp;gt;()void" codesize="37" stacksize="20"></method>
+		<method descriptor="java.io.OutputStream.write(byte[],int,int)void" codesize="38" stacksize="28"></method>
+		<method descriptor="ej.bon.Immutables.get(java.lang.String)java.lang.Object" codesize="38" stacksize="24"></method>
+		<method descriptor="ej.bon.CurrentTime.setAppTime(long)void" codesize="39" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.println()void" codesize="40" stacksize="28"></method>
+		<method descriptor="java.lang.Class.forName(java.lang.String)java.lang.Class" codesize="40" stacksize="20"></method>
+		<method descriptor="java.security.BasicPermission.BasicPermission(java.lang.String)void" codesize="40" stacksize="24"></method>
+		<method descriptor="java.util.AbstractArrayList.add(java.lang.Object)boolean" codesize="41" stacksize="24"></method>
+		<method descriptor="java.lang.Package.toString()java.lang.String" codesize="41" stacksize="24"></method>
+		<method descriptor="java.lang.Character.toString()java.lang.String" codesize="41" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractStringBuilder._append(java.lang.String)void" codesize="41" stacksize="32"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapSet.AbstractHashMap$AbstractHashMapSet(java.util.AbstractHashMap,int)void" codesize="42" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.print(java.lang.String)void" codesize="43" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.println(java.lang.String)void" codesize="43" stacksize="32"></method>
+		<method descriptor="java.io.PrintStream.println(int)void" codesize="43" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.setPriority(int)void" codesize="43" stacksize="24"></method>
+		<method descriptor="java.io.PrintStream.write(byte[],int,int)void" codesize="44" stacksize="28"></method>
+		<method descriptor="java.io.PrintStream.write(int)void" codesize="44" stacksize="24"></method>
+		<method descriptor="java.lang.StringBuffer.append(char)java.lang.StringBuffer" codesize="44" stacksize="36"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapIterator.next()java.lang.Object" codesize="45" stacksize="28"></method>
+		<method descriptor="java.lang.Throwable.Throwable(java.lang.Throwable)void" codesize="45" stacksize="24"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.AbstractStringBuilder(int)void" codesize="45" stacksize="28"></method>
+		<method descriptor="java.util.AbstractMap$AbstractMapEntry.hashCode()int" codesize="45" stacksize="24"></method>
+		<method descriptor="java.util.AbstractArrayList.get(int)java.lang.Object" codesize="46" stacksize="28"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapEnumeration.hasMoreElements()boolean" codesize="46" stacksize="28"></method>
+		<method descriptor="java.lang.Boolean.&amp;lt;clinit&amp;gt;()void" codesize="47" stacksize="24"></method>
+		<method descriptor="java.lang.SecurityManager.SecurityManager()void" codesize="47" stacksize="28"></method>
+		<method descriptor="java.util.Calendar.validateBeforeGet()void" codesize="49" stacksize="20"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapSet.hashCode()int" codesize="50" stacksize="24"></method>
+		<method descriptor="java.lang.StackOverflowError.getMessage()java.lang.String" codesize="50" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractStringBuilder._append(char[],int,int)void" codesize="51" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.someName()java.lang.String" codesize="51" stacksize="28"></method>
+		<method descriptor="java.lang.System.getPropertyNoCheck(java.lang.String)java.lang.String" codesize="51" stacksize="36"></method>
+		<method descriptor="com.is2t.vm.support.lang.Systools.charValue(int)char" codesize="51" stacksize="20"></method>
+		<method descriptor="java.util.AbstractArrayList.AbstractArrayList(int)void" codesize="54" stacksize="28"></method>
+		<method descriptor="java.lang.Throwable.printMessageStackTrace(java.io.PrintStream)void" codesize="55" stacksize="28"></method>
+		<method descriptor="java.lang.System.buildOutputStream()java.io.OutputStream" codesize="57" stacksize="16"></method>
+		<method descriptor="java.util.Calendar.setFields()void" codesize="58" stacksize="24"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUS_ASCII.encode(char[],int[],int,byte[],int,int)int" codesize="58" stacksize="32"></method>
+		<method descriptor="com.is2t.vm.support.util.EncodingConversion.&amp;lt;clinit&amp;gt;()void" codesize="63" stacksize="24"></method>
+		<method descriptor="java.util.AbstractList.hashCode()int" codesize="64" stacksize="24"></method>
+		<method descriptor="com.is2t.microjvm.test.MonitorKeeper.synchronizeAll(int)void" codesize="65" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.toString()java.lang.String" codesize="65" stacksize="28"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.check(java.lang.Class,java.lang.String,java.lang.String,boolean,boolean)boolean" codesize="66" stacksize="44"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.check(java.lang.Class,java.lang.String,java.lang.String,int,int)boolean" codesize="66" stacksize="44"></method>
+		<method descriptor="java.util.AbstractMap.hashCode()int" codesize="66" stacksize="24"></method>
+		<method descriptor="java.lang.Thread.updateThreadCounters()void" codesize="67" stacksize="28"></method>
+		<method descriptor="java.lang.AbstractStringBuilder.ensureCapacity(int)void" codesize="67" stacksize="40"></method>
+		<method descriptor="java.lang.Integer.parseInt(java.lang.String,int)int" codesize="68" stacksize="28"></method>
+		<method descriptor="ej.error.Message.at(ej.error.ErrorMessages,int)java.lang.String" codesize="71" stacksize="28"></method>
+		<method descriptor="java.util.Calendar.Calendar()void" codesize="75" stacksize="32"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringLong(long,int)java.lang.String" codesize="75" stacksize="40"></method>
+		<method descriptor="java.io.OutputStreamWriter.flush()void" codesize="76" stacksize="36"></method>
+		<method descriptor="java.lang.Object.toString()java.lang.String" codesize="77" stacksize="28"></method>
+		<method descriptor="java.lang.Throwable.toString()java.lang.String" codesize="78" stacksize="24"></method>
+		<method descriptor="ej.error.Message.at(ej.error.ErrorMessages,int,java.lang.Object)java.lang.String" codesize="79" stacksize="28"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toUnsignedString(int,int)java.lang.String" codesize="83" stacksize="44"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.class$()void" codesize="83" stacksize="12"></method>
+		<method descriptor="java.lang.String.String(char[],int,int,boolean)void" codesize="83" stacksize="36"></method>
+		<method descriptor="java.util.AbstractMap$AbstractMapEntry.toString()java.lang.String" codesize="86" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.objectsFromRam()java.util.List" codesize="87" stacksize="44"></method>
+		<method descriptor="java.lang.Thread.runWrapper()void" codesize="89" stacksize="28"></method>
+		<method descriptor="java.util.AbstractArrayList.add(int,java.lang.Object)void" codesize="91" stacksize="40"></method>
+		<method descriptor="java.util.Calendar.hashCode()int" codesize="92" stacksize="40"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.objectsFromImmortals()java.util.List" codesize="93" stacksize="44"></method>
+		<method descriptor="java.lang.Thread.join(long)void" codesize="94" stacksize="44"></method>
+		<method descriptor="java.util.AbstractArrayList.ensureFreeSpace(int)void" codesize="95" stacksize="44"></method>
+		<method descriptor="java.lang.Class.toString()java.lang.String" codesize="95" stacksize="28"></method>
+		<method descriptor="java.util.AbstractArrayList$AbstractArrayListIterator.next()java.lang.Object" codesize="100" stacksize="28"></method>
+		<method descriptor="java.util.AbstractHashMap$AbstractHashMapEnumeration.nextElement()java.lang.Object" codesize="102" stacksize="44"></method>
+		<method descriptor="java.util.AbstractList$InternalIterator.next()java.lang.Object" codesize="102" stacksize="32"></method>
+		<method descriptor="java.lang.System.&amp;lt;clinit&amp;gt;()void" codesize="113" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.main(java.lang.String[])void" codesize="113" stacksize="16"></method>
+		<method descriptor="java.util.AbstractCollection.toString()java.lang.String" codesize="118" stacksize="32"></method>
+		<method descriptor="java.lang.String.trim()java.lang.String" codesize="120" stacksize="52"></method>
+		<method descriptor="java.util.AbstractHashMap.AbstractHashMap(int,float)void" codesize="121" stacksize="32"></method>
+		<method descriptor="java.lang.Long.parseLong(java.lang.String,int)long" codesize="123" stacksize="36"></method>
+		<method descriptor="java.io.OutputStreamWriter.write(char[],int,int)void" codesize="128" stacksize="60"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.objectsFromImmutables()java.util.List" codesize="129" stacksize="48"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.printProduct()void" codesize="139" stacksize="24"></method>
+		<method descriptor="java.io.OutputStreamWriter.writeln(char[],int,int)void" codesize="140" stacksize="60"></method>
+		<method descriptor="com.is2t.tools.ArrayTools.checkBounds(int,int,int,int)void" codesize="171" stacksize="36"></method>
+		<method descriptor="java.lang.Thread.start()void" codesize="171" stacksize="36"></method>
+		<method descriptor="java.security.Permission.toString()java.lang.String" codesize="176" stacksize="28"></method>
+		<method descriptor="java.lang.Thread.handleUncaughtException(java.lang.Throwable)void" codesize="182" stacksize="36"></method>
+		<method descriptor="java.lang.Throwable.printStackTrace(java.io.PrintStream)void" codesize="186" stacksize="36"></method>
+		<method descriptor="com.is2t.vm.support.lang.SupportNumber.toStringInteger(int,int)java.lang.String" codesize="187" stacksize="36"></method>
+		<method descriptor="java.util.AbstractMap.toString()java.lang.String" codesize="200" stacksize="40"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.tryToSynchronizeOn(java.util.List,boolean)void" codesize="200" stacksize="44"></method>
+		<method descriptor="java.util.Calendar.toString()java.lang.String" codesize="203" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkVisibleClock()void" codesize="205" stacksize="60"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkIsInReadOnlyMemory()void" codesize="209" stacksize="32"></method>
+		<method descriptor="java.lang.System.printStackTrace(java.io.PrintStream,int[])void" codesize="212" stacksize="52"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.encode(char[],int[],int,byte[],int,int)int" codesize="237" stacksize="36"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkMonotonicTime()void" codesize="247" stacksize="80"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.printComment(java.lang.Class,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,boolean)boolean" codesize="270" stacksize="32"></method>
+		<method descriptor="java.lang.Character.&amp;lt;clinit&amp;gt;()void" codesize="271" stacksize="24"></method>
+		<method descriptor="com.is2t.microjvm.test.Task.run()void" codesize="282" stacksize="48"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkTime()void" codesize="287" stacksize="64"></method>
+		<method descriptor="com.is2t.vm.support.util.EncUTF_8.decode(byte[],int[],int,char[],int,int)int" codesize="326" stacksize="40"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkFPU()void" codesize="327" stacksize="36"></method>
+		<method descriptor="com.is2t.testsuite.support.CheckHelper.endCheck(java.lang.String,java.lang.Class)void" codesize="368" stacksize="40"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.stringsFromImmutables()java.util.List" codesize="553" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.classes()java.util.List" codesize="553" stacksize="32"></method>
+		<method descriptor="com.is2t.microjvm.test.MJVMPortValidation.checkJavaRoundRobin()void" codesize="696" stacksize="68"></method>
+	</selected_methods>
+	<classpath>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.2\.bin\MICROJVM\javaLibs\bon-1.2.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.2\.bin\MICROJVM\javaLibs\edc-1.2.jar"></path>
+		<path location="E:\ProjetSAMD21\mjvmPortValidation\bin"></path>
+		<path location="E:\ProjetSAMD21\mjvmPortValidation\checkHelper-1.2.0.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.2\.bin\javaLibs\pump.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.2\.bin\javaLibs\resourcemanager-1.0.jar"></path>
+		<path location="E:\ProjetSAMD21\SAMD21-Core-CM0P_GCC48-1.0.2\.bin\javaLibs\watchdog-1.0.jar"></path>
+		<path location="C:\Users\Simon\AppData\Local\Temp\microej\ProjetSAMD21_1486560630961\MJVMPortValidation_1486565948987\customlaunch2086660021properties"></path>
+	</classpath>
+	<selected_resources></selected_resources>
+	<java_properties>
+		<property name="java.vendor" value="IS2T"></property>
+		<property name="java.vendor.url" value="www.is2t.com"></property>
+		<property name="com.is2t.edc.assertions.status" value="true"></property>
+		<property name="line.separator" value="&#xa;"></property>
+		<property name="microedition.configuration" value="EDC-1.2"></property>
+		<property name="microedition.encoding" value="ISO-8859-1"></property>
+		<property name="com.is2t.system.out.class" value=""></property>
+		<property name="microedition.platform" value="Core"></property>
+	</java_properties>
+	<selected_internStrings>
+		main
+		Core
+		--------------------
+		time=
+		* Modification and distribution is permitted under certain conditions.  *
+		-&gt; Check schedule request and wakeup (LLMJVM_IMPL_scheduleRequest and LLMJVM_IMPL_wakeupVM validation)...
+		test &apos;float * float&apos; in C: FPU option is not coherent between MicroEJ Platform and BSP
+		createSecurityManager
+		)&lt;=
+		 FAILED
+		Exception in thread "
+		 loops
+		Calendar [
+		26
+		null
+		In BSP, write and compile the following functions:
+		true
+		13
+		 PASSED
+		deltaPer10000=
+		class 
+		Stacks space
+		)
+		package 
+		*************************************************************************
+		Util.platformTimeNanos()/1000000 != Util.platformTimeMillis()10
+		-&gt; Check visible clock (LLMJVM_IMPL_getCurrentTime validation)...
+		-&gt; Check Java round robin (LLMJVM_IMPL_scheduleRequest validation)...
+		
+		...&#xa;
+		28
+		22
+		10
+		, 
+		maxResults(=
+		IS2T
+		18
+		 : OK
+		31
+		9
+		array
+		Task 
+		www.is2t.com
+		...done. Stopping tasks...
+		Test synchronize on literal string
+		23
+		0
+		Test synchronize on class
+		30
+		20
+		test &apos;double * double&apos; in C: FPU option is not coherent between MicroEJ Platform and BSP
+		 NOK
+		)&gt;0)
+		27
+		11
+		&#xa; (
+		microedition.encoding
+		32
+		6
+		realDelay&gt;=delay
+		 starts.
+		Exception: 
+		this
+		* Copyright 2013-2016 IS2T. All rights reserved.                             *
+		s...
+		Starting tasks...
+		17
+		minimalDayInFirstWeek=
+		, at 
+		-&gt; Check isInReadOnlyMemory (LLBSP_IMPL_isInReadOnlyMemory validation)...
+		29
+		21
+		test &apos;float * float&apos; in Java: FPU option is not coherent between MicroEJ Platform and BSP
+		@ASSERTIONS_OK:
+		25
+		1
+		jfloat Java_com_is2t_microjvm_test_MJVMPortValidation_testFPU__FF (jfloat a, jfloat b) {return a * b;}
+		thread
+		Thread[
+		ISO-8859-1
+		timezone=
+		UTF-8
+		12
+		Error : 
+		microedition.configuration
+		MAX DELTA = 
+		 ends.
+		 (
+		 ) , expected 
+		lenient=
+		try to grow _jvm_sharedMemory_size
+		&#xa;
+		-&gt; Check monotonic time (LLMJVM_IMPL_getCurrentTime, LLMJVM_IMPL_setApplicationTime validation)...
+		-&gt; Check FPU (soft/hard FP option)...
+		com.is2t.edc.assertions.status
+		16
+		 thrown from UncaughtExceptionHandler in thread "
+		 
+		     at 
+		7
+		#
+		Can&apos;t find the requested object in the immutables, check your configuration.
+		4
+		*                    LLMJVM Port Validation - 2.2.3                     *
+		Waiting for 
+		literal string
+		2
+		java.lang.OutOfMemoryError
+		8
+		monotonic time not set
+		maxDeltaLoopCount=
+		33
+		19
+		interface 
+		14
+		5
+		* IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.       *
+		IllegalMonitorStateException during synchronization on immutable object (class)
+		US-ASCII
+		 OK
+		24
+		"
+		@ASSERTIONS_NOK:
+		com.is2t.system.out.class
+		delta(=
+		test &apos;double * double&apos; in Java: FPU option is not coherent between MicroEJ Platform and BSP
+		 == 
+		Test multiple synchronize
+		Too many alive java threads (
+		EDC-1.2
+		 remaining frame(s).&#xa;
+		line.separator
+		IllegalMonitorStateException during synchronization on immutable object (literal string)
+		Generic
+		...done.
+		java.vendor.url
+		15
+		3
+		" 
+		java.vendor
+		No objects to synchronize on, aborting.
+		is waiting for start...
+		state=
+		: 
+		...done
+		nbThreads &gt;= 2
+		too many synchronized monitors
+		jdouble Java_com_is2t_microjvm_test_MJVMPortValidation_testFPU__DD (jdouble a, jdouble b) {return a * b;}
+		false
+		firstDayOfTheWeek=
+		Caused by: 
+		microedition.platform
+		Util.platformTimeMillis() != System.currentTimeMillis()10
+		34
+		#include "sni.h"
+	</selected_internStrings>
+	<selected_types nb="155">
+		<type descriptor="java.lang.Object" instancesize="4" depth="0"></type>
+		<type descriptor="com.is2t.microjvm.test.MJVMPortValidation" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.System" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.String" instancesize="20" depth="1"></type>
+		<type descriptor="char[]" depth="0"></type>
+		<type descriptor="java.lang.String$CaseInsensitiveOrder" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.String[]" depth="0"></type>
+		<type descriptor="java.lang.String[][]" depth="0"></type>
+		<type descriptor="java.lang.Throwable" instancesize="24" depth="1"></type>
+		<type descriptor="java.lang.Throwable[]" depth="0"></type>
+		<type descriptor="java.lang.Thread" instancesize="28" depth="1"></type>
+		<type descriptor="java.lang.AbstractStringBuilder" instancesize="12" depth="1"></type>
+		<type descriptor="java.lang.StringBuilder" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.Exception" instancesize="24" depth="2"></type>
+		<type descriptor="java.lang.RuntimeException" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.NegativeArraySizeException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.Number" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Integer" instancesize="8" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.lang.SupportNumber" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.lang.Systools" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.IndexOutOfBoundsException" instancesize="24" depth="4"></type>
+		<type descriptor="com.is2t.tools.ArrayTools" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.tools.ToolsErrorMessage" instancesize="4" depth="1"></type>
+		<type descriptor="ej.error.Message" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Class" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Math" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.StringBuffer" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.ArrayIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.StringIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.Error" instancesize="24" depth="2"></type>
+		<type descriptor="java.lang.VirtualMachineError" instancesize="24" depth="3"></type>
+		<type descriptor="com.is2t.vm.support.InternalLimitsError" instancesize="24" depth="4"></type>
+		<type descriptor="java.io.OutputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.io.NullOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java.io.FilterOutputStream" instancesize="8" depth="2"></type>
+		<type descriptor="java.io.PrintStream" instancesize="16" depth="3"></type>
+		<type descriptor="java.io.Writer" instancesize="8" depth="1"></type>
+		<type descriptor="java.io.OutputStreamWriter" instancesize="16" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.util.EncodingConversion" instancesize="8" depth="1"></type>
+		<type descriptor="com.is2t.vm.support.util.EncUS_ASCII" instancesize="8" depth="2"></type>
+		<type descriptor="byte[]" depth="0"></type>
+		<type descriptor="int[]" depth="0"></type>
+		<type descriptor="java.io.IOException" instancesize="24" depth="3"></type>
+		<type descriptor="com.is2t.vm.support.err.EDCErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="ej.bon.Util" instancesize="4" depth="1"></type>
+		<type descriptor="ej.bon.CurrentTime" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.testsuite.support.CheckHelper" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Boolean" instancesize="8" depth="1"></type>
+		<type descriptor="java.lang.Long" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.IllegalArgumentException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.InterruptedException" instancesize="24" depth="3"></type>
+		<type descriptor="com.is2t.microjvm.test.MonitorKeeper" instancesize="8" depth="1"></type>
+		<type descriptor="java.lang.Thread[]" depth="0"></type>
+		<type descriptor="java.lang.Object[]" depth="0"></type>
+		<type descriptor="java.lang.IllegalThreadStateException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.OutOfMemoryError" instancesize="24" depth="4"></type>
+		<type descriptor="java.util.AbstractCollection" instancesize="4" depth="1"></type>
+		<type descriptor="java.util.AbstractList" instancesize="8" depth="2"></type>
+		<type descriptor="java.util.AbstractList$InternalIterator" instancesize="20" depth="1"></type>
+		<type descriptor="java.util.NoSuchElementException" instancesize="24" depth="4"></type>
+		<type descriptor="java.util.ConcurrentModificationException" instancesize="24" depth="4"></type>
+		<type descriptor="java.util.AbstractArrayList" instancesize="20" depth="3"></type>
+		<type descriptor="java.util.AbstractArrayList$AbstractArrayListIterator" instancesize="24" depth="2"></type>
+		<type descriptor="java.util.ArrayList" instancesize="20" depth="4"></type>
+		<type descriptor="java.lang.UnsupportedOperationException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.Class[]" depth="0"></type>
+		<type descriptor="java.lang.Float" instancesize="8" depth="2"></type>
+		<type descriptor="java.lang.Double" instancesize="12" depth="2"></type>
+		<type descriptor="java.lang.Byte" instancesize="8" depth="2"></type>
+		<type descriptor="java.lang.Character" instancesize="8" depth="1"></type>
+		<type descriptor="java.util.Calendar" instancesize="48" depth="1"></type>
+		<type descriptor="java.io.InputStream" instancesize="4" depth="1"></type>
+		<type descriptor="java.util.AbstractMap" instancesize="12" depth="1"></type>
+		<type descriptor="java.util.AbstractHashMap" instancesize="32" depth="2"></type>
+		<type descriptor="java.util.AbstractMap$AbstractMapEntry" instancesize="8" depth="1"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapEntry" instancesize="12" depth="2"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapEntry[]" depth="0"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapCollection" instancesize="12" depth="2"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapEnumeration" instancesize="20" depth="1"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapIterator" instancesize="32" depth="2"></type>
+		<type descriptor="java.util.AbstractHashMap$AbstractHashMapSet" instancesize="16" depth="3"></type>
+		<type descriptor="java.lang.InternalError" instancesize="24" depth="4"></type>
+		<type descriptor="java.util.HashMap" instancesize="32" depth="3"></type>
+		<type descriptor="java.util.Dictionary" instancesize="4" depth="1"></type>
+		<type descriptor="java.util.Hashtable" instancesize="8" depth="2"></type>
+		<type descriptor="java.util.Hashtable$HashMapForHashtable" instancesize="32" depth="4"></type>
+		<type descriptor="java.io.Reader" instancesize="8" depth="1"></type>
+		<type descriptor="java.lang.Short" instancesize="8" depth="2"></type>
+		<type descriptor="java.lang.Enum" instancesize="12" depth="1"></type>
+		<type descriptor="java.lang.Runtime" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.Package" instancesize="8" depth="1"></type>
+		<type descriptor="ej.bon.Immortals" instancesize="4" depth="1"></type>
+		<type descriptor="ej.bon.Immutables" instancesize="4" depth="1"></type>
+		<type descriptor="com.is2t.bon.ImmutablesNatives" instancesize="4" depth="1"></type>
+		<type descriptor="java.lang.IllegalMonitorStateException" instancesize="24" depth="4"></type>
+		<type descriptor="com.is2t.microjvm.test.Task" instancesize="8" depth="1"></type>
+		<type descriptor="java.lang.SecurityManager" instancesize="4" depth="1"></type>
+		<type descriptor="java.security.Permission" instancesize="8" depth="1"></type>
+		<type descriptor="java.security.BasicPermission" instancesize="8" depth="2"></type>
+		<type descriptor="java.lang.RuntimePermission" instancesize="8" depth="3"></type>
+		<type descriptor="java.lang.NullPointerException" instancesize="24" depth="4"></type>
+		<type descriptor="char[][]" depth="0"></type>
+		<type descriptor="java.lang.ArrayStoreException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ReflectiveOperationException" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.IllegalAccessException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.LinkageError" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.IncompatibleClassChangeError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.IllegalAccessError" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.InstantiationException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ArithmeticException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.NumberFormatException" instancesize="24" depth="5"></type>
+		<type descriptor="java.lang.ClassCastException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ClassNotFoundException" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.UnsatisfiedLinkError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.StackOverflowError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.ref.Reference" instancesize="24" depth="1"></type>
+		<type descriptor="java.lang.ref.WeakReference" instancesize="24" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.io.DebugOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="com.is2t.vm.support.io.MemoryInputStream" instancesize="20" depth="2"></type>
+		<type descriptor="ej.bon.EnqueuedWeakReference" instancesize="24" depth="3"></type>
+		<type descriptor="java.lang.MainThread" instancesize="28" depth="2"></type>
+		<type descriptor="java.lang.ExceptionInInitializerError" instancesize="24" depth="4"></type>
+		<type descriptor="java.lang.AbstractMethodError" instancesize="24" depth="5"></type>
+		<type descriptor="com.is2t.vm.support.util.EncUTF_8" instancesize="8" depth="2"></type>
+		<type descriptor="boolean[]" depth="0"></type>
+		<type descriptor="short[]" depth="0"></type>
+		<type descriptor="long[]" depth="0"></type>
+		<type descriptor="float[]" depth="0"></type>
+		<type descriptor="double[]" depth="0"></type>
+		<type descriptor="java.lang.CharSequence" depth="0"></type>
+		<type descriptor="java.lang.Comparable" depth="0"></type>
+		<type descriptor="java.io.Serializable" depth="0"></type>
+		<type descriptor="java.util.Comparator" depth="0"></type>
+		<type descriptor="java.lang.Runnable" depth="0"></type>
+		<type descriptor="java.lang.Appendable" depth="0"></type>
+		<type descriptor="ej.error.ErrorMessages" depth="0"></type>
+		<type descriptor="java.lang.reflect.Type" depth="0"></type>
+		<type descriptor="java.lang.reflect.GenericDeclaration" depth="0"></type>
+		<type descriptor="java.lang.reflect.AnnotatedElement" depth="0"></type>
+		<type descriptor="java.lang.AutoCloseable" depth="0"></type>
+		<type descriptor="java.io.Flushable" depth="0"></type>
+		<type descriptor="java.io.Closeable" depth="0"></type>
+		<type descriptor="java.lang.Iterable" depth="0"></type>
+		<type descriptor="java.util.Collection" depth="0"></type>
+		<type descriptor="java.util.List" depth="0"></type>
+		<type descriptor="java.util.Iterator" depth="0"></type>
+		<type descriptor="java.lang.Cloneable" depth="0"></type>
+		<type descriptor="java.util.RandomAccess" depth="0"></type>
+		<type descriptor="java.util.Map" depth="0"></type>
+		<type descriptor="java.util.Set" depth="0"></type>
+		<type descriptor="java.util.Map$Entry" depth="0"></type>
+		<type descriptor="java.util.Enumeration" depth="0"></type>
+		<type descriptor="java.lang.Readable" depth="0"></type>
+		<type descriptor="java.security.Guard" depth="0"></type>
+		<type descriptor="java.lang.Thread$UncaughtExceptionHandler" depth="0"></type>
+	</selected_types>
+	<required_types>
+		<type descriptor="com.is2t.vm.support.util.EncUTF_8"></type>
+	</required_types>
+	<selected_immutables></selected_immutables>
+</soar_information>

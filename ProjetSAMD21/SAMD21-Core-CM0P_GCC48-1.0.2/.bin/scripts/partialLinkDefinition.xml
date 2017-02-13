@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2012-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="partialLink.definition">
+
+	<dirname file="${ant.file.partialLink.definition}" property="ant.dir.partialLink.definition"/>
+	<loadproperties srcfile="${ant.dir.partialLink.definition}/partialLink.properties" prefix="linker"/>
+	
+	<property name="linker.dir" location="${platform.dir}/linker"/>
+	
+	<path id="linker.classpath.path">
+		<fileset dir="${linker.dir}" includes="Linker*.jar"/>
+	</path>
+	<taskdef name="linkerTask" classname="${linker.classname}" classpathref="linker.classpath.path"/>
+
+	<presetdef name="partialLink">
+		<linkerTask
+			linkPath="${overall.partialLink.lscf.path}" 
+			toDir="${partialLink.output.dir}" 
+			outputArchitecture="${arch.link.target}" 
+			endianness="${arch.endianness}"
+			partial="${partialLink.partial}" 
+			symbolPrefix="${arch.symbol.prefix}"
+			convertToRela="${arch.convertToRela}"
+			outputName="${partialLink.output.name}"
+			hidePrivateSymbols="${partialLink.hidePrivateSymbols}"
+			verboseLevel="${linker.verbose.level}"
+			noWarning="${linker.noWarning}"
+		>
+			<path refid="partialLink.objects.files"/>
+			
+			<extension name="Icetea">
+				<property name="ilink.files" value="${overall.partialLink.ilink.files}"/>
+			</extension>
+			<propertyset refid="partialLink.generic.properties"/>
+		</linkerTask>
+	</presetdef>
+		
+</project>
+	
+	

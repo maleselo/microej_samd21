@@ -1,0 +1,15 @@
+<!--
+  	LSC
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	
+	<!--
+		Define java stacks memory. Symbol _java_java_stack_size is generated from the launch scripts
+	-->
+	<defSection name=".bss.vm.stacks.java" size="_java_java_stack_size" align="8" rootSection="true"/>
+	
+</lscFragment>

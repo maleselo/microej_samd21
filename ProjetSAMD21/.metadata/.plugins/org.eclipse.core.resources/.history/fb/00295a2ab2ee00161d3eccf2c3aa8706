@@ -1,0 +1,191 @@
+<soar_information>
+	<clinit_order>
+		<init rank="0" descriptor="ej/microui/event/EventGenerator"></init>
+		<init rank="1" descriptor="ej/microui/display/Display"></init>
+		<init rank="2" descriptor="java/lang/Thread"></init>
+		<init rank="3" descriptor="com/is2t/vm/support/util/EncodingConversion"></init>
+		<init rank="4" descriptor="java/lang/String"></init>
+		<init rank="5" descriptor="java/lang/System"></init>
+		<init rank="6" descriptor="ej/microui/MicroUI"></init>
+		<init rank="7" descriptor="ej/microui/Immortal"></init>
+		<init rank="8" descriptor="ej/microui/display/OffscreenWeakRefPool"></init>
+		<init rank="9" descriptor="ej/microui/PumpsPool"></init>
+	</clinit_order>
+	<selected_type nb="175">
+		<type descriptor="java/lang/Object" instancesize="4" depth="0"></type>
+		<type descriptor="ej/microui/display/Displayable" instancesize="16" depth="1"></type>
+		<type descriptor="test/TestLCD03" instancesize="24" depth="2"></type>
+		<type descriptor="ej/microui/MicroUI" instancesize="8" depth="1"></type>
+		<type descriptor="java/lang/AbstractStringBuilder" instancesize="12" depth="1"></type>
+		<type descriptor="[C" depth="0"></type>
+		<type descriptor="java/lang/StringBuilder" instancesize="12" depth="2"></type>
+		<type descriptor="ej/microui/MicroUIProperties" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/System" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/String" instancesize="20" depth="1"></type>
+		<type descriptor="java/lang/String$CaseInsensitiveOrder" instancesize="4" depth="1"></type>
+		<type descriptor="[Ljava/lang/String;" depth="0"></type>
+		<type descriptor="[[Ljava/lang/String;" depth="0"></type>
+		<type descriptor="java/lang/Throwable" instancesize="24" depth="1"></type>
+		<type descriptor="[Ljava/lang/Throwable;" depth="0"></type>
+		<type descriptor="java/lang/Thread" instancesize="28" depth="1"></type>
+		<type descriptor="java/lang/Exception" instancesize="24" depth="2"></type>
+		<type descriptor="java/lang/RuntimeException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/NegativeArraySizeException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/Number" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Integer" instancesize="8" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/lang/SupportNumber" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/lang/Systools" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/IndexOutOfBoundsException" instancesize="24" depth="4"></type>
+		<type descriptor="com/is2t/tools/ArrayTools" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/tools/ToolsErrorMessage" instancesize="4" depth="1"></type>
+		<type descriptor="ej/error/Message" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Class" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/Math" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/StringBuffer" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/ArrayIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/StringIndexOutOfBoundsException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/Error" instancesize="24" depth="2"></type>
+		<type descriptor="java/lang/VirtualMachineError" instancesize="24" depth="3"></type>
+		<type descriptor="com/is2t/vm/support/InternalLimitsError" instancesize="24" depth="4"></type>
+		<type descriptor="java/io/OutputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/io/NullOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java/io/FilterOutputStream" instancesize="8" depth="2"></type>
+		<type descriptor="java/io/PrintStream" instancesize="16" depth="3"></type>
+		<type descriptor="java/io/Writer" instancesize="8" depth="1"></type>
+		<type descriptor="java/io/OutputStreamWriter" instancesize="16" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/util/EncodingConversion" instancesize="8" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/util/EncUS_ASCII" instancesize="8" depth="2"></type>
+		<type descriptor="java/security/Permission" instancesize="8" depth="1"></type>
+		<type descriptor="java/security/BasicPermission" instancesize="8" depth="2"></type>
+		<type descriptor="java/util/PropertyPermission" instancesize="12" depth="3"></type>
+		<type descriptor="java/lang/IllegalArgumentException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/SecurityManager" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/RuntimePermission" instancesize="8" depth="3"></type>
+		<type descriptor="java/lang/NullPointerException" instancesize="24" depth="4"></type>
+		<type descriptor="ej/microui/err/MicroUIErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="[B" depth="0"></type>
+		<type descriptor="[I" depth="0"></type>
+		<type descriptor="java/io/IOException" instancesize="24" depth="3"></type>
+		<type descriptor="com/is2t/vm/support/err/EDCErrorMessages" instancesize="4" depth="1"></type>
+		<type descriptor="java/lang/OutOfMemoryError" instancesize="24" depth="4"></type>
+		<type descriptor="ej/microui/MicroUIPermission" instancesize="12" depth="2"></type>
+		<type descriptor="ej/microui/MicroUIFactory" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/PumpsPool" instancesize="4" depth="1"></type>
+		<type descriptor="[Lej/microui/MicroUIPump;" depth="0"></type>
+		<type descriptor="ej/microui/display/Display" instancesize="36" depth="1"></type>
+		<type descriptor="ej/microui/display/DefaultLayersManager" instancesize="8" depth="1"></type>
+		<type descriptor="ej/microui/display/DisplayPermission" instancesize="12" depth="2"></type>
+		<type descriptor="[Lej/microui/display/Display;" depth="0"></type>
+		<type descriptor="java/lang/IllegalStateException" instancesize="24" depth="4"></type>
+		<type descriptor="com/is2t/pump/_int/FIFOIntQueue" instancesize="16" depth="1"></type>
+		<type descriptor="ej/microui/display/DisplayPump" instancesize="36" depth="2"></type>
+		<type descriptor="java/lang/IllegalThreadStateException" instancesize="24" depth="5"></type>
+		<type descriptor="[Ljava/lang/Object;" depth="0"></type>
+		<type descriptor="ej/microui/display/OutOfEventsException" instancesize="24" depth="4"></type>
+		<type descriptor="[[C" depth="0"></type>
+		<type descriptor="[Ljava/lang/Thread;" depth="0"></type>
+		<type descriptor="java/lang/ArrayStoreException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/ReflectiveOperationException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/IllegalAccessException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/LinkageError" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/IncompatibleClassChangeError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/IllegalAccessError" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/InstantiationException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/IllegalMonitorStateException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/InterruptedException" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/ArithmeticException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/NumberFormatException" instancesize="24" depth="5"></type>
+		<type descriptor="java/lang/ClassCastException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/ClassNotFoundException" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/UnsatisfiedLinkError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/StackOverflowError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/Long" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/ref/Reference" instancesize="24" depth="1"></type>
+		<type descriptor="java/lang/ref/WeakReference" instancesize="24" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/io/DebugOutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="java/io/InputStream" instancesize="4" depth="1"></type>
+		<type descriptor="com/is2t/vm/support/io/MemoryInputStream" instancesize="20" depth="2"></type>
+		<type descriptor="ej/bon/EnqueuedWeakReference" instancesize="24" depth="3"></type>
+		<type descriptor="java/lang/MainThread" instancesize="28" depth="2"></type>
+		<type descriptor="ej/microui/event/Event" instancesize="4" depth="1"></type>
+		<type descriptor="ej/bon/Util" instancesize="4" depth="1"></type>
+		<type descriptor="ej/bon/CurrentTime" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/display/GraphicsContext" instancesize="76" depth="1"></type>
+		<type descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/display/FlyingImage" instancesize="24" depth="1"></type>
+		<type descriptor="ej/microui/display/Image" instancesize="12" depth="1"></type>
+		<type descriptor="ej/microui/display/OffscreenWeakRefPool" instancesize="8" depth="1"></type>
+		<type descriptor="ej/microui/display/OffscreenWeakReference" instancesize="36" depth="3"></type>
+		<type descriptor="ej/microui/display/ImageWeakReference" instancesize="36" depth="4"></type>
+		<type descriptor="ej/lang/ResourceManager" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/display/Font" instancesize="32" depth="1"></type>
+		<type descriptor="java/util/AbstractCollection" instancesize="4" depth="1"></type>
+		<type descriptor="java/util/AbstractList" instancesize="8" depth="2"></type>
+		<type descriptor="java/util/AbstractList$InternalIterator" instancesize="20" depth="1"></type>
+		<type descriptor="java/util/NoSuchElementException" instancesize="24" depth="4"></type>
+		<type descriptor="java/util/ConcurrentModificationException" instancesize="24" depth="4"></type>
+		<type descriptor="java/util/AbstractArrayList" instancesize="20" depth="3"></type>
+		<type descriptor="java/util/AbstractArrayList$AbstractArrayListIterator" instancesize="24" depth="2"></type>
+		<type descriptor="java/util/ArrayList" instancesize="20" depth="4"></type>
+		<type descriptor="ej/microui/display/FontPermission" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/Immortal" instancesize="4" depth="1"></type>
+		<type descriptor="ej/bon/Immortals" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/display/DisplayFontResource" instancesize="8" depth="1"></type>
+		<type descriptor="com/is2t/tools/BitFieldHelper" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/display/DisplayFontsData" instancesize="24" depth="1"></type>
+		<type descriptor="java/lang/SecurityException" instancesize="24" depth="4"></type>
+		<type descriptor="[Lej/microui/display/Font;" depth="0"></type>
+		<type descriptor="java/lang/ExceptionInInitializerError" instancesize="24" depth="4"></type>
+		<type descriptor="java/lang/AbstractMethodError" instancesize="24" depth="5"></type>
+		<type descriptor="com/is2t/vm/support/util/EncUTF_8" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/MicroUIFactory$1" instancesize="36" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/SystemMicroUI" instancesize="8" depth="2"></type>
+		<type descriptor="com/is2t/microej/microui/SystemMicroUIImpl" instancesize="24" depth="3"></type>
+		<type descriptor="com/is2t/microbsp/microui/io/SystemDisplay" instancesize="44" depth="2"></type>
+		<type descriptor="com/is2t/pump/_int/IntPump" instancesize="8" depth="1"></type>
+		<type descriptor="com/is2t/microbsp/microui/io/SystemInputPump" instancesize="12" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump" instancesize="4" depth="1"></type>
+		<type descriptor="ej/microui/event/EventGenerator" instancesize="20" depth="1"></type>
+		<type descriptor="ej/microui/event/EventGeneratorsPool" instancesize="12" depth="1"></type>
+		<type descriptor="[Lej/microui/event/EventGenerator;" depth="0"></type>
+		<type descriptor="ej/microui/event/generator/Command" instancesize="20" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/SystemCommand" instancesize="20" depth="3"></type>
+		<type descriptor="ej/microui/event/EventPermission" instancesize="12" depth="2"></type>
+		<type descriptor="ej/microui/event/generator/Buttons" instancesize="36" depth="2"></type>
+		<type descriptor="[J" depth="0"></type>
+		<type descriptor="[Z" depth="0"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/SystemButtons" instancesize="36" depth="3"></type>
+		<type descriptor="[S" depth="0"></type>
+		<type descriptor="[F" depth="0"></type>
+		<type descriptor="[D" depth="0"></type>
+		<type descriptor="java/io/Serializable" depth="0"></type>
+		<type descriptor="java/lang/CharSequence" depth="0"></type>
+		<type descriptor="java/lang/Appendable" depth="0"></type>
+		<type descriptor="java/lang/Comparable" depth="0"></type>
+		<type descriptor="java/util/Comparator" depth="0"></type>
+		<type descriptor="java/lang/Runnable" depth="0"></type>
+		<type descriptor="ej/error/ErrorMessages" depth="0"></type>
+		<type descriptor="java/lang/reflect/Type" depth="0"></type>
+		<type descriptor="java/lang/reflect/GenericDeclaration" depth="0"></type>
+		<type descriptor="java/lang/reflect/AnnotatedElement" depth="0"></type>
+		<type descriptor="java/lang/AutoCloseable" depth="0"></type>
+		<type descriptor="java/io/Flushable" depth="0"></type>
+		<type descriptor="java/io/Closeable" depth="0"></type>
+		<type descriptor="java/security/Guard" depth="0"></type>
+		<type descriptor="ej/microui/err/ErrorMessagesNames" depth="0"></type>
+		<type descriptor="com/is2t/pump/Pump" depth="0"></type>
+		<type descriptor="ej/microui/MicroUIPump" depth="0"></type>
+		<type descriptor="ej/microui/LayersManager" depth="0"></type>
+		<type descriptor="com/is2t/pump/_int/BlockingIntQueue" depth="0"></type>
+		<type descriptor="ej/microui/util/EventHandler" depth="0"></type>
+		<type descriptor="ej/lang/Resource" depth="0"></type>
+		<type descriptor="java/lang/Iterable" depth="0"></type>
+		<type descriptor="java/util/Collection" depth="0"></type>
+		<type descriptor="java/util/Iterator" depth="0"></type>
+		<type descriptor="java/util/List" depth="0"></type>
+		<type descriptor="java/lang/Cloneable" depth="0"></type>
+		<type descriptor="java/util/RandomAccess" depth="0"></type>
+		<type descriptor="ej/microui/UncaughtExceptionHandler" depth="0"></type>
+		<type descriptor="java/lang/Thread$UncaughtExceptionHandler" depth="0"></type>
+	</selected_type>
+</soar_information>

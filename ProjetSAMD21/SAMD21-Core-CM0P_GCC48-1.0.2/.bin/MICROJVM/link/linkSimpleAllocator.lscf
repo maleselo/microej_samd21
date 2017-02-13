@@ -1,0 +1,19 @@
+<!--
+  	LSC
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	
+	<!-- Icetea HEAP -->
+	<defSymbol name="_java_vmthread_native_size" value="256"/>	
+	<defSymbol name="_icetea_heap_size" value="1184+(_java_max_nb_standaloneEngines*_java_vmthread_native_size)"/> 
+	<defSection name="HEAP_ICETEA" size="_icetea_heap_size" align="8" rootSection="true"/>
+	<defSection name="ICETEA_HEAP" start="0" size="0x7fffffff" align="8" rootSection="true"/>
+	<memoryLayout ranges="ICETEA_HEAP">
+		<sectionRef name="HEAP_*"/>
+	</memoryLayout>
+	
+</lscFragment>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	ANT
+	
+	Copyright 2014-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.	
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="deployInBSP" default="deploy/bsp">
+	
+	<dirname file="${ant.file.deployInBSP}" property="deployInBSP.dir"/>
+	
+	<target name="init">
+		
+		<property file="${deployInBSP.dir}/deployInBSP.properties"/>
+		
+		<!-- forces an OS path-->
+		<getProperty property="deploy.copy.file0" default="${deploy.bsp.javaapp.location}"/>
+		<property name="deploy.copy.file" location="${deploy.copy.file0}"/>
+		
+	</target>
+	
+	<target name="copyApplication" depends="init">
+		<copy tofile="${deploy.copy.file}" file="${deploy.binary.file}"/>
+	</target>
+	
+	<target name="deploy/bsp" depends="copyApplication">
+		<echo message="The MicroEJ application output file has been copied here: '${deploy.copy.file}'."/>
+		<echo message="This location is known by the BSP project."/>
+	</target>
+	
+</project>

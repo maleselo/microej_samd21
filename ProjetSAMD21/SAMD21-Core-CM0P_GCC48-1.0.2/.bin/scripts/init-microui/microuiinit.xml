@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+	Copyright 2011-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="microuInit">
+
+	<import file="${ant.file.microuInit}/../../extension-init.xml" />
+	
+	<extension-point name="init/microui/context/hook" description="Hook to force to use MicroUI (see MWT)" />
+	
+	<target name="init/microui/check" extensionOf="init/context" depends="init/microui/context/hook">
+		<!-- check if application targets MicroUI -->
+		<available classpath="${application.classpath}" classname="ej.microui.MicroUI" property="usesMICROUI"/>
+	</target>
+	
+	<target name="init/microui" extensionOf="init/execution" if="usesMICROUI">
+		
+		<echo message="MicroUI init" level="verbose" />
+		
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${jpf.dir}/javaLibs" includes="microui-*.jar" />
+			<fileset dir="${jpf.dir}/javaLibs" includes="systemmicroui-*.jar" />
+		</augment>
+		
+		<!-- REQUIRES (system microui class)-->
+		<property file="${jpf.dir}/javaLibs/systemmicroui.properties"/>
+		<fail unless="microui.require" description="platform specific, must be set in systemmicroui.properties"/>
+		<augment id="init.requires">
+			<string value="${microui.require}"/>
+		</augment>
+		
+		<!-- REQUIRES (generic event generator) -->
+		<condition property="microui.eventgen.require" value="${microui.eventgen}" else="ej.microui.MicroUI" description="fake value in case of there is no generic event generator.">
+			<and>
+				<isset property="microui.eventgen"/>
+				<not><equals arg1="${microui.eventgen.require}" arg2=""/></not>
+			</and>
+		</condition>
+		<script language="javascript"> 
+			list = project.getProperty("microui.eventgen.require").split(project.getProperty("path.separator"));
+			for(var i = 0; i &lt; list.length; i++) {
+				project.setProperty("microui.eventgen", list[i]);
+				self.project.executeTarget("init/microui/genericEventGenerator/require");
+			}
+		</script>
+		
+		<!-- RESOURCES -->
+		<property name="microui.resources" value="" description="default value: no specific resource"/>	
+		<augment id="init.resources">
+			<string value="${microui.resources}"/>
+		</augment>
+		
+	</target>
+	
+	<!-- check if a generic event generator is in the application classpath -->
+	<target name="init/microui/genericEventGenerator/check">
+		<available classpath="${application.classpath}" classname="${microui.eventgen}" property="microui.eventgen.${microui.eventgen}.available"/>
+	</target>
+	
+	<!-- force to embed the generic event generator -->
+	<target name="init/microui/genericEventGenerator/require" depends="init/microui/genericEventGenerator/check" if="microui.eventgen.${microui.eventgen}.available">
+		<augment id="init.requires">
+			<string value="${microui.eventgen}"/>
+		</augment>
+	</target>
+	
+</project>

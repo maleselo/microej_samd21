@@ -1,0 +1,53 @@
+<!--
+	LSC
+	
+	Copyright 2011-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+
+	<!-- 
+		+ 32:	sizeOf(ScreenDescriptor) (25 aligned)
+		+ 4:	ScreenDescriptor array element
+		
+		= 36
+	 -->
+	<defSymbol name="DISPLAY_SIZE_SD" value="36" rootSymbol="true"/>
+	
+	<!-- 
+		+ 8:	sizeOf(Offscreen) (8 aligned)
+		+ 4:	Offscreen array element
+		
+		= 12
+	 -->
+	<defSymbol name="DISPLAY_SIZE_OFF" value="12" rootSymbol="true"/>
+	
+	<!-- 
+		+ 24:	sizeOf(FlyingImage) (17 aligned)
+		+ 4:	FlyingImage array element
+		
+		= 28
+	 -->
+	<defSymbol name="DISPLAY_SIZE_FI" value="28" rootSymbol="true"/>
+	
+	<!-- 
+		+ 4:	font array element
+		
+		= 4
+	 -->
+	<defSymbol name="DISPLAY_SIZE_FONT" value="4" rootSymbol="true"/>
+	
+	<defSymbol name="DISPLAY_SIZE_EDGE" value="96" rootSymbol="true"/>
+	
+	<defSymbol name="DISPLAY_EXPECTED_ALLOCATION" value="416" rootSymbol="true"/>
+	<defSymbol name="DISPLAY_DEBUG_ALLOCATION" value="-1" rootSymbol="true"/>
+	
+	<defSymbol name="microui.display.nativeheap" value="DISPLAY_EXPECTED_ALLOCATION+DISPLAY_SIZE_SD*MAX_NB_SCREEN_DESCRIPTORS+DISPLAY_SIZE_OFF*MAX_NB_SCREEN_DESCRIPTORS+DISPLAY_SIZE_FI*MAX_NB_FLYING_IMAGES+DISPLAY_SIZE_FONT*MAX_NB_FONTS+DISPLAY_SIZE_EDGE*MAX_NB_EDGES"/>
+	
+	<!--
+		Define HEAP extension for MicroUI
+	-->
+	<defSection name="HEAP_DISPLAY_STACK" size="microui.display.nativeheap" rootSection="true"/>
+	
+</lscFragment>

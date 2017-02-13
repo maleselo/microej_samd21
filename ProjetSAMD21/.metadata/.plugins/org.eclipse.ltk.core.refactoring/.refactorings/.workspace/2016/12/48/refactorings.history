@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SAMD21-Core-CM0P_GCC48-1.0.0&apos;" deleteContents="true" description="Delete resource &apos;SAMD21-Core-CM0P_GCC48-1.0.0&apos;" element1="/SAMD21-Core-CM0P_GCC48-1.0.0" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1480777964008"/>
+</session>

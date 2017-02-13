@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="soar.definition">
+
+	<dirname file="${ant.file.soar.definition}" property="ant.dir.soar.definition"/>
+	<loadproperties srcfile="${ant.dir.soar.definition}/soar.properties" prefix="soar"/>
+	
+	<import file="soarPathDefinition.xml"/>
+	<!-- Silently skip if soar is unavailable (e.g virtual device strip - execSOAR will be set to false later) -->
+	<taskdef name="soarTask" classname="${soar.classname}" classpathref="soar.classpath.path" onerror="ignore"/>
+		
+	<presetdef name="soar">
+		<soarTask
+			is13Compliance="${cldc.13.compliance}"
+			generateAllClassnames="${soar.generate.classnames}"
+			verbose="${soar.verbose.level}"
+			
+			expertMode="${soar.expertMode}"
+			debugMode="${soar.debugMode}"
+			
+			onlyInfoFile="${soar.only.info.file}"
+			
+			mainclass="${application.main.class}"
+			
+			toDir="${soar.output.dir}"
+			rootName="${soar.root.name}"
+			
+			toAddInVmImage="${overall.requires}"
+			immutables="${overall.immutables}"
+			resources="${overall.resources}"
+			
+			niFiles="${overall.soar.ni.files}"
+			ni="${soar.ni}"
+			
+		    enableAOTCompiler="${soar.aot.compiler}"
+			
+			jpfFile="${application.allocation.policy.file}"
+			cpuVariant="${compiler.cpu}"
+			endianness="${arch.endianness}"
+			symbolPrefix="${arch.symbol.prefix}"
+			floatingRepresentation="${decimal.impl}"
+			
+			disableStringCompaction="${soar.disableStringCompaction}"
+			checkAPIs="${soar.checkAPIs}"
+			clinitAnalysisMode="${soar.clinit.mode}"
+			legacyPropertiesLoad="${soar.legacyPropertiesLoad}"
+			legacyStaticFeatures="${soar.legacyStaticFeatures}"
+			verify="${soar.bytecode.verifier}"
+		>
+			<classpath>				
+				<pathelement path="${overall.soar.bootclasspath}"/>
+				<pathelement path="${overall.classpath}"/>
+			</classpath>
+			<propertyset refid="emb.java.propertyset"/>
+			<buildpropertyset refid="build.propertyset"/>
+		</soarTask>
+	</presetdef>
+
+</project>
+	
+	

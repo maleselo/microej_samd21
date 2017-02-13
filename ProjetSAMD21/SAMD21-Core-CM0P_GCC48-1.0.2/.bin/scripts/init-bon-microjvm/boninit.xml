@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="bonInitMicroJvm">
+
+	<dirname property="ant.dir.bonInitMicroJvm" file="${ant.file.bonInitMicroJvm}"/>
+	<import file="${ant.dir.bonInitMicroJvm}/../extension-init.xml" />
+	
+	<!-- Add the BON in the Soar bootclasspath -->
+	<target name="init/bon/soar" extensionOf="init/execution" if="execSOAR">
+		<fail unless="microjvm.dir"/>
+		<augment id="init.soar.bootclasspath">
+			<fileset dir="${microjvm.dir}/javaLibs" includes="bon-*.jar"/>
+		</augment>
+	</target>
+	
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2014-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="buildCProject">
+
+	<dirname file="${ant.file.buildCProject}" property="ant.file.buildCProject.dir"/>
+	<import file="${ant.file.buildCProject.dir}/buildCDTProject.microejTask"/>
+
+	<macrodef name="microej.buildCProject" description="Build a C project by invoking ">
+		<!-- ANT 1.7 compatible -->
+		<attribute name="buildCProject.project.file" description="Third party IDE project file"/>
+		<attribute name="buildCProject.project.configuration" default="" description="Project configuration to use (Debug, Release, etc.)"/>
+		<attribute name="buildCProject.failonerror" default="true" description="Set to 'true' if build has to fail if errors occurred, 'false' otherwise"/>
+		<sequential>
+			<microej.cdtProjectBuild
+				cdtProjectBuild.project.file="@{buildCProject.project.file}"
+				cdtProjectBuild.failonerror="@{buildCProject.failonerror}"
+			/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="microej.getCProjectFileExtension" description="Build a C project by invoking ">
+		<attribute name="getCProjectFileExtension.output.property" description="Return the file extension of the third party IDE project file"/>
+		<sequential>
+			<property name="@{getCProjectFileExtension.output.property}" value=".cproject"/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="microej.getCProjectOutputDir" description="Return CIDE binaries output directory">
+		<attribute name="getCProjectOutputDir.project.file" description="Third party IDE project file"/>
+		<attribute name="getCProjectOutputDir.output.property" description="Return the binaries output directory of the third party IDE project file"/>
+		<attribute name="getCProjectOutputDir.default.configuration" default="Debug" description="Return the binaries output directory of the third party IDE project file"/>
+		<sequential>
+			<local name="cproject.project.file.dir"/>
+			<local name="cproject.project.conf"/>
+			<dirname file="@{getCProjectOutputDir.project.file}" property="cproject.project.file.dir"/>
+			<xmlproperty file="@{getCProjectOutputDir.project.file}" prefix="cproject.xmlelmt"/>
+			<condition property="cproject.project.conf" value="@{getCProjectOutputDir.default.configuration}" else="${cproject.xmlelmt.cproject.storageModule.cconfiguration.storageModule(name)}">
+				<contains string="${cproject.xmlelmt.cproject.storageModule.cconfiguration.storageModule(name)}" substring=","/>
+			</condition>
+			<property name="@{getCProjectOutputDir.output.property}" location="${cproject.project.file.dir}${file.separator}${cproject.project.conf}"/>
+		</sequential>
+	</macrodef>
+</project>

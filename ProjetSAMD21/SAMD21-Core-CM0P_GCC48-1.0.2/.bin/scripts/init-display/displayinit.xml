@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	ANT
+	
+	Copyright 2011-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="display"> 
+
+	<dirname file="${ant.file.display}" property="ant.file.display.dir"/>
+	
+	<import file="${ant.file.display.dir}/../extension-init.xml" />
+	<import file="${ant.file.display.dir}/../init-microui/microuiinit.xml" />
+	<import file="${ant.file.display.dir}/../microejAntlib.xml" />
+
+	<target name="init/display" extensionOf="init/execution" if="onBoard">
+		
+		<!-- create tmp dir -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="linkDisplay" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+			
+		<!-- get tmp link file name -->
+		<local name="link.sizes"/>
+		<property name="link.sizes" value="${link.files.dir}/sizes.lscf" />
+		
+		<!-- set default properties values (in case of we are not using MicroUI) -->
+		<property name="mui.flying.images.size" value="0"/>
+		<property name="mui.images.size" value="0"/>
+		<property name="mui.fonts.size" value="0"/>
+		<property name="mui.edges.size" value="4" description="minimum 4 edges"/>
+		<property name="mui.displaypump.size" value="0" description="force to use default value"/>
+		
+		<!-- get properties values from MicroEJ launcher -->
+		<getProperty prefix="" property="mui.flying.images.size"/>
+		<getProperty prefix="" property="mui.images.size"/>
+		<getProperty prefix="" property="mui.fonts.size"/>
+		<getProperty prefix="" property="mui.edges.size"/>
+		
+		<!-- retrieve LCD pixel format -->
+		<loadproperties srcfile="${ant.file.display.dir}/display.properties" prefix="display."/>
+		
+		<!-- create the size file -->
+		<echoxml file="${link.sizes}" append="false">
+			<lscFragment>
+				<defSymbol name="${arch.symbol.prefix}MAX_NB_FLYING_IMAGES" value="${mui.flying.images.size}"/>
+				<defSymbol name="${arch.symbol.prefix}MAX_NB_SCREEN_DESCRIPTORS" value="${mui.images.size}"/>
+				<defSymbol name="${arch.symbol.prefix}MAX_NB_FONTS" value="${mui.fonts.size}"/>
+				<defSymbol name="${arch.symbol.prefix}MAX_NB_EDGES" value="${mui.edges.size}"/>
+				<defSymbol name="${arch.symbol.prefix}DISPLAY_PUMP_SIZE" value="${mui.displaypump.size}"/>
+				<defSymbol name="${arch.symbol.prefix}LCD_FORMAT" value="${display.pixel}"/>
+			</lscFragment>
+		</echoxml>
+		
+		<!-- add link file in linker's link files path -->
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+			<path location="${jpf.dir}/link"/>
+		</augment>
+	</target>
+</project>

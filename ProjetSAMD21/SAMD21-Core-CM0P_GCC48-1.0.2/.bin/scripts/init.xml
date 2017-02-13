@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+ 	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="init" default="init">
+
+	<dirname property="scripts.dir" file="${ant.file.init}"/>
+
+	<loadproperties srcfile="${scripts.dir}/core.properties"/> <!-- must exist -->
+	<!-- properties from platform build -->
+	<loadproperties srcfile="${scripts.dir}/workbenchExtension.properties"/> <!-- must exist -->
+	<property file="${scripts.dir}/jpf.properties"/> <!-- may not exist -->
+
+	<!-- All resource collection that can be augmented by extension-init and used by tools (S3, SOAR, etc.) -->
+	<path id="init.application.classpath"/>
+	<resources id="init.resources"/>
+	<resources id="init.immutables"/>
+	<resources id="init.requires"/>
+	<propertyset id="init.properties"/> <!-- properties to add to MicroEJ context (add properties/*.system.properties to classpath) -->
+	<propertyset id="s3.override.properties"/> <!-- properties to add to S3 MicroEJ context (add properties/*.override.properties to classpath) -->
+	<propertyset id="init.build.properties"/> <!-- Build properties that will be used to tag the output image -->
+	
+	<!-- All Native Implementation that initializers can augment, may be use both for Mock classpath and native linker -->
+	<path id="native.implementation.archives"/>
+	
+	<import file="extension-init.xml"/>
+	<import>
+		<!-- Import all libraries initializers -->
+		<fileset dir="${scripts.dir}">
+			<include name="init-*/*.xml"/>
+		</fileset>
+	</import>
+
+	<import file="activity.xml" />
+	
+	<!-- Root Activity Definition -->
+	<target name="activity/microej">
+		<start.activity
+			activity.id="${activity.root.id}"
+			message="Initialization Stage"
+		/>
+	</target>
+
+	<target name="activity/microej/finish">
+		<complete.activity
+			activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<!--
+		@see http://bugs.sun.com/bugdatabase/
+		bug ID #4809647
+	-->
+	<target name="sleep.onWinXP" if="runOnWinXP">
+		<sleep seconds="2"/>
+	</target>
+	
+	<target name="isWinXP">
+		<condition property="runOnWinXP" value="SET">
+			<istrue value="${isWinXP}"/>
+		</condition>
+	</target>
+
+	<target name="init" description="Common entry point to all MicroEJ Launches" depends="activity/microej, platform/constants, init/execution, launch/mkdirs, init/finalization"/>
+	<target name="dyninit" description="Common entry point to MicroEJ dynamic download launches" depends="activity/microej, platform/constants, dyninit/execution, dyninit/finalization"/>
+	<target name="finish" description="MicroEJ Launches end" depends="launch/clean,activity/microej/finish"/>
+
+	<target name="platform/constants" depends="check/OS, target/define">
+		<!-- TODO checks on mandatory properties -->
+		
+		<property name="resource.os.root" location="${jpf.dir}/resources/os"/>
+		<condition property="resource.os.dir" value="${resource.os.root}/Windows" else="${resource.os.root}/Linux">
+			<istrue value="${isWindows}"/> <!-- computed by check/OS -->
+		</condition>
+	</target>
+	
+	<target name="target/define">
+		<!--
+			sets onS3=SET if vm is S3, (not set otherwise)
+			sets onBoard=SET if vm is not S3, (not set otherwise)
+		-->
+		<condition property="onS3" value="SET">
+			<equals arg1="${vm.name}" arg2="S3" />
+		</condition>
+	
+		<condition property="onBoard" value="SET">
+			<not>
+				<isset property="onS3"/>
+			</not>
+		</condition>
+	</target>
+
+	<target name="check/OS" depends="check/OS/job, isWinXP" if="noSupportedOS">
+		<!--
+			displays a warning message if the OS is not officially supported (see check/OS/job)
+		-->
+		<echo message="WARNING: This OS version (${os.name}) has not been tested at the time this package as been built... some functionnalities may not work. "/>
+	</target>
+
+	<target name="check/OS/job">
+		<!-- 
+			defines isLinux, isWinXP, isWinVista and isWindows properties
+		-->
+		<condition property="isLinux" value="true" else="false">
+			<equals arg1="${os.name}" arg2="Linux"/>
+		</condition>
+
+		<condition property="isWinXP" value="true" else="false">
+			<equals arg1="${os.name}" arg2="Windows XP"/>
+		</condition>
+
+		<condition property="isWinVista" value="true" else="false">
+			<equals arg1="${os.name}" arg2="Windows Vista"/>
+		</condition>
+
+		<condition property="isWin7" value="true" else="false">
+			<or>
+				<equals arg1="${os.name}" arg2="Windows 7"/>
+				<equals arg1="${os.name}" arg2="Windows Server 2008 R2"/>
+			</or>
+		</condition>
+
+		<condition property="isWin8" value="true" else="false">
+			<or>
+				<equals arg1="${os.name}" arg2="Windows 8"/>
+				<equals arg1="${os.name}" arg2="Windows 8.1"/>
+			</or>
+		</condition>
+
+		<condition property="isWin10" value="true" else="false">
+			<equals arg1="${os.name}" arg2="Windows 10"/>
+		</condition>
+
+		<condition property="isMacOSX" value="true" else="false">
+			<equals arg1="${os.name}" arg2="Mac OS X"/>
+		</condition>
+
+		<condition property="isWindows" value="true" else="false">
+			<or>
+				<istrue value="${isWinXP}"/>
+				<istrue value="${isWinVista}"/>
+				<istrue value="${isWin7}"/>
+				<istrue value="${isWin8}"/>
+				<istrue value="${isWin10}"/>
+			</or>
+		</condition>
+
+		<condition property="isMac" value="true" else="false">
+			<istrue value="${isMacOSX}"/>
+		</condition>
+
+		<condition property="noSupportedOS" value="SET">
+			<and>
+				<isfalse value="${isLinux}"/>
+				<isfalse value="${isWindows}"/>
+				<isfalse value="${isMac}"/>
+			</and>
+		</condition>
+	</target>
+	
+	<target name="properties/finalize" extensionOf="init/finalization,dyninit/finalization">
+		<!-- deals with properties (create properties file to be added to "properties" package and to be included in the classpath) -->
+		<tempfile property="launch.custom.properties.dir" destdir="${microej.io.tmpdir}" prefix="customlaunch" suffix="properties"/>
+		<property name="properties.package" location="${launch.custom.properties.dir}/properties"/>
+		<mkdir dir="${properties.package}"/>
+		
+		<tempfile property="custom.properties.file" destdir="${properties.package}" prefix="custom" suffix=".system.properties"/>
+		<tempfile property="s3.override.properties.file" destdir="${properties.package}" prefix="s3" suffix=".override.properties"/>
+	
+		<echoproperties destfile="${custom.properties.file}">
+			<propertyset>
+				<propertyset refid="init.properties"/>
+				<globmapper from="microej.application.*" to="*"/>
+			</propertyset>
+		</echoproperties>
+	
+		<echoproperties destfile="${s3.override.properties.file}">
+			<propertyset>
+				<propertyset refid="s3.override.properties"/>
+				<globmapper from="s3.java.property.*" to="*"/>
+			</propertyset>
+		</echoproperties>
+		
+		<augment id="init.application.classpath">
+			<!-- add {tempdir} to classpath which contains "properties/*.[system|override].properties" -->
+			<pathelement location="${launch.custom.properties.dir}"/>
+		</augment>
+	</target>
+	
+	<target name="collections/finalize" extensionOf="init/finalization,dyninit/finalization" depends="properties/finalize"> <!-- depends on properties finalization which may add some stuff to classpath -->
+		<!-- default path separator used (':' or ';' according to OS) (default pathsep value of pathconvert) -->
+		<pathconvert property="overall.classpath" refid="init.application.classpath"/>
+		<pathconvert property="overall.requires" refid="init.requires"/>
+		<pathconvert property="overall.resources" refid="init.resources"/>
+		<pathconvert property="overall.immutables" refid="init.immutables"/>
+	</target>
+
+</project>

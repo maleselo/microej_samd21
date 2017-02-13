@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="ccanalyser" default="cc.analyser">
+	<dirname property="ccanalyser.launch.dir" file="${ant.file.ccanalyser}"/>
+	
+	
+	<target name="cc.definition">
+		<!-- cca task -->
+		<taskdef name="codeCoverAnalyzer" classname="com.ist.codeCoverage.CodeCoverAnalyzerTask"
+			classpath="${ccanalyser.launch.dir}/../tools/codeCoverageAnalyzer.jar">
+		</taskdef>
+		
+		<!-- check that the code coverage has been done before the analysis -->
+		<available file="${cc.dir}" type="dir" property="cc.dir.exist"/>
+		
+		<!-- report output dir -->
+		<property name="cc.html.dir" value="${cc.dir}/htmlReport"/>
+	</target>
+	
+	<target name="cc.check" depends="cc.definition" unless="cc.dir.exist">
+		<echo message="Code Coverage Error, the directory ${cc.dir} does not exist"/>
+		<echo message="Try to launch 'Default' configuration with 'Code Coverage Analysis' option"/>
+		<fail message="code coverage error"/>
+	</target>
+	
+	<target name="cc.analyser" depends="cc.definition, cc.check">
+		<codeCoverAnalyzer 
+			inputDir="${cc.dir}" 
+			outputDir="${cc.html.dir}" 
+		    verbose="${execution.verbose}"
+			include="${cc.includes}"
+			exclude="${cc.excludes}"
+		/>
+	</target>
+	
+</project>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2013-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="buildCDTProject">
+
+	<macrodef name="microej.cdtProjectBuild">
+		<attribute name="cdtProjectBuild.exec.dir" default="${cdtProjectBuild.exec.dir}" description="CDT batch build tool directory"/>
+		<attribute name="cdtProjectBuild.exec.name" default="${cdtProjectBuild.exec.name}" description="CDT batch build executable name"/>
+		<attribute name="cdtProjectBuild.project.file" description="CDT project (with *.cproject extension) file path"/>
+		<attribute name="cdtProjectBuild.failonerror" default="true" description="CDT build fail on error policy"/>
+		<sequential>
+			<fail unless="cdtProjectBuild.exec.dir" message="Please set 'cdtProjectBuild.exec.dir' property."/>
+			<fail unless="cdtProjectBuild.exec.name" message="Please set 'cdtProjectBuild.exec.name' property."/>
+			<fail message="CDT executable file does not exists (@{cdtProjectBuild.exec.dir}${file.separator}@{cdtProjectBuild.exec.name})">
+				<condition>
+					<not><available file="@{cdtProjectBuild.exec.dir}${file.separator}@{cdtProjectBuild.exec.name}"/></not>
+				</condition>
+			</fail>
+			<!-- take care: '#' and '~' characters not allowed in path  -->
+			<fail message="Special character '#' not allowed in path: '@{cdtProjectBuild.project.file}'">
+				<condition>
+					<contains string="@{cdtProjectBuild.project.file}" substring="#" casesensitive="false"/>
+				</condition>
+			</fail>
+			<fail message="Special character '$' not allowed in path: '@{cdtProjectBuild.project.file}'">
+				<condition>
+					<contains string="@{cdtProjectBuild.project.file}" substring="$" casesensitive="false"/>
+				</condition>
+			</fail>
+			
+			<dirname file="@{cdtProjectBuild.project.file}" property="cdtProjectBuild.project.file.dir.root"/>
+			<property name="cdtProjectBuild.project.workspace.dir" location="${cdtProjectBuild.project.file.dir.root}/../../../.."/>
+
+			<!-- Prepare the BSP workspace -->
+			<echo message="CDT workspace = ${cdtProjectBuild.project.workspace.dir}"/>
+			<echo message="	=> Prepare..."/>
+			<exec executable="@{cdtProjectBuild.exec.dir}/@{cdtProjectBuild.exec.name}" vmlauncher="true">
+				<arg value="-nosplash"/>
+				<arg value="-application"/>
+				<arg value="org.eclipse.cdt.managedbuilder.core.headlessbuild"/>
+				<arg value="-data"/> 
+				<arg value="${cdtProjectBuild.project.workspace.dir}"/>
+				<arg value="-importAll"/>
+				<arg value="${cdtProjectBuild.project.workspace.dir}"/>
+				<arg value="--launcher.suppressErrors"/>
+			</exec>	
+
+			<!-- Clean and Build the BSP workspace -->
+			<echo message="	=> Clean and build..."/>
+			<exec executable="@{cdtProjectBuild.exec.dir}/@{cdtProjectBuild.exec.name}" dir="@{cdtProjectBuild.exec.dir}" failonerror="@{cdtProjectBuild.failonerror}" vmlauncher="true">
+				<arg value="-nosplash"/>
+				<arg line="-application org.eclipse.cdt.managedbuilder.core.headlessbuild"/>
+				<arg value="-cleanBuild"/>
+				<arg value="all"/>
+				<arg value="-build"/>
+				<arg value="all"/>
+				<arg value="-data"/>
+				<arg value="${cdtProjectBuild.project.workspace.dir}"/>
+				<arg value="--launcher.suppressErrors"/>
+			</exec>
+		</sequential>
+	</macrodef>
+
+</project>

@@ -1,0 +1,125 @@
+<!--
+	LSC
+ 
+  	Copyright 2011-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+ 	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	<!--
+		Linker file for converting ELF SOAR relocatable file to target ELF relocatable.
+		This file defines SOAR symbols entry points for both static and dynamic link. 	
+	-->
+	
+	<!-- Soar section start --> 
+	<rootSymbol name="_java_soarsection_header_start"/>
+
+	<!-- Soar runtime header start --> 
+	<rootSymbol name="_java_soarfile_header_start"/>
+
+	<rootSymbol name="_java_header_types_start"/>
+	<rootSymbol name="_java_header_types_end"/>
+	<rootSymbol name="_java_internStrings_start"/>
+	<rootSymbol name="_java_internStrings_end"/>
+	<rootSymbol name="_java_sharedarray_start"/>
+	<rootSymbol name="_java_class_names_start"/>
+	<rootSymbol name="_java_class_names_end"/>
+	<rootSymbol name="_java_resource_names_start"/>
+	<rootSymbol name="_java_resource_names_end"/>
+	<rootSymbol name="_java_statics_ref_start"/>
+	<rootSymbol name="_java_statics_ref_end"/>
+	<rootSymbol name="_java_names_data_start"/>
+	<rootSymbol name="_java_stackgroup_table"/>
+	<rootSymbol name="_java_stackgroup_table_length"/>
+	<rootSymbol name="_java_Ljava_lang_Object"/>
+	<rootSymbol name="_java_Ljava_lang_Class"/>
+	<rootSymbol name="_java_Ljava_lang_String"/>
+	<rootSymbol name="_java_Ljava_lang_MainThread"/>
+	<rootSymbol name="_java_Ljava_lang_MainThread_field_Args_ALjava_lang_String"/>
+	<rootSymbol name="_java_Ljava_lang_Thread"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_field_PeakThreadCount_I"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_field_TotalStartedThreadCount_I"/>
+	<rootSymbol name="_java_Ljava_lang_OutOfMemoryError"/>
+	<rootSymbol name="_java_Ljava_lang_OutOfMemoryError_field_OOMEMethodAddr_I"/>
+	<rootSymbol name="_java_Ljava_lang_NullPointerException"/>
+	<rootSymbol name="_java_Ljava_lang_IndexOutOfBoundsException"/>
+	<rootSymbol name="_java_Ljava_lang_ArrayIndexOutOfBoundsException"/> 
+	<rootSymbol name="_java_Ljava_lang_NegativeArraySizeException"/>
+	<rootSymbol name="_java_Ljava_lang_ArrayStoreException"/>
+	<rootSymbol name="_java_Ljava_lang_IllegalAccessException"/>
+	<rootSymbol name="_java_Ljava_lang_IllegalAccessError"/>
+	<rootSymbol name="_java_Ljava_lang_IllegalArgumentException"/>
+	<rootSymbol name="_java_Ljava_lang_InstantiationException"/>
+	<rootSymbol name="_java_Ljava_lang_IllegalMonitorStateException"/>
+	<rootSymbol name="_java_Ljava_lang_IllegalThreadStateException"/>
+	<rootSymbol name="_java_Ljava_lang_InterruptedException"/>
+	<rootSymbol name="_java_Ljava_lang_ArithmeticException"/>
+	<rootSymbol name="_java_Ljava_lang_NumberFormatException"/>
+	<rootSymbol name="_java_Ljava_lang_ClassCastException"/>
+	<rootSymbol name="_java_immutable_Keys"/>
+	<rootSymbol name="_java_immutable_Values"/>
+	<rootSymbol name="_java_properties_Keys"/>
+	<rootSymbol name="_java_properties_Values"/>
+	<rootSymbol name="_java_Object_OutOfMemory"/>
+	<rootSymbol name="_java_main_thread_name"/>
+	<rootSymbol name="_java_AB"/>
+	<rootSymbol name="_java_AI"/>
+	<rootSymbol name="_java_AC"/>
+	<rootSymbol name="_java_AAC"/>
+	<rootSymbol name="_java_ALjava_lang_String"/>
+	<rootSymbol name="_java_ALjava_lang_Thread"/>
+	<rootSymbol name="_java_ALjava_lang_Object"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_method_runWrapper_V"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_method_callWrapper_V"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_method_clinitWrapper_I_V"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_method_run_V"/>
+	<rootSymbol name="_java_Ljava_lang_Throwable_method_printStackTrace_V"/>
+	<rootSymbol name="_java_Ljava_lang_Thread_methodoffset_run_V"/>
+	<rootSymbol name="_java_Ljava_lang_Throwable_methodoffset_printStackTrace_V"/>
+	<rootSymbol name="_java_Lcom_is2t_vm_support_io_DebugOutputStream"/>
+	<rootSymbol name="_java_Lcom_is2t_vm_support_io_MemoryInputStream"/>
+	<rootSymbol name="_java_Ljava_lang_ClassNotFoundException"/>
+	<rootSymbol name="_java_Lcom_is2t_vm_support_InternalLimitsError"/>
+	<rootSymbol name="_java_Ljava_lang_UnsatisfiedLinkError"/>
+	<rootSymbol name="_java_Ljava_lang_StackOverflowError"/>
+	<rootSymbol name="_java_Ljava_lang_ref_WeakReference"/>
+	<rootSymbol name="_java_Ljava_lang_ref_SoftReference"/>
+	<rootSymbol name="_java_Lej_bon_EnqueuedWeakReference"/>
+	<rootSymbol name="_java_immutables_start"/>
+	<rootSymbol name="_java_immutables_end"/>
+	<rootSymbol name="_java_ClinitMethod"/>
+	
+	<defSymbol name="_java_soarsection_header_start" value="START(.text.soar)" />
+	<defSymbol name="_java_header_types_start" value="START(SOAR_RUNTIME)" />
+	<defSymbol name="_java_header_types_end" value="END(SOAR_RUNTIME)" />
+
+	<defSymbol name="_java_resource_names_start" value="START(SOAR_RESOURCES_NAMES)"/>
+	<defSymbol name="_java_resource_names_end" value="END(SOAR_RESOURCES_NAMES)"/>
+
+	<defSymbol name="_java_class_names_start" value="START(SOAR_CLASS_NAMES)"/>
+	<defSymbol name="_java_class_names_end" value="END(SOAR_CLASS_NAMES)"/>
+	
+	<defSymbol name="_java_immutables_start" value="START(SOAR_IMMUTABLES)"/>
+	<defSymbol name="_java_immutables_end" value="END(SOAR_IMMUTABLES)"/>
+	
+	<defSymbol name="_java_statics_ref_start" value="START(SOAR_STATICS_REF)"/>
+	<defSymbol name="_java_statics_ref_end" value="END(SOAR_STATICS_REF)"/>
+	
+	<!-- _java_internStrings_start symbol is defined by the soar -->
+	<defSymbol name="_java_internStrings_end" value="END(SOAR_INTERN_STRINGS)"/>
+
+	<rootSymbol name="__icetea___6bss_6soar_6BT1$$Base"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT1$$Limit"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT2$$Base"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT2$$Limit"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT4$$Base"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT4$$Limit"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT8$$Base"/>
+	<rootSymbol name="__icetea___6bss_6soar_6BT8$$Limit"/>
+	<rootSymbol name="__icetea___6bss_6soar_6REF$$Base"/>
+	<rootSymbol name="__icetea___6bss_6soar_6REF$$Limit"/>
+	
+	<rootSymbol name="__icetea___6text_6soar$$Base"/>
+	
+</lscFragment>
+	

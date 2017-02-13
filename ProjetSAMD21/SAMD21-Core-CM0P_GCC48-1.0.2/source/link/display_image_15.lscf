@@ -1,0 +1,143 @@
+
+<!--
+	LSC
+	
+	Copyright 2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+		
+<lscFragment>
+		
+	<defSymbol name="IMAGE_UTILS_TABLE_COPY" value="START(.text.IMAGE_UTILS_TABLE_COPY)"/>
+	<defSymbol name="IMAGE_UTILS_TABLE_COPY_WITH_ALPHA" value="START(.text.IMAGE_UTILS_TABLE_COPY_WITH_ALPHA)"/>
+	<defSymbol name="IMAGE_UTILS_TABLE_DRAW" value="START(.text.IMAGE_UTILS_TABLE_DRAW)"/>
+	<defSymbol name="IMAGE_UTILS_TABLE_DRAW_WITH_ALPHA" value="START(.text.IMAGE_UTILS_TABLE_DRAW_WITH_ALPHA)"/>
+	<defSymbol name="IMAGE_UTILS_TABLE_SET" value="START(.text.IMAGE_UTILS_TABLE_SET)"/>
+	<defSymbol name="IMAGE_UTILS_TABLE_READ" value="START(.text.IMAGE_UTILS_TABLE_READ)"/>
+		
+	<!--
+		Functions to perform a copy from source to destination without checking a global alpha
+		(no need to perform a blending when the source pixel is fully opaque). 
+		
+		Each function can be replaced by a generic one (smaller footprint but slower):
+		"com_is2t_drivers_addr_image_drawer_Stub___genericCopy"
+		
+		Each function can be replaced by an empty function which disables the copy (smaller footprint):
+		"com_is2t_drivers_addr_image_drawer_Stub___copyDisabled"
+	-->
+	<defSection name=".text.IMAGE_UTILS_TABLE_COPY" align="8" rootSection="true">
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRLE1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB8888"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRGB888"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRGB565"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB1555"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB4444"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA4"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA8"/>
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA2"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC4"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC2"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC44"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC22"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC11"/>
+	</defSection>
+	
+	<!--
+		Functions to perform a copy from source to destination, checking a global alpha
+		(have always to perform a blending between source pixel, destination pixel and
+		global alpha). 
+		
+		Each function can be replaced by a generic one (smaller footprint but slower):
+		"com_is2t_drivers_addr_image_drawer_Stub___genericCopy"
+		
+		Each function can be replaced by an empty function which disables the copy (smaller footprint):
+		"com_is2t_drivers_addr_image_drawer_Stub___copyDisabled"
+	-->
+	<defSection name=".text.IMAGE_UTILS_TABLE_COPY_WITH_ALPHA" align="8" rootSection="true">
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRLE1AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB8888AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRGB888AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromRGB565AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB1555AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromARGB4444AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA4AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA8AndAlpha"/>
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA2AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromA1AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC4AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC2AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromC1AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC44AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC22AndAlpha"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromAC11AndAlpha"/>
+	</defSection>
+	
+	<!--
+		Functions to draw an ARGB8888 color in destination, checking or not a global alpha.
+		
+		Each function can be replaced by an empty function which disables the drawing (smaller footprint):
+		"com_is2t_drivers_addr_image_drawer_Stub___drawDisabled"
+	-->
+	<defSection name=".text.IMAGE_UTILS_TABLE_DRAW" align="8" rootSection="true">
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromDrawing"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToC1___fromDrawingAndAlpha"/>
+	</defSection>
+	
+	<!--
+		Functions to set an ARGB8888 color in destination (no blending: the color replace the destination
+		pixel)
+		
+		Each function can be replaced by an empty function which disables the setting (smaller footprint):
+		"com_is2t_drivers_addr_image_drawer_Stub___setDisabled"
+	-->
+	<defSection name=".text.IMAGE_UTILS_TABLE_SET" align="8" rootSection="true">
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToARGB8888___set"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToRGB888___set"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToRGB565___set"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToARGB1555___set"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToARGB4444___set"/>
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ToA8___set"/>
+	</defSection>
+	
+	<!--
+		Functions to read an ARGB8888 color from source.
+		
+		Each function can be replaced by an empty function which disables the reading (smaller footprint):
+		"com_is2t_drivers_addr_image_drawer_Stub___readDisabled"
+	-->
+	<defSection name=".text.IMAGE_UTILS_TABLE_READ" align="8" rootSection="true">
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcRLE1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcARGB8888"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcRGB888"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcRGB565"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcARGB1555"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcARGB4444"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcA4"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcA8"/>
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="0"/>	<!-- never used -->
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcA2"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcA1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcC4"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcC2"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcC1"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcAC44"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcAC22"/>
+		<u4 value="com_is2t_drivers_addr_image_drawer_ImageReader___readFromSrcAC11"/>
+	</defSection>
+		
+</lscFragment>
+		

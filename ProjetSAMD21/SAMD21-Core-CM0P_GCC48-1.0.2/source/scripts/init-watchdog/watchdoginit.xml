@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+	Copyright 2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="watchdogInit">
+
+	<import file="${ant.file.microuInit}/../../extension-init.xml" />
+	
+	<extension-point name="init/watchdog/context/hook" description="Hook to force to use Watchdogs" />
+	
+	<target name="init/watchdog" extensionOf="init/execution">
+		
+		<echo message="Watchdog init" level="verbose" />
+		
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${jpf.dir}/javaLibs" includes="watchdog*.jar" />
+		</augment>
+	</target>
+	
+</project>

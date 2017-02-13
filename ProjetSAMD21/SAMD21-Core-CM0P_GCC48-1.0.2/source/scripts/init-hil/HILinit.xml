@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+	Copyright 2012-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="hilinit">
+
+	<import file="${ant.file.hilinit}/../../extension-init.xml" />
+	<import file="${ant.file.hilinit}/../../microejAntlib.xml"/>
+
+	<target name="init/hil/context" extensionOf="init/context" if="onS3">
+		<path id="hil.main.classpath"/>
+		<path id="hil.library.path"/>
+		<resources id="hil.main.excludes"/>
+		<propertyset id="hil.main.properties"/>
+	</target>
+
+	<target name="init/hil" extensionOf="init/execution" if="onS3">
+		<echo message="HIL init" level="verbose"/>
+		<augment id="hil.main.classpath">
+			<!-- include both API and Implementation -->
+			<fileset dir="${s3.dir}/HIL" includes="HILEngine*.jar"/>
+		</augment>
+		
+		<augment id="hil.main.classpath">
+			<!-- include Mock dropins -->
+			<fileset dir="${jpf.dir}" includes="mocks/dropins/*.jar"/>
+		</augment>
+			
+		<!-- Get the java library path provided by the workbench (i.e. the os specific platform resources directory) -->
+		<property name="jpf.library.path" value="${java.library.path}"/>
+		<condition property="ldlibrarypath.property.name" value="PATH" else="LD_LIBRARY_PATH">
+			<os family="windows"/>
+		</condition>
+		<property name="s3.mock.uart.uartconnector" value="com.is2t.io.comm.ECOMConnector"/>
+		<augment id="hil.main.properties">
+			<propertyref name="s3.mock.uart.uartconnector"/>
+		</augment>
+		
+		<augment id="hil.library.path">
+			<dirset dir="${jpf.library.path}"/>
+		</augment>
+		
+		<!-- specify the port for the HIL Engine -->
+		<freePortFinder property="hil.temp.port"/>
+		<condition property="hil.main.port" value="${s3.hil.port}" else="${hil.temp.port}">
+			<equals arg1="${s3.hil.use.port}" arg2="true"/>
+		</condition>
+		
+		<!-- mock must be launched in parallel with the S3 (the tasks reference is defined by the S3 scripts) -->
+		<augment id="s3.exec.parallel.tasks">
+			<ant antfile="${scripts.dir}/hil.xml" target="mainMock">
+				<reference refid="hil.main.classpath"/>
+			</ant>
+		</augment>
+	</target>
+	
+	<target name="finalization/hil" extensionOf="init/finalization" if="onS3">
+		<!-- default path separator for excludes (default pathsep value of pathconvert) -->
+		<pathconvert property="overall.hil.main.excludes" refid="hil.main.excludes" />
+		<pathconvert property="ld.library.path" refid="hil.library.path" />
+		
+		<microejtempfile property="hil.main.properties.file" prefix="hil." suffix=".main.properties"/>
+		<echoproperties destfile="${hil.main.properties.file}">
+			<propertyset refid="hil.main.properties"/>
+		</echoproperties>
+	</target>
+
+</project>

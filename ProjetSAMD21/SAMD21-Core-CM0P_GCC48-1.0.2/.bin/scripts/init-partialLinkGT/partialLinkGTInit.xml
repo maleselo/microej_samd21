@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="partialLinkGTInit">
+
+	<!-- 
+		Generate link file for GreenThread VM
+	-->
+
+	<import file="${ant.file.partialLinkGTInit}/../../extension-init.xml" />
+	<import file="${ant.file.partialLinkGTInit}/../../microejAntlib.xml" />
+		
+	<target name="createLinkFileGT" extensionOf="init/execution" if="onBoard">
+		<!-- temporary link files -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="linkGT" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+		
+		<local name="link.sizes"/>
+		<property name="link.sizes" value="${link.files.dir}/sizes.lscf" />
+		
+		<fail unless="arch.symbol.prefix" message="Please define the 'arch.symbol.prefix' property"/>
+		
+		<!-- create the size file -->
+		<echoxml file="${link.sizes}" append="false">
+			<lscFragment>
+				<defSymbol name="${arch.symbol.prefix}_java_max_nb_standaloneEngines" value="${core.memory.threads.size}" rootSymbol="true"/>
+			</lscFragment>
+		</echoxml>
+		
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+		</augment>
+	</target>
+		
+</project>

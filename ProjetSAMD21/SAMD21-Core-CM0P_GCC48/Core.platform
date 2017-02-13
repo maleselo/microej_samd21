@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<platform hardwarePartNumber="SAMD21" name="Core" version="1.0.2" provider="Simon" vendorUrl="" workbenchMinVersion="2.7.2">
+    <environment architecture="CM0P" baseline="14" hardwarePartNumber="CM0P" toolchain="CM0P_GCC48" name="flopi0PG23" techVersion="1.6" version="6.6.0" level="eval" provider="MicroEJ" licenseTag="IS2T_J8F5C"/>
+    <group name="ui">
+        <without name="display_decoder_bmpm"/>
+        <without name="display_decoder_png"/>
+        <without name="frontpanel"/>
+        <without name="fontDesigner"/>
+        <without name="fontGenerator"/>
+        <without name="imageGenerator"/>
+        <without name="mwt"/>
+    </group>
+</platform>

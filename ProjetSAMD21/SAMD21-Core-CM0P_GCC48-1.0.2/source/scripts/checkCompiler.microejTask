@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2011-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="checkCompiler">
+	
+	<macrodef name="microej.checkCompiler">
+		<attribute name="message.notfound" description="Printed message if not found" default="GNU toolchain not found"/>
+		<attribute name="message.invalidversion" description="Printed message if invalid version" default="Invalid GNU toolchain version"/>
+		<sequential>
+			<antcall target="check-version-intern">
+				<param name="check-version.prefix" value="arm-none-eabi-"/>
+				<param name="check-version.version" value="arm-none-eabi-gcc (GNU Tools for ARM Embedded Processors) 4.8.4 20140725"/>
+				<param name="check-version.message.notfound" value="@{message.notfound}"/>
+				<param name="check-version.message.invalidversion" value="@{message.invalidversion}"/>
+				<param name="gnu.toolchain.prefix" value="arm-none-eabi-"/>
+			</antcall>			
+		</sequential>
+	</macrodef>
+	
+	<target name="check-version-intern">
+		<exec 
+			failonerror="false"
+			failifexecutionfails="false" 
+			outputproperty="check-version.output.version" 
+			resultproperty="check-version.result"
+			executable="${check-version.prefix}gcc"
+			logerror="false"
+		>
+			<arg value="--version"/>			
+		</exec> 
+		
+		<!-- Check existence -->
+		<condition property="check-version.error.notfound" value="true">
+			<not>
+				<equals arg1="${check-version.result}" arg2="0"/>
+			</not>
+		</condition>	
+		<antcall target="check-version-notfound"/>
+			
+		<!-- Check version -->
+		<condition property="check-version.error.invalidversion" value="true">
+			<not>
+				<contains string="${check-version.output.version}" substring="${check-version.version}"/>
+			</not>
+		</condition>			
+		<antcall target="check-version-invalidversion"/>
+	</target>
+	
+	<target name="check-version-notfound" if="check-version.error.notfound">
+		<echo message="${check-version.message.notfound} (prefix arm-none-eabi-)"/>
+		<fail/>
+	</target>
+	
+	<target name="check-version-invalidversion" if="check-version.error.invalidversion">
+		<echo message="${check-version.message.invalidversion} (expected ${check-version.version})"/>
+		<fail/>
+	</target>
+
+</project>

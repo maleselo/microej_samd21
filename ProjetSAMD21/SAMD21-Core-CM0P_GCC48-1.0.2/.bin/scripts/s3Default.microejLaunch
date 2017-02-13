@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="s3.default" default="s3">
+
+	<import file="s3Definition.xml"/>
+	<import file="soar.xml"/>
+	<import file="hil.xml"/>
+	
+	<!-- define parallel2 task -->
+	<import file="${scripts.dir}/microejAntlib.xml"/>
+	
+	<target name="soarForS3" if="soar.beforeS3">
+		<antcall target="soar" inheritRefs="true"/>
+		<!--
+			FIXME give the soar.file property to antcall, soar use this value as output file
+			the SOAR produces some info files using ${soar.root.name} as filename prefix (.xml, .dbg, ...)
+			some of them are required by the S3 when running with target characteristics
+		-->
+		<condition property="soar.file" value="${soar.output.dir}/${soar.root.name}.s3infos">
+			<available file="${soar.output.dir}/${soar.root.name}.s3infos"/>
+		</condition>
+		<!-- Default case - MicroEJ 3 compatibility: connect to the expert file -->
+		<property name="soar.file" value="${soar.output.dir}/${soar.root.name}.xml" />
+	</target>
+	
+	<target name="s3/exec/impl" extensionOf="s3/exec" depends="soarForS3, activity/s3">
+		<parallel2>
+			<!-- use default preset definition -->
+			<s3 />
+			
+			<tasks refid="s3.exec.parallel.tasks"/>
+		</parallel2>
+	</target>
+
+</project>

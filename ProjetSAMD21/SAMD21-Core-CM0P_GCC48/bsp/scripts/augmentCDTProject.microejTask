@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2014-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="augmentCDTProject">
+
+	<fileset dir="." id="microej.augmentCDTProject.empty.files.id" excludes="**/*"/>
+		
+	<macrodef name="microej.augmentCDTProject" description="Generate a Kinetis Design Studio project by adding new files (*.c,*.s, *.o, *.lib ... files) in a previously defined group">
+		<!-- ANT 1.7 compatible -->
+		<attribute name="augmentCDTProject.project.file" description="Project file to be modified (.cproject)"/>
+		<attribute name="augmentCDTProject.group.name" description="Group name where to add files" default=""/>
+		<attribute name="augmentCDTProject.files.id" description="Files to be added (Path or Fileset id)" default="microej.augmentCDTProject.empty.files.id"/>
+		<sequential>
+			<antcall target="microej.augmentCDTProject.intern">
+				<param name="augmentCDTProject.project.file" value="@{augmentCDTProject.project.file}"/>
+				<param name="augmentCDTProject.group.name" value="@{augmentCDTProject.group.name}"/>
+				<reference refid="@{augmentCDTProject.files.id}" torefid="augmentCDTProject.files.id"/>
+			</antcall>
+		</sequential>
+	</macrodef>
+
+	<target name="microej.augmentCDTProject.intern">
+		<!-- Internal target for local context -->
+		<!-- 1) Generate XSL for files to be inserted -->
+		<pathconvert property="files.tmp" refid="augmentCDTProject.files.id" pathsep="">
+			<globmapper from="*" to="*${line.separator}" />
+		</pathconvert>
+
+		<tempfile property="augmentCDTProject.tmp.xsl" destdir="${java.io.tmpdir}"/>
+		<concat destfile="${augmentCDTProject.tmp.xsl}">
+			<header><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+				<!--
+						Copyright 2014 IS2T. All rights reserved.
+						IS2T PROPRIETARY. Use is subject to license terms.
+						
+						Bibliography:
+							[XSLTREC] XSL Transformations (XSLT), Version 1.0, W3C Recommendation 16 November 1999
+					-->
+				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+					<!-- This is an XML to XML generator -->
+					<xsl:output	method="xml" indent="yes"/>
+
+					<!-- Well known identity transformation : see 7.5 in [XSLTREC] -->
+					<xsl:template match="node()|@*">
+						<xsl:copy>
+							<xsl:apply-templates select="node()|@*"/>
+						</xsl:copy>
+					</xsl:template>
+
+					<xsl:template match="option[@valueType='${augmentCDTProject.group.name}']">
+						<xsl:copy>
+							<xsl:apply-templates select="node()|@*"/>
+]]>
+				</header>
+
+						<propertyresource name="files.tmp" />
+						<filterchain>
+							<TokenFilter delimOutput="${line.separator}">
+								<replaceregex pattern="^.*[\\/](.*\.(c))$" replace="&lt;listOptionValue builtIn=&quot;false&quot; value=&quot;&amp;quot;\0&amp;quot;&quot;/&gt;" />
+								<replaceregex pattern="^.*[\\/](.*\.(s|asm))$" replace="&lt;listOptionValue builtIn=&quot;false&quot; value=&quot;&amp;quot;\0&amp;quot;&quot;/&gt;" />
+								<replaceregex pattern="^.*[\\/](.*\.(o|obj|symdefs))$" replace="&lt;listOptionValue builtIn=&quot;false&quot; value=&quot;&amp;quot;\0&amp;quot;&quot;/&gt;" />
+								<replaceregex pattern="^.*[\\/](.*\.(lib|a))$" replace="&lt;listOptionValue builtIn=&quot;false&quot; value=&quot;&amp;quot;\0&amp;quot;&quot;/&gt;" />
+								<replaceregex pattern="^.*[\\/](.*\.(txt|h|inc))$" replace="&lt;listOptionValue builtIn=&quot;false&quot; value=&quot;&amp;quot;\0&amp;quot;&quot;/&gt;" />
+							</TokenFilter>
+						</filterchain>
+
+						<footer>
+							<![CDATA[
+						</xsl:copy>
+					</xsl:template>
+				</xsl:stylesheet>
+					]]>
+				</footer>
+			</concat>
+
+			<!-- 2) Process XSL and generate ouput project  -->
+			<!-- XSLT MUST NOT process the same file in input and output => perform a copy -->
+			<tempfile property="augmentCDTProject.tmp.project" destdir="${java.io.tmpdir}"/>
+			<copy file="${augmentCDTProject.project.file}" tofile="${augmentCDTProject.tmp.project}"/>
+			<xslt 
+				style="${augmentCDTProject.tmp.xsl}" 
+			    in="${augmentCDTProject.tmp.project}"
+				out="${augmentCDTProject.project.file}"
+				force="true"
+			/>
+
+			<delete file="${augmentCDTProject.tmp.xsl}"/>
+			<delete file="${augmentCDTProject.tmp.project}"/>
+	</target>
+</project>

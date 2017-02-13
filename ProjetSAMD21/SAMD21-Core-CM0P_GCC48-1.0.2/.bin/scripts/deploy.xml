@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+ 
+  	Copyright 2013-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="deployCaller">
+	
+	<import file="init.xml" />
+	<import file="activity.xml" />
+	
+	<property name="activity.deploy.id" value="deploy"/>
+		
+	<!--
+		Call the deploy script defined by the 'deploy.script' properties.
+		A deploy script deploys the binary defined by 'binary.file' attribute.
+	-->
+	<macrodef name="deploy">
+		<attribute name="binary.file" description="Binary file to deploy"/>
+		<sequential>
+			<start.activity 
+				activity.id="${activity.deploy.id}"
+				message="Deployment"
+			/>
+			<property name="deploy.script" value="noDeployment.xml"/> <!-- default deployment -->
+		
+			<!-- user deployment -->
+			<ant antfile="${scripts.dir}/${deploy.script}">
+				<property name="deploy.binary.file" location="@{binary.file}"/>
+			</ant>
+		
+			<!-- addtional/optional/automatic deployment(s) -->
+			<ant antfile="${scripts.dir}/deployHook.xml">
+				<property name="deploy.binary.file" location="@{binary.file}"/>
+			</ant>
+			
+			<complete.activity activity.id="${activity.deploy.id}"/>
+		</sequential>
+	</macrodef>
+
+
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright 2015-2016 IS2T. All rights reserved.	
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="configuration" default="howto">
+
+	<!--
+		Defines some properties used in this configuration project 
+		(in ant and properties files)
+	-->
+	<dirname file="${ant.file.configuration}" property="project.dir"/>
+	<property name="workspace" location="${project.dir}/.."/>
+	<import file="${xpf.path}/build/scripts/autoConfigurationMergeLibraries.xml" optional="true"/>
+	
+	<!-- ${project.prefix} is the prefix pattern of all template projects -->
+	<basename file="${project.dir}" suffix="-configuration" property="project.prefix"/>
+	
+	<!-- 
+		Helpful target
+	-->
+	<target name="lib/rename" extensionOf="platform/finalization" depends="wip/mergeLibraries">
+		<copy file="${jpf.dir}/lib/microejruntime.a" tofile="${workspace}/.microej/libmicroejruntime.a"/>
+	</target>
+	
+</project>

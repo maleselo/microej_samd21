@@ -1,0 +1,115 @@
+<!--
+	LSC
+ 
+	Copyright 2010-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	<!--
+		Linker file for converting ELF SOAR relocatable file to target ELF relocatable.
+		This file defines the default SOAR layout for both static and dynamic link. 	
+	-->
+
+	<!-- 
+		Soar image code. Fixed position due to _java_SOAR_BASE_ADDRESS fixed.
+	-->	
+ 	<defSection name=".text.soar" start="0" end="0x7fffffff" align="16"/>
+ 	<defSection name=".rodata.resources" start="0" end="0x7fffffff" align="16"/>
+ 	
+ 	<defSymbol name=".text.soar$$Base" value="START(.text.soar)" rootSymbol="true"/>
+ 	
+ 	<!-- 
+ 		Soar runtime linked in RAM (statics). Floating position.
+ 	-->
+ 	<defSection name=".bss.soar" start="0" end="0x7fffffff" align="8"/>	
+ 
+	<!-- Symbol needed when calling start(.bss.soar.xxx) -->
+	<defSymbol name=".bss.soar.BT1$$Base" value="START(SOAR_STATICS_BT1)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT1$$Limit" value="END(SOAR_STATICS_BT1)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT2$$Base" value="START(SOAR_STATICS_BT2)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT2$$Limit" value="END(SOAR_STATICS_BT2)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT4$$Base" value="START(SOAR_STATICS_BT4)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT4$$Limit" value="END(SOAR_STATICS_BT4)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT8$$Base" value="START(SOAR_STATICS_BT8)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.BT8$$Limit" value="END(SOAR_STATICS_BT8)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.REF$$Base" value="START(SOAR_STATICS_REF)" rootSymbol="true"/>
+	<defSymbol name=".bss.soar.REF$$Limit" value="END(SOAR_STATICS_REF)" rootSymbol="true"/>
+	
+	<memoryLayout ranges=".bss.soar">
+	    <!-- 
+	    	Static areas : 5 sections of statics. 
+	    	Wrapped in a group because sections are not generated if no statics found of the given type 
+	    -->	    
+	    <group name="SOAR_STATICS_BT1"> 
+			<sectionRef name=".bss.soar.BT1*"/>
+		</group>
+	    <group name="SOAR_STATICS_BT2"> 
+			<sectionRef name=".bss.soar.BT2*" />
+		</group>
+	    <group name="SOAR_STATICS_BT4"> 
+			<sectionRef name=".bss.soar.BT4*"/>
+		</group>
+	    <group name="SOAR_STATICS_BT8"> 
+			<sectionRef name=".bss.soar.BT8*"/>
+		</group>
+	    <group name="SOAR_STATICS_REF"> 
+	    	<group name="SOAR_STATICS_REF_DEFAULT">
+				<sectionRef name=".bss.soar.REF"/>		
+				<sectionRef name=".bss.soar.REFLS"/>		
+	    	</group>
+			<sectionRef name=".bss.soar.REF*"/>		
+		</group>
+	</memoryLayout>
+	
+	<memoryLayout ranges=".rodata.resources" image="true">
+		<sectionRef name=".soar.rodata.resource"/>
+	</memoryLayout>
+	
+	<defSection name=".text.soar.startpadding" size="4">
+		<u4 value="0"/>
+	</defSection>
+	
+	<memoryLayout ranges=".text.soar" image="true">
+		<!-- SOAR_START is a well known symbol used by BSP -->
+		<defSymbol name="SOAR_START" value="." rootSymbol="true"/>
+	
+	 	<!-- Just add a padding a the beginning of the soar section to avoid to get a relative address equals to 0  -->
+		<sectionRef name=".text.soar.startpadding" force="true"/>
+	
+		<group name="SOAR_RUNTIME">
+			<sectionRef name=".soar.runtime.types*"/>
+			<sectionRef name=".soar.runtime.atypes*"/>
+		</group>
+		
+		<sectionRef name=".soar.runtime*"/>
+		<sectionRef name=".soar.rodata.packagenames"/>
+		
+		<group name="SOAR_RESOURCES_NAMES">
+			<sectionRef name=".soar.rodata.resourcenames"/>
+		</group>
+		
+		<group name="SOAR_CLASS_NAMES">
+			<sectionRef name=".soar.rodata.classnames"/>
+		</group>
+		
+		<group name="SOAR_IMMUTABLES">
+			<sectionRef name=".soar.rodata.immutable"/>
+		</group>
+		
+		<group name="SOAR_INTERN_STRINGS">
+			<sectionRef name=".soar.*" symbol="_java_internStrings_start"/>
+		</group>
+		
+		<!--
+			All kind of others image section: text, resources, properties ... (no order)
+		-->
+		<sectionRef name=".soar.text*"/>
+		<sectionRef name=".soar.rodata*"/>
+		
+		<!-- SOAR_END is a well known symbol used by BSP -->
+		<defSymbol name="SOAR_END" value="." rootSymbol="true"/>
+		
+	</memoryLayout>
+		
+</lscFragment>

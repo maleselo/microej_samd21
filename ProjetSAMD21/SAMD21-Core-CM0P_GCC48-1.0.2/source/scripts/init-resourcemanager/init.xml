@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2015 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+    	
+-->
+<project name="resourcemanager-init">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+		
+	<target name="init/resourcemanager" extensionOf="init/execution">
+		<augment id="init.application.classpath">
+			<fileset dir="${platform.dir}/javaLibs" includes="resourcemanager-*.jar" />
+		</augment>
+	</target>
+	
+</project>

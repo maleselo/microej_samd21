@@ -1,0 +1,24 @@
+<!--
+	LSC
+ 
+  	Copyright 2015-2016 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+
+	<!-- 
+		Contains default value for customizable parameters.
+		This default values must be defined as weak symbols. 
+	-->
+	
+	<!-- Unused time in milliseconds available for a SoftReference for each free kilobyte in the heap. -->
+	<defSymbol name="_java_softRef_LRU_msPerFreeKb" value="1000" weak="true" rootSymbol="true"/>
+	
+	<!-- 
+		The SoftReference class symbol is touched by the VM.
+		If the application does not embed the class SoftReference, a null value must be set to this symbol. 
+	-->
+	<defSymbol name="_java_Ljava_lang_ref_SoftReference" value="0" weak="true" rootSymbol="true"/>
+	
+</lscFragment>

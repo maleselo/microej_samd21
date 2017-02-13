@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2012-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="hil">
+	<dirname property="ant.dir.hil" file="${ant.file.hil}"/>
+	
+	<loadproperties srcfile="${ant.dir.hil}/hil.properties" prefix="hilengine"/>	
+	<property name="s3.dir" value="${platform.dir}/S3"/>
+	
+	<import file="init.xml"/>
+	
+		
+	<target name="mainMock" depends="sleep.onWinXP"> <!-- force depends until a clean solution if found combining extension-point and parallel -->
+		<launchMock 
+			port="${hil.main.port}"
+			properties.file="${hil.main.properties.file}"
+			hil.main.excludes="${overall.hil.main.excludes}"
+		>
+			<mock.classpath>
+				<path refid="hil.main.classpath"/>
+			</mock.classpath>
+		</launchMock>
+	</target>
+	
+	<macrodef name="launchMock">
+		<attribute name="name" default="main"/>
+		<attribute name="port" default="${s3.hil.port}"/>
+		<attribute name="properties.file" />
+		
+		<!-- use a default value for backward compatibility but shouldn't -->
+		<attribute name="hil.main.excludes" default="${overall.hil.main.excludes}"/>
+		
+		<element name="mock.classpath"/>
+		
+		<sequential>
+			<fail message="The given properties file (@{properties.file}) doesn't exists">
+				<condition>
+					<not><available file="@{properties.file}"/></not>
+				</condition>
+			</fail>
+			
+			<echo message="Launching Mock[@{name}] (port: @{port}, properties: @{properties.file})" level="verbose"/>
+			<java fork="true" failonerror="true" classname="${hilengine.classname}">
+				<env key="${ldlibrarypath.property.name}" path="${ld.library.path}"/>
+				<classpath>
+					<mock.classpath/>
+				</classpath>
+				
+				<!-- Mandatory properties for an UART connection -->
+				<!-- java.library.path for native libraries packaged by the jpf -->
+				<!-- single quote are needed for WIN32 platforms-->
+				<jvmarg line="-Djava.library.path='${jpf.library.path}'"/>
+				
+				
+				<!-- HIL options -->
+				<arg line="-port @{port}"/>
+				
+				<!-- properties option points to a property file containing all System properties to add to the HILEngine instance -->
+				<arg line="-properties @{properties.file}"/>
+				
+				<!--
+					Keep this arg line the last one since @{hil.main.excludes} can be empty.
+					If so, the -properties options is not well passed to Java (at least not as expected)
+				-->
+				
+				<!-- excludes option computed by libaries initializers (see extension-init.xml) -->
+				<arg line="-excludes @{hil.main.excludes}"/>
+			</java>
+		</sequential>
+	</macrodef>
+
+</project>

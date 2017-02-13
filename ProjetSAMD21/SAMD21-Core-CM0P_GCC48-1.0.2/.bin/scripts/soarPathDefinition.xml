@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2015 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="soar.path.definition">
+
+	<path id="soar.classpath.path">
+		<fileset dir="${microjvm.dir}/soar" includes="SOAR.jar"/>
+		<fileset dir="${microjvm.dir}/soar" includes="bytecodeVerifier*.jar"/>
+		<fileset dir="${microjvm.dir}/soar" includes="bcel*.jar"/>
+	</path>
+
+</project>
+	
+	

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  	ANT
+ 
+  	Copyright 2013-2014 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="anttoolsDefinition">
+
+	<dirname file="${ant.file.anttoolsDefinition}" property="anttoolsDefinitions.basedir"/>
+	
+	<path id="anttools.path">
+		<fileset dir="${anttoolsDefinitions.basedir}/../tools" includes="AntTools*.jar"/>
+	</path>
+	<taskdef resource="com/is2t/ant/antlib.xml" classpathref="anttools.path" />
+	
+</project>
